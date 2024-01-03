@@ -3,18 +3,31 @@ project:
 
 website:
   title: "EcoAssets"
+  open-graph: true 
+  page-footer: 
+    right: "Copyright 2024"
+    background: "#EBFEE7"
+    foreground: "#000000"
   navbar:
     background: "#EBFEE7"
     foreground: "#000000"
+    collapse: true
+    pinned: true
+    back-to-top-navigation: true
     search: true
     right:
-      - text: "Home"
-        file: index.qmd
-      - href: about.qmd
-        text: About
+      - icon: house-door-fill
+        text: " "
+        aria-label: "Homepage"
+        href: index.qmd
+      - text: "About"
+        href: about.qmd
       - text: "Data"
         menu: 
+          - data.qmd
           - biodiversity_data.qmd
+          - monitoring_data.qmd
+        
 format:
   html:
     theme: cosmo

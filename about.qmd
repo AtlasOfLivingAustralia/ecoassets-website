@@ -2,8 +2,44 @@
 title: "About us"
 ---
 
-About this site
+## About us
 
-```{r}
-1 + 1
-```
+EcoAssets is improving access to integrated environmental data in forms that can support national, and state and territory environmental assessment and reporting activities. The project was established to support the authors of the 2021 Federal State of the Environment (SoE) report which reviews how different pressures are changing Australia’s land and marine environments and how these changes will impact the economy and society.
+
+Australian environmental research infrastructures and their data partners collect large amounts of data each year on all aspects of the environment. In the past these data have not been integrated across infrastructures, or provided at a scale and in a format suitable for environmental reporting at national, or state and territory levels.
+
+Through EcoAssets, three of Australia’s national research infrastructures - the ALA, IMOS and TERN - are working together to deliver open integrated data to support environmental assessment and reporting needs.
+
+The key resulting data assets are:
+Integrated species distribution data asset
+Integrated survey and monitoring activity data asset
+EcoAssets is achieving these outcomes by identifying opportunities to increase alignment between data from all partners. In particular, we are simplifying spatiotemporal analyses and addressing differences in terminology and vocabularies.
+
+## Core Features
+
+Improvements to Data Pipelines
+EcoAssets will develop pipelines that offer standard views of the biodiversity component of data collected during TERN and IMOS field programmes for aggregation with ALA data streams.
+
+Aggregation of Similar Data
+Partners will deliver and maintain high-value national data products that will serve as reference assets and a baseline for future environmental assessment. Data assets include species distribution, monitoring activity and growth in biodiversity knowledge.
+
+Alignment of Data Services
+The newly aggregated data assets will provide a single set of data for major environmental products from the NCRIS infrastructures. This collection will feature standardised metadata, spatial and temporal units and other facets to support SoE reporting.
+The data assets will add significant value to future SoE reports (produced every 5 years), and other areas such as environmental accounting and impact assessments.
+
+Data Principles: Findable, Accessible, Interoperable and Reusable (FAIR)
+Data linkages and summary formats will provide easy-to-access information on indicators and trends. Data pipelines developed will enable future continuous updates and integration of new data from partners.
+
+## Partners
+
+ALA
+
+IMOS
+
+TERN
+
+NCRIS
+
+CSIRO
+
+GBIF
