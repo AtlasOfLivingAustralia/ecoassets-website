@@ -1,5 +1,5 @@
 ---
-title: "ecoassets-website"
+title: "Welcome to EcoAssets"
 ---
 
 This is a Quarto website.

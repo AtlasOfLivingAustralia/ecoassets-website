@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to EcoAssets",
+    "section": "",
+    "text": "EcoAssets brings together environmental data collected from three national research infrastructures – the ALA, IMOS and TERN. By standardising the formats of these data resources and then sharing them, the information can be streamlined into integrated data assets to support Australia’s environmental reporting needs.\nLearn more &gt;"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About us",
+    "section": "",
+    "text": "EcoAssets is improving access to integrated environmental data in forms that can support national, and state and territory environmental assessment and reporting activities. The project was established to support the authors of the 2021 Federal State of the Environment (SoE) report which reviews how different pressures are changing Australia’s land and marine environments and how these changes will impact the economy and society.\nAustralian environmental research infrastructures and their data partners collect large amounts of data each year on all aspects of the environment. In the past these data have not been integrated across infrastructures, or provided at a scale and in a format suitable for environmental reporting at national, or state and territory levels.\nThrough EcoAssets, three of Australia’s national research infrastructures - the ALA, IMOS and TERN - are working together to deliver open integrated data to support environmental assessment and reporting needs.\nThe key resulting data assets are: Integrated species distribution data asset Integrated survey and monitoring activity data asset EcoAssets is achieving these outcomes by identifying opportunities to increase alignment between data from all partners. In particular, we are simplifying spatiotemporal analyses and addressing differences in terminology and vocabularies."
+  },
+  {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "EcoAssets Data",
+    "section": "",
+    "text": "Creating interactive plots with ojs\nA summary of the tutorial on this site."
+  },
+  {
+    "objectID": "index.html#explore-data",
+    "href": "index.html#explore-data",
+    "title": "Welcome to EcoAssets",
+    "section": "Explore Data",
+    "text": "Explore Data\nExplore the latest aggregated datasets for biodiversity and monitoring data from the ALA, IMOS and TERN.\nSee data &gt;"
+  },
+  {
+    "objectID": "index.html#news",
+    "href": "index.html#news",
+    "title": "Welcome to EcoAssets",
+    "section": "News",
+    "text": "News\nView latest updates &gt;\n\nthis is a test block"
+  },
+  {
+    "objectID": "index.html#welcome-to-ecoassets",
+    "href": "index.html#welcome-to-ecoassets",
+    "title": "Welcome to EcoAssets",
+    "section": "",
+    "text": "EcoAssets brings together environmental data collected from three national research infrastructures – the ALA, IMOS and TERN. By standardising the formats of these data resources and then sharing them, the information can be streamlined into integrated data assets to support Australia’s environmental reporting needs.\nLearn more &gt;"
+  },
+  {
+    "objectID": "about.html#about-us",
+    "href": "about.html#about-us",
+    "title": "About us",
+    "section": "",
+    "text": "EcoAssets is improving access to integrated environmental data in forms that can support national, and state and territory environmental assessment and reporting activities. The project was established to support the authors of the 2021 Federal State of the Environment (SoE) report which reviews how different pressures are changing Australia’s land and marine environments and how these changes will impact the economy and society.\nAustralian environmental research infrastructures and their data partners collect large amounts of data each year on all aspects of the environment. In the past these data have not been integrated across infrastructures, or provided at a scale and in a format suitable for environmental reporting at national, or state and territory levels.\nThrough EcoAssets, three of Australia’s national research infrastructures - the ALA, IMOS and TERN - are working together to deliver open integrated data to support environmental assessment and reporting needs.\nThe key resulting data assets are: Integrated species distribution data asset Integrated survey and monitoring activity data asset EcoAssets is achieving these outcomes by identifying opportunities to increase alignment between data from all partners. In particular, we are simplifying spatiotemporal analyses and addressing differences in terminology and vocabularies."
+  },
+  {
+    "objectID": "about.html#core-features",
+    "href": "about.html#core-features",
+    "title": "About us",
+    "section": "Core Features",
+    "text": "Core Features\nImprovements to Data Pipelines EcoAssets will develop pipelines that offer standard views of the biodiversity component of data collected during TERN and IMOS field programmes for aggregation with ALA data streams.\nAggregation of Similar Data Partners will deliver and maintain high-value national data products that will serve as reference assets and a baseline for future environmental assessment. Data assets include species distribution, monitoring activity and growth in biodiversity knowledge.\nAlignment of Data Services The newly aggregated data assets will provide a single set of data for major environmental products from the NCRIS infrastructures. This collection will feature standardised metadata, spatial and temporal units and other facets to support SoE reporting. The data assets will add significant value to future SoE reports (produced every 5 years), and other areas such as environmental accounting and impact assessments.\nData Principles: Findable, Accessible, Interoperable and Reusable (FAIR) Data linkages and summary formats will provide easy-to-access information on indicators and trends. Data pipelines developed will enable future continuous updates and integration of new data from partners."
+  },
+  {
+    "objectID": "about.html#partners",
+    "href": "about.html#partners",
+    "title": "About us",
+    "section": "Partners",
+    "text": "Partners\nALA\nIMOS\nTERN\nNCRIS\nCSIRO\nGBIF"
+  }
+]

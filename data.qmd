@@ -1,0 +1,12 @@
+---
+title: "EcoAssets Data"
+format:
+  html: 
+    page-layout: full
+execute:
+  echo: false
+---
+
+### EcoAssets Data explained
+
+OJS tutorial: A summary of the tutorial on [this site](https://quarto.org/docs/interactive/ojs/){target="_blank"}. 
