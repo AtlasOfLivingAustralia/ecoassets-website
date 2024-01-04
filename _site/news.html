@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>EcoAssets - About us</title>
+<title>EcoAssets - News</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,6 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -58,10 +60,41 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="EcoAssets - About us">
+<meta property="og:title" content="EcoAssets - News">
 <meta property="og:site-name" content="EcoAssets">
 </head>
 
@@ -88,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"> </span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -115,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./news.html" rel="" target="">
+    <a class="nav-link active" href="./news.html" rel="" target="" aria-current="page">
  <span class="menu-text">News</span></a>
   </li>  
 </ul>
@@ -131,78 +164,66 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">News</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 </header>
 
-<div id="about-us">
-<section id="about-us" class="level2 subheading">
-<h2 class="anchored" data-anchor-id="about-us">About us</h2>
-</section>
-<p>EcoAssets is improving access to integrated environmental data in forms that can support national, and state and territory environmental assessment and reporting activities. The project was established to support the authors of the 2021 Federal State of the Environment (SoE) report which reviews how different pressures are changing Australia’s land and marine environments and how these changes will impact the economy and society.</p>
-<p>Australian environmental research infrastructures and their data partners collect large amounts of data each year on all aspects of the environment. In the past these data have not been integrated across infrastructures, or provided at a scale and in a format suitable for environmental reporting at national, or state and territory levels.</p>
-<p>Through EcoAssets, three of Australia’s national research infrastructures - the ALA, IMOS and TERN - are working together to deliver open integrated data to support environmental assessment and reporting needs.</p>
-<p>The key resulting data assets are: Integrated species distribution data asset Integrated survey and monitoring activity data asset EcoAssets is achieving these outcomes by identifying opportunities to increase alignment between data from all partners. In particular, we are simplifying spatiotemporal analyses and addressing differences in terminology and vocabularies.</p>
-</div>
-<div id="core-features">
-<section id="core-features" class="level2 subheading">
-<h2 class="anchored" data-anchor-id="core-features">Core Features</h2>
-</section>
-<section id="improvements-to-data-pipelines" class="level5">
-<h5 class="anchored" data-anchor-id="improvements-to-data-pipelines"><strong>Improvements to Data Pipelines</strong></h5>
-<p>EcoAssets will develop pipelines that offer standard views of the biodiversity component of data collected during TERN and IMOS field programmes for aggregation with ALA data streams.</p>
-</section>
-<section id="aggregation-of-similar-data" class="level5">
-<h5 class="anchored" data-anchor-id="aggregation-of-similar-data"><strong>Aggregation of Similar Data</strong></h5>
-<p>Partners will deliver and maintain high-value national data products that will serve as reference assets and a baseline for future environmental assessment. Data assets include species distribution, monitoring activity and growth in biodiversity knowledge.</p>
-</section>
-<section id="alignment-of-data-services" class="level5">
-<h5 class="anchored" data-anchor-id="alignment-of-data-services"><strong>Alignment of Data Services</strong></h5>
-<p>The newly aggregated data assets will provide a single set of data for major environmental products from the NCRIS infrastructures. This collection will feature standardised metadata, spatial and temporal units and other facets to support SoE reporting. The data assets will add significant value to future SoE reports (produced every 5 years), and other areas such as environmental accounting and impact assessments.</p>
-</section>
-<section id="data-principles-findable-accessible-interoperable-and-reusable-fair" class="level5">
-<h5 class="anchored" data-anchor-id="data-principles-findable-accessible-interoperable-and-reusable-fair"><strong>Data Principles: Findable, Accessible, Interoperable and Reusable (FAIR)</strong></h5>
-<p>Data linkages and summary formats will provide easy-to-access information on indicators and trends. Data pipelines developed will enable future continuous updates and integration of new data from partners.</p>
-</section>
-</div>
-<div id="partners">
-<section id="partners" class="level2 subheading">
-<h2 class="anchored" data-anchor-id="partners">Partners</h2>
-</section>
-<section id="atlas-of-living-australia-ala" class="level3">
-<h3 class="anchored" data-anchor-id="atlas-of-living-australia-ala"><a href="https://ala.org.au/" title="Atlas of Living Australia website">Atlas of Living Australia (ALA)</a></h3>
-<p>The Atlas of Living Australia (ALA) aggregates evidence of the distribution of Australian plant and animal species, bringing together data from museum specimens, field surveys, citizen science observations, molecular sequencing and literature. There are currently over 101 million freely available records held in the ALA.</p>
-</section>
-<section id="integrated-marine-observing-system-imos" class="level3">
-<h3 class="anchored" data-anchor-id="integrated-marine-observing-system-imos"><a href="https://imos.org.au/" title="Interated Marine Observing Sysytem website">Integrated Marine Observing System (IMOS)</a></h3>
-<p>The Integrated Marine Observing System (IMOS) operates a wide range of observing equipment throughout Australia’s coastal and open oceans, covering physical, chemical and biological variables. IMOS provides over 950 million freely available recorded ocean measurements.</p>
-</section>
-<section id="terrestrial-ecosystem-research-network-tern" class="level3">
-<h3 class="anchored" data-anchor-id="terrestrial-ecosystem-research-network-tern"><a href="https://www.tern.org.au/" title="Terrestrial Ecosystem Research Network website">Terrestrial Ecosystem Research Network (TERN)</a></h3>
-<p>TERN Australia advances research on anthropogenic impacts on land-based Australian ecosystems through provision of open access, standardised and integrated time-series data from its remote sensing, field observation and sensor monitoring across the continent. NCRIS</p>
-</section>
-<section id="australian-research-data-commons-ardc" class="level3">
-<h3 class="anchored" data-anchor-id="australian-research-data-commons-ardc"><a href="https://ardc.edu.au/" title="Australian Research Data Commons website">Australian Research Data Commons (ARDC)</a></h3>
-<p>The Australian Research Data Commons (ARDC) enables the Australian research community and industry access to nationally significant, data-intensive digital research infrastructure, platforms, skills and collections of high-quality data. The EcoAssets project received investment (<a href="https://doi.org/10.47486/XN005" class="uri">https://doi.org/10.47486/XN005</a>) from Australian Research Data Commons (ARDC), funded by The National Collaborative Research Infrastructure Strategy (NCRIS).</p>
-</section>
-<section id="australian-government" class="level3">
-<h3 class="anchored" data-anchor-id="australian-government">Australian Government</h3>
-<p>Delivering the State of the Environment Report every five years, the Australian Government oversees national environmental interests in a broad range of areas such as environment and heritage, water resources, biosecurity, agriculture and the Antarctic.</p>
-<hr>
-</section>
-<section id="the-national-collaborative-research-infrastructure-strategy-ncris" class="level3">
-<h3 class="anchored" data-anchor-id="the-national-collaborative-research-infrastructure-strategy-ncris"><a href="https://www.education.gov.au/ncris" title="Find out more about NCRIS">The National Collaborative Research Infrastructure Strategy (NCRIS)</a></h3>
-<p>The ALA, IMOS, TERN and ARDC are made possible with funding from The National Collaborative Research Infrastructure Strategy (NCRIS).</p>
-</section>
-</div>
 
 
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1711890000000" data-listing-file-modified-sort="1704338573216" data-listing-date-modified-sort="1711890000000" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="./posts/first-news-post/post.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+</div>
+<div class="body">
+<a href="./posts/first-news-post/post.html">
+<h3 class="no-anchor listing-title">
+EcoAssets 2024 is up and running
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+<p>The first news post of the website.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/first-news-post/post.html">
+<div class="listing-date">
+Apr 1, 2024
+</div>
+<div class="listing-author">
+Clara Peers
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

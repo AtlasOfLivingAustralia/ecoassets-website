@@ -1,0 +1,100 @@
+$theme: "lumen" !default;
+
+/*-- scss:defaults --*/
+// required by Quarto; write variables under here
+
+// import fonts
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Spectral:ita,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+@import url('_extensions/quarto-ext/fontawesome/assets/css/all.css');
+
+// Colours
+$primary-green: #EBFEE7;
+$secondary-green: #125800;
+$dark-text: #000000;
+$light-text: #FFFFFF;
+
+// Fonts 
+$font-family-serif: 'Spectral', serif;
+$font-family-sans-serif: 'Libre Franklin', sans-serif;
+$font-family-monospace: 'Fira Code', monospace;
+
+// Font sizes 
+$font-size-root: 16px;
+$body-font : 25px;
+$h1-font-size: 50px;
+$h2-font-size: 40px;
+
+$content-width: 500px;
+
+// CSS 
+/*-- scss:rules --*/
+.navbar-title {
+  font-family: $font-family-sans-serif;
+  font-size: $h2-font-size;
+  font-weight: bold;
+}
+
+#title-block-header {
+  background-color: $secondary-green;
+}
+
+.subheading {
+  background-color: $secondary-green;
+  color: $light-text;
+  font-family: $font-family-sans-serif;
+}
+
+.centre-text {
+  text-align: center;
+}
+
+.footer {
+  color: $light-text;
+  background-color: $secondary-green;
+}
+
+.hero-container {
+  overflow: hidden;
+  width: 100%;
+  max-height: 50vh;
+  height: 30vh;
+}
+
+.hero-image {
+  display: block;
+  object-fit: contain;
+}
+
+.home-container-green {
+  width: 100%;
+  height: auto;
+  background-color: $primary-green;
+}
+
+/* example
+// Colors
+$dark-green: #858E79;
+$light-green: #D1D9CE;
+$cream: #FDFBF7;
+$gray: #64605f;
+$purple: #9158A2;
+$orange: #ad7237;
+
+// Base document colors
+$navbar-bg: $cream; // navbar
+$navbar-fg: $dark-green; // navbar foreground elements
+$navbar-hl: $purple; // highlight color when hovering over navbar links
+$body-bg: $light-green; // page background 
+$body-color: $gray; // page text 
+$footer-bg: $cream; // footer 
+$link-color: $purple; // hyperlinks 
+
+// Inline code
+$code-bg: $cream; // inline code background color
+$code-color: $purple; // inline code text color
+
+// Code blocks
+$code-block-bg: $cream; // code block background color
+*/

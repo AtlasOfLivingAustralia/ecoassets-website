@@ -1,4 +1,8 @@
 ---
 title: "Biodiversity data"
+format: 
+  html:
+    template-partials: 
+      - title-block.html
 ---
 
