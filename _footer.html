@@ -1,12 +1,17 @@
 <!-- EcoAssets Footer -->
 
 <style>
+.top-rectangle {
+  background-color: #125800;
+  height: 2vh;
+}
+
 .logos-frame {
-  position: absolute;
+  position: relative;
   width: 482px;
   height: 233px;
-  top: 18px;
-  left: 270px;
+  padding-top: 2vh;
+  padding-bottom: 10vh;
 }
 
 .logos {
@@ -16,15 +21,16 @@
   left: 11px;
 }
 
-.img {
+#ala {
   position: absolute;
   width: 144px;
   height: 99px;
   top: 0;
   left: 0;
+  object-fit: fill;
 }
 
-.rectangle-3 {
+#imos {
   position: absolute;
   width: 144px;
   height: 99px;
@@ -32,7 +38,7 @@
   left: 169px;
 }
 
-.rectangle-4 {
+#tern {
   position: absolute;
   width: 144px;
   height: 99px;
@@ -40,7 +46,7 @@
   left: 338px;
 }
 
-.rectangle-5 {
+#ncris {
   position: absolute;
   width: 144px;
   height: 99px;
@@ -48,7 +54,7 @@
   left: 338px;
 }
 
-.rectangle-6 {
+#ardc {
   position: absolute;
   width: 144px;
   height: 99px;
@@ -56,7 +62,7 @@
   left: 169px;
 }
 
-.rectangle-7 {
+#augov {
   position: absolute;
   width: 144px;
   height: 99px;
@@ -65,11 +71,9 @@
 }
 
 .acknowledgement-of-country {
-  position: absolute;
+  position: relative;
   width: 357px;
   height: 281px;
-  top: 18px;
-  left: 813px;
   font-family: "Spectral-Bold", Helvetica;
   font-weight: 400;
   color: #000000;
@@ -85,12 +89,12 @@
   <div class="centre-rectangle">
     <div class="logos-frame">
         <div class="logos">
-          <img class="img" src="img/rectangle-10.png" />
-          <img class="rectangle-3" src="img/rectangle-11.png" />
-          <img class="rectangle-4" src="img/rectangle-12.png" />
-          <img class="rectangle-5" src="img/rectangle-13.png" />
-          <img class="rectangle-6" src="img/rectangle-14.png" />
-          <img class="rectangle-7" src="img/rectangle-15.png" />
+          <img id="ala" src="images/ala-logo.png" />
+          <img id="imos" src="images/imos-logo.png" />
+          <img id="tern" src="images/tern-logo.png" />
+          <img id="ncris" src="images/ncris-logo.png" />
+          <img id="ardc" src="images/ardc-logo.png" />
+          <img id="augov" src="images/augov-logo.png" />
         </div>
       </div>
     <p class="funding-statement">EcoAssets received investment (doi.org/10.47486/XN005) from the Australian Research Data Commons (ARDC). The ARDC is funded by the Australian Research Data National Collaborative Research Infrastructure Strategy (NCRIS).</p>

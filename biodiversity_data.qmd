@@ -4,5 +4,49 @@ format:
   html:
     template-partials: 
       - title-block.html
+execute:
+  echo: true
 ---
 
+```{ojs}
+
+`Threatened Status of species from the year ${selectedYear} to the year ${selectedYearEnd}`
+
+imcraData = FileAttachment("SummaryData-ThreatenedSpeciesOccurrencesByMarineEcoregion-1.1.2023-06-13.csv").csv({ typed: true })
+ibraData = FileAttachment("SummaryData-ThreatenedSpeciesOccurrencesByTerrestrialEcoregion-1.1.2023-06-13.csv").csv({ typed: true })
+
+combinedData = Promise.all(
+  [imcraData,
+  ibraData]
+).then(
+  ([data1, data2]) => {
+    return data1.concat(data2)
+  }
+)
+
+Plot.plot({
+  color: { legend: true, scheme: "Rainbow" },
+  marks: [
+    Plot.barY(
+      year,
+      Plot.groupX(
+        { y: "count" },
+        { x: "epbcStatus", fill: "epbcStatus", tip: true }
+      )
+    ),
+    Plot.ruleY([0])
+  ]
+})
+
+viewof year = Inputs.radio(d3.group(combinedData, d => d.yearStart), {label: "Year", sort: "ascending", value:'2016'})
+
+year
+
+selectedYear = year[0]["yearStart"]
+
+selectedYearEnd = year[0]["yearEnd"]
+
+
+```
+
+### Figure 2

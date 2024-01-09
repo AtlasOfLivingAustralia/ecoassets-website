@@ -6,8 +6,8 @@ website:
   open-graph: true 
   page-footer: 
     right: "Copyright 2024"
-    background: "#EBFEE7"
-    foreground: "#000000"
+    background: "#125800"
+    foreground: "#FFFFFF"
   navbar:
     background: "#EBFEE7"
     foreground: "#000000"

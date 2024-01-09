@@ -14,6 +14,7 @@ format:
 :::
 :::
 
+:::{.centre-text}
 :::{#welcome .home-container-green}
 ## Welcome to EcoAssets <!-- {.hidden} -->
 
@@ -34,4 +35,5 @@ Explore the latest aggregated datasets for biodiversity and monitoring data from
 ## News
 
 [View latest updates >](news.qmd)
+:::
 :::

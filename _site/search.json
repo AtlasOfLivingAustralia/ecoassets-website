@@ -37,7 +37,7 @@
   {
     "objectID": "data.html",
     "href": "data.html",
-    "title": "EcoAssets Data",
+    "title": "About the Data",
     "section": "",
     "text": "EcoAssets Data explained\nOJS tutorial: A summary of the tutorial on this site."
   },
@@ -82,5 +82,40 @@
     "title": "EcoAssets",
     "section": "About us",
     "text": "About us"
+  },
+  {
+    "objectID": "biodiversity_data.html#info-2",
+    "href": "biodiversity_data.html#info-2",
+    "title": "EcoAssets",
+    "section": "info 2",
+    "text": "info 2"
+  },
+  {
+    "objectID": "biodiversity_data.html#info-3",
+    "href": "biodiversity_data.html#info-3",
+    "title": "EcoAssets",
+    "section": "info 3",
+    "text": "info 3"
+  },
+  {
+    "objectID": "biodiversity_data.html",
+    "href": "biodiversity_data.html",
+    "title": "EcoAssets",
+    "section": "",
+    "text": "`Threatened Status of species from the year ${selectedYear} to the year ${selectedYearEnd}`\n\n\n\n\n\n\n\nimcraData = FileAttachment(\"SummaryData-ThreatenedSpeciesOccurrencesByMarineEcoregion-1.1.2023-06-13.csv\").csv({ typed: true })\nibraData = FileAttachment(\"SummaryData-ThreatenedSpeciesOccurrencesByTerrestrialEcoregion-1.1.2023-06-13.csv\").csv({ typed: true })\n\ncombinedData = Promise.all(\n  [imcraData,\n  ibraData]\n).then(\n  ([data1, data2]) =&gt; {\n    return data1.concat(data2)\n  }\n)\n\nPlot.plot({\n  color: { legend: true, scheme: \"Rainbow\" },\n  marks: [\n    Plot.barY(\n      year,\n      Plot.groupX(\n        { y: \"count\" },\n        { x: \"epbcStatus\", fill: \"epbcStatus\", tip: true }\n      )\n    ),\n    Plot.ruleY([0])\n  ]\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof year = Inputs.radio(d3.group(combinedData, d =&gt; d.yearStart), {label: \"Year\", sort: \"ascending\", value:'2016'})\n\nyear\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nselectedYear = year[0][\"yearStart\"]\n\nselectedYearEnd = year[0][\"yearEnd\"]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2"
+  },
+  {
+    "objectID": "biodiversity_data.html#figure-1",
+    "href": "biodiversity_data.html#figure-1",
+    "title": "EcoAssets",
+    "section": "",
+    "text": "imcraData = FileAttachment(\"SummaryData-ThreatenedSpeciesOccurrencesByMarineEcoregion-1.1.2023-06-13.csv\").csv({ typed: true })\nibraData = FileAttachment(\"SummaryData-ThreatenedSpeciesOccurrencesByTerrestrialEcoregion-1.1.2023-06-13.csv\").csv({ typed: true })\n\ncombinedData = Promise.all(\n  [imcraData,\n  ibraData]\n).then(\n  ([data1, data2]) =&gt; {\n    return data1.concat(data2)\n  }\n)\n\nPlot.plot({\n  color: { legend: true, scheme: \"Rainbow\" },\n  marks: [\n    Plot.barY(\n      year,\n      Plot.groupX(\n        { y: \"count\" },\n        { x: \"epbcStatus\", fill: \"epbcStatus\", tip: true }\n      )\n    ),\n    Plot.ruleY([0])\n  ]\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof year = Inputs.radio(d3.group(combinedData, d =&gt; d.yearStart), {label: \"Year\", sort: \"ascending\", value:[498]})\n\nselectedYear = year[0][\"yearStart\"]\n\nselectedYearEnd = year[0][\"yearEnd\"]"
+  },
+  {
+    "objectID": "biodiversity_data.html#figure-2",
+    "href": "biodiversity_data.html#figure-2",
+    "title": "EcoAssets",
+    "section": "Figure 2",
+    "text": "Figure 2"
   }
 ]
