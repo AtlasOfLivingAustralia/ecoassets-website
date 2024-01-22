@@ -5,15 +5,17 @@ format:
     template-partials: 
       - title-block.html
 execute:
-  echo: true
+  echo: false
 ---
+
+### Figure 1
 
 ```{ojs}
 
 `Threatened Status of species from the year ${selectedYear} to the year ${selectedYearEnd}`
 
-imcraData = FileAttachment("SummaryData-ThreatenedSpeciesOccurrencesByMarineEcoregion-1.1.2023-06-13.csv").csv({ typed: true })
-ibraData = FileAttachment("SummaryData-ThreatenedSpeciesOccurrencesByTerrestrialEcoregion-1.1.2023-06-13.csv").csv({ typed: true })
+imcraData = FileAttachment("data/SummaryData-ThreatenedSpeciesOccurrencesByMarineEcoregion-1.1.2023-06-13.csv").csv({ typed: true })
+ibraData = FileAttachment("data/SummaryData-ThreatenedSpeciesOccurrencesByTerrestrialEcoregion-1.1.2023-06-13.csv").csv({ typed: true })
 
 combinedData = Promise.all(
   [imcraData,
@@ -50,3 +52,10 @@ selectedYearEnd = year[0]["yearEnd"]
 ```
 
 ### Figure 2
+
+WARNING: error writing a body to connection: An operation on a socket could not be performed because the system lacked sufficient buffer space or because a queue was full. (os error 10055): An operation on a socket could not be performed because the system lacked sufficient buffer space or because a queue was full. (os error 10055)
+
+
+### Link to access data
+
+Link to CSIRO data portal to access data.

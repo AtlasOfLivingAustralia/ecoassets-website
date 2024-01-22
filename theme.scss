@@ -30,47 +30,92 @@ $content-width: 500px;
 
 // CSS 
 /*-- scss:rules --*/
+.container {
+  margin: 0px;
+}
 .navbar-title {
   font-family: $font-family-sans-serif;
   font-size: $h2-font-size;
   font-weight: bold;
 }
 
-#title-block-header {
-  background-color: $secondary-green;
+/*#title-block-header {
+  background-color: $primary-green;
+  height: 2vh;
+  width: 100vw;
+  margin: 0px;
+}*/
+
+#quarto-header {
+  border-bottom: 2vh solid $secondary-green;
+  margin: 0px;
 }
 
 .subheading {
   background-color: $secondary-green;
   color: $light-text;
   font-family: $font-family-sans-serif;
+  text-align: center;
+  font-size: 2.5rem;
 }
 
 .centre-text {
   text-align: center;
+  margin: 0px;
 }
 
 .footer {
   color: $light-text;
   background-color: $secondary-green;
+  margin: 0px;
+}
+
+.quarto-content {
+  // background-color: $primary-green;
 }
 
 .hero-container {
   overflow: hidden;
   width: 100%;
   max-height: 50vh;
-  height: 30vh;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  // background-image: ;
+  //background-size: cover;
+  //background-repeat: no-repeat;
+//background-position: 50% 50%;
 }
 
 .hero-image {
+  width: 100%;
+  height: auto;
   display: block;
-  object-fit: contain;
+}
+
+.home-container {
+  width: 100%;
+  height: auto;
+  background-color: --primary-green;
 }
 
 .home-container-green {
   width: 100%;
   height: auto;
   background-color: $primary-green;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  padding-right: 20vw;
+  padding-left: 20vw;
+}
+
+.home-container-light {
+  width: 100%;
+  height: auto;
+  background-color: $white;
+  padding: 50px;
 }
 
 .observablehq--string{
@@ -78,6 +123,24 @@ $content-width: 500px;
   font-size: $h2-font-size;
   font-weight: bold;
 }
+
+#TOC {
+  align-self: center;
+}
+
+.ecoassets-footer {
+  margin: 0px;
+}
+
+.about-page {
+  margin: 0px;
+}
+
+.about-page-text-padding {
+  padding-left: 20vw;
+  padding-right: 20vw;
+}
+
 /* example
 // Colors
 $dark-green: #858E79;

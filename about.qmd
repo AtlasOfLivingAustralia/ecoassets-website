@@ -3,71 +3,82 @@ title: "About us"
 toc: true
 format:
   html:
+    page-layout: custom
     template-partials: 
       - title-block.html
+    include-after-body: _footer.html
 ---
-
-:::{#about-us}
-:::{.subheading}
-## About us
+::: about-page
+::: {#about-us}
+::: subheading
+About us
 :::
 
-EcoAssets is improving access to integrated environmental data in forms that can support national, and state and territory environmental assessment and reporting activities. The project was established to support the authors of the 2021 Federal State of the Environment (SoE) report which reviews how different pressures are changing Australia’s land and marine environments and how these changes will impact the economy and society.
+::: about-page-text-padding
+EcoAssets is improving access to integrated environmental data in forms that can support national, and state and territory environmental assessment and reporting activities. The project was established to support the authors of the 2021 Federal State of the Environment (SoE) report which reviews how different pressures are changing Australia's land and marine environments and how these changes will impact the economy and society.
 
 Australian environmental research infrastructures and their data partners collect large amounts of data each year on all aspects of the environment. In the past these data have not been integrated across infrastructures, or provided at a scale and in a format suitable for environmental reporting at national, or state and territory levels.
 
-Through EcoAssets, three of Australia’s national research infrastructures - the ALA, IMOS and TERN - are working together to deliver open integrated data to support environmental assessment and reporting needs.
+Through EcoAssets, three of Australia's national research infrastructures - the ALA, IMOS and TERN - are working together to deliver open integrated data to support environmental assessment and reporting needs.
 
-The key resulting data assets are:
-Integrated species distribution data asset
-Integrated survey and monitoring activity data asset
-EcoAssets is achieving these outcomes by identifying opportunities to increase alignment between data from all partners. In particular, we are simplifying spatiotemporal analyses and addressing differences in terminology and vocabularies.
-
+The key resulting data assets are: Integrated species distribution data asset Integrated survey and monitoring activity data asset EcoAssets is achieving these outcomes by identifying opportunities to increase alignment between data from all partners. In particular, we are simplifying spatiotemporal analyses and addressing differences in terminology and vocabularies.
+:::
 :::
 
-:::{#core-features}
-:::{.subheading}
+::: {#core-features}
+::: subheading
 ## Core Features
 :::
 
+::: about-page-text-padding
 ##### **Improvements to Data Pipelines**
+
 EcoAssets will develop pipelines that offer standard views of the biodiversity component of data collected during TERN and IMOS field programmes for aggregation with ALA data streams.
 
 ##### **Aggregation of Similar Data**
+
 Partners will deliver and maintain high-value national data products that will serve as reference assets and a baseline for future environmental assessment. Data assets include species distribution, monitoring activity and growth in biodiversity knowledge.
 
 ##### **Alignment of Data Services**
-The newly aggregated data assets will provide a single set of data for major environmental products from the NCRIS infrastructures. This collection will feature standardised metadata, spatial and temporal units and other facets to support SoE reporting.
-The data assets will add significant value to future SoE reports (produced every 5 years), and other areas such as environmental accounting and impact assessments.
+
+The newly aggregated data assets will provide a single set of data for major environmental products from the NCRIS infrastructures. This collection will feature standardised metadata, spatial and temporal units and other facets to support SoE reporting. The data assets will add significant value to future SoE reports (produced every 5 years), and other areas such as environmental accounting and impact assessments.
 
 ##### **Data Principles: Findable, Accessible, Interoperable and Reusable (FAIR)**
-Data linkages and summary formats will provide easy-to-access information on indicators and trends. Data pipelines developed will enable future continuous updates and integration of new data from partners.
 
+Data linkages and summary formats will provide easy-to-access information on indicators and trends. Data pipelines developed will enable future continuous updates and integration of new data from partners.
+:::
 :::
 
-:::{#partners}
-:::{.subheading}
+::: {#partners}
+::: subheading
 ## Partners
 :::
-### [Atlas of Living Australia (ALA)](https://ala.org.au/ "Atlas of Living Australia website")
+::: about-page-text-padding
+### [Atlas of Living Australia (ALA)](https://ala.org.au/ "Atlas of Living Australia website"){target="_blank"}
+
 The Atlas of Living Australia (ALA) aggregates evidence of the distribution of Australian plant and animal species, bringing together data from museum specimens, field surveys, citizen science observations, molecular sequencing and literature. There are currently over 101 million freely available records held in the ALA.
 
 ### [Integrated Marine Observing System (IMOS)](https://imos.org.au/ "Interated Marine Observing Sysytem website")
-The Integrated Marine Observing System (IMOS) operates a wide range of observing equipment throughout Australia’s coastal and open oceans, covering physical, chemical and biological variables. IMOS provides over 950 million freely available recorded ocean measurements.
+
+The Integrated Marine Observing System (IMOS) operates a wide range of observing equipment throughout Australia's coastal and open oceans, covering physical, chemical and biological variables. IMOS provides over 950 million freely available recorded ocean measurements.
 
 ### [Terrestrial Ecosystem Research Network (TERN)](https://www.tern.org.au/ "Terrestrial Ecosystem Research Network website")
-TERN Australia advances research on anthropogenic impacts on land-based Australian ecosystems through provision of open access, standardised and integrated time-series data from its remote sensing, field observation and sensor monitoring across the continent.
-NCRIS
+
+TERN Australia advances research on anthropogenic impacts on land-based Australian ecosystems through provision of open access, standardised and integrated time-series data from its remote sensing, field observation and sensor monitoring across the continent. NCRIS
 
 ### [Australian Research Data Commons (ARDC)](https://ardc.edu.au/ "Australian Research Data Commons website")
+
 The Australian Research Data Commons (ARDC) enables the Australian research community and industry access to nationally significant, data-intensive digital research infrastructure, platforms, skills and collections of high-quality data. The EcoAssets project received investment (<https://doi.org/10.47486/XN005>) from Australian Research Data Commons (ARDC), funded by The National Collaborative Research Infrastructure Strategy (NCRIS).
 
 ### Australian Government
+
 Delivering the State of the Environment Report every five years, the Australian Government oversees national environmental interests in a broad range of areas such as environment and heritage, water resources, biosecurity, agriculture and the Antarctic.
 
-___
+------------------------------------------------------------------------
 
 ### [The National Collaborative Research Infrastructure Strategy (NCRIS)](https://www.education.gov.au/ncris "Find out more about NCRIS")
-The ALA, IMOS, TERN and ARDC are made possible with funding from The National Collaborative Research Infrastructure Strategy (NCRIS).
 
+The ALA, IMOS, TERN and ARDC are made possible with funding from The National Collaborative Research Infrastructure Strategy (NCRIS).
+:::
+:::
 :::

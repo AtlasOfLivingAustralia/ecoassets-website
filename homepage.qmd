@@ -14,7 +14,7 @@
 
 <div class="homepage">
 
-```         
+``` html         
   <div class="div">
     <footer class="footer">
       <div class="overlap-group">

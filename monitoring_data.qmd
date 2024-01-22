@@ -2,7 +2,14 @@
 title: Monitoring Data
 format: 
   html:
+    page-layout: custom
     template-partials: 
       - title-block.html
     include-after-body: _footer.html
 ---
+
+### Visualisations
+
+### Link to Access Data
+
+Link to CSIRO data portal to access monitoring dataset.

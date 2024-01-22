@@ -111,10 +111,6 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./homepage.html" rel="" target="">
- <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./news.html" rel="" target="">
  <span class="menu-text">News</span></a>
   </li>  
@@ -126,23 +122,33 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
+<!-- <header id="title-block-header">
 
-</header>
+</header> -->
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#visualisations" id="toc-visualisations">Visualisations</a></li>
+  <li><a href="#link-to-access-data" id="toc-link-to-access-data">Link to Access Data</a></li>
+  </ul>
+</nav>
+<section id="visualisations" class="level3">
+<h3 data-anchor-id="visualisations">Visualisations</h3>
+</section>
+<section id="link-to-access-data" class="level3">
+<h3 data-anchor-id="link-to-access-data">Link to Access Data</h3>
+<p>Link to CSIRO data portal to access monitoring dataset.</p>
 
 
+</section>
 
 
-</main> <!-- /main -->
 <!-- EcoAssets Footer -->
 
 <style>
@@ -168,8 +174,8 @@ ul.task-list li input[type="checkbox"] {
 
 #ala {
   position: absolute;
-  width: 144px;
-  height: 99px;
+  width: 140px;
+  height: auto;
   top: 0;
   left: 0;
   object-fit: fill;
@@ -178,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
 #imos {
   position: absolute;
   width: 144px;
-  height: 99px;
+  height: auto;
   top: 0;
   left: 169px;
 }
@@ -186,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
 #tern {
   position: absolute;
   width: 144px;
-  height: 99px;
+  height: auto;
   top: 0;
   left: 338px;
 }
@@ -227,70 +233,65 @@ ul.task-list li input[type="checkbox"] {
   letter-spacing: -0.32px;
   line-height: normal;
 }
+
+.footer-line-divide {
+  border-left-color: #125800;
+  width: 5px;
+  height: 10vh;
+  padding-right: 5vw;
+}
+
+.centre-rectangle {
+  background-color: #EBFEE7;
+  height: auto;
+}
+
+.footer-right .footer-left {
+  padding-top: 1vh;
+}
+.footer-left {
+  align-content: right;
+}
 </style>
 
 <div class="ecoassets-footer">
   <div class="top-rectangle"></div>
   <div class="centre-rectangle">
-    <div class="logos-frame">
-        <div class="logos">
-          <img id="ala" src="images/ala-logo.png">
-          <img id="imos" src="images/imos-logo.png">
-          <img id="tern" src="images/tern-logo.png">
-          <img id="ncris" src="images/ncris-logo.png">
-          <img id="ardc" src="images/ardc-logo.png">
-          <img id="augov" src="images/augov-logo.png">
+    <div class="grid">
+      <div class="g-col-6">
+        <div class="footer-left">
+          <div class="logos-frame">
+            <div class="logos">
+              <a href="https://www.ala.org.au/" target="_blank" rel="noreferrer noopener">
+                <img id="ala" src="images/ala-logo.png" alt="ALA logo"></a>
+              <a href="https://imos.org.au/" target="_blank" rel="noreferrer noopener">
+                <img id="imos" src="images/imos-logo.png" alt="IMOS logo"></a>
+              <a href="https://www.tern.org.au/" target="_blank" rel="noreferrer noopener">
+                <img id="tern" src="images/tern-logo.png" alt="TERN logo"></a>
+              <a href="https://www.education.gov.au/ncris" target="_blank" rel="noreferrer noopener">
+                <img id="ncris" src="images/ncris-logo.png" alt="NCRIS logo"></a>
+              <a href="https://ardc.edu.au/" target="_blank" rel="noreferrer noopener">
+                <img id="ardc" src="images/ardc-logo.png" alt="ARDC logo"></a>
+              <a href="https://www.agriculture.gov.au/" target="_blank" rel="noreferrer noopener">
+                <img id="augov" src="images/augov-logo.png" alt="Australian government logo"></a>
+            </div>
+          </div>
+          <p class="funding-statement">EcoAssets received investment (doi.org/10.47486/XN005) from the Australian Research Data Commons (ARDC). The ARDC is funded by the Australian Research Data National Collaborative Research Infrastructure Strategy (NCRIS).</p>
+        </div>
+    </div>
+      <div class="g-col-6">
+        <div class="footer-line-divide"></div>
+        <div class="footer-right">
+          <p class="acknowledgement-of-country">
+          The project partners acknowledge Australia’s Traditional Owners and pay respect to the past and present 
+          Elders of the nation’s Aboriginal and Torres Strait Islander communities. We honour and celebrate the spiritual,
+          cultural and customary connections of Traditional Owners to the country and the biodiversity that forms part of that country.
+        </p>  
         </div>
       </div>
-    <p class="funding-statement">EcoAssets received investment (doi.org/10.47486/XN005) from the Australian Research Data Commons (ARDC). The ARDC is funded by the Australian Research Data National Collaborative Research Infrastructure Strategy (NCRIS).</p>
-    <p class="acknowledgement-of-country">
-      The project partners acknowledge Australia’s Traditional Owners and pay respect to the past and present 
-      Elders of the nation’s Aboriginal and Torres Strait Islander communities. We honour and celebrate the spiritual,
-      cultural and customary connections of Traditional Owners to the country and the biodiversity that forms part of that country.
-    </p>
+    </div>
   </div>
 </div>
-
-<!-- quarto footer below this 
-    <div class="overlap-group">
-      <div class="rectangle"></div>
-      <div class="text-wrapper">Copyright</div>
-      <div class="text-wrapper-2">Terms of use</div>
-      <div class="text-wrapper-3">Privacy policy</div>
-      <div class="rectangle-2"></div>
-      <p class="ecoassets-received">
-        <span class="span">EcoAssets received investment (</span>
-        <a href="https://doi.org/10.47486/XN005" target="_blank" rel="noopener noreferrer"
-          ><span class="span">doi.org/10.47486/XN005</span></a
-        >
-        <span class="span"
-          >) from the Australian Research Data Commons (ARDC). The ARDC is funded by the Australian Research Data
-          National Collaborative Research Infrastructure Strategy (NCRIS).</span
-        >
-      </p>
-      <div class="frame">
-        <div class="logos">
-          <img class="img" src="img/rectangle-10.png" />
-          <img class="rectangle-3" src="img/rectangle-11.png" />
-          <img class="rectangle-4" src="img/rectangle-12.png" />
-          <img class="rectangle-5" src="img/rectangle-13.png" />
-          <img class="rectangle-6" src="img/rectangle-14.png" />
-          <img class="rectangle-7" src="img/rectangle-15.png" />
-        </div>
-      </div>
-      <p class="acknowledgement-of">
-        <span class="text-wrapper-4">Acknowledgement of Traditional Owners and Country<br /></span>
-        <span class="text-wrapper-5"
-          ><br />The project partners acknowledge Australia’s Traditional Owners and pay respect to the past and
-          present Elders of the nation’s Aboriginal and Torres Strait Islander communities. We honour and
-          celebrate the spiritual, cultural and customary connections of Traditional Owners to the country and the
-          biodiversity that forms part of that country.</span
-        >
-      </p>
-      <img class="line" src="img/line-1.svg" />
-    </div>
-    <div class="rectangle-8"></div> -->
-  
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

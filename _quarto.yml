@@ -27,8 +27,6 @@ website:
           - data.qmd
           - biodiversity_data.qmd
           - monitoring_data.qmd
-      - href: homepage.qmd
-        text: "Home"
       - href: news.qmd
         text: "News"
         
@@ -36,7 +34,7 @@ format:
   html:
     theme: 
       - lumen
-      - styles_ucsb.scss
+      - theme.scss
     mainfont: Spectral
     monofont: Fira Code
     css: styles.css

@@ -39,7 +39,7 @@
     "href": "data.html",
     "title": "About the Data",
     "section": "",
-    "text": "EcoAssets Data explained\nOJS tutorial: A summary of the tutorial on this site."
+    "text": "EcoAssets Data explained\n1-2 sentences explaining the EcoAssets data, the difference between the datasets etc.\nlink to biodiversity page and monitoring page from here.\n\n100"
   },
   {
     "objectID": "index.html",
@@ -52,8 +52,8 @@
     "objectID": "index.html#welcome-to-ecoassets",
     "href": "index.html#welcome-to-ecoassets",
     "title": "EcoAssets",
-    "section": "Welcome to EcoAssets ",
-    "text": "Welcome to EcoAssets \nEcoAssets brings together environmental data collected from three national research infrastructures – the ALA, IMOS and TERN. By standardising the formats of these data resources and then sharing them, the information can be streamlined into integrated data assets to support Australia’s environmental reporting needs.\nLearn more &gt;"
+    "section": "Welcome to EcoAssets",
+    "text": "Welcome to EcoAssets\nEcoAssets brings together environmental data collected from three national research infrastructures – the ALA, IMOS and TERN. By standardising the formats of these data resources and then sharing them, the information can be streamlined into integrated data assets to support Australia’s environmental reporting needs.\nLearn more &gt;"
   },
   {
     "objectID": "index.html#explore-data",
@@ -102,7 +102,7 @@
     "href": "biodiversity_data.html",
     "title": "EcoAssets",
     "section": "",
-    "text": "`Threatened Status of species from the year ${selectedYear} to the year ${selectedYearEnd}`\n\n\n\n\n\n\n\nimcraData = FileAttachment(\"SummaryData-ThreatenedSpeciesOccurrencesByMarineEcoregion-1.1.2023-06-13.csv\").csv({ typed: true })\nibraData = FileAttachment(\"SummaryData-ThreatenedSpeciesOccurrencesByTerrestrialEcoregion-1.1.2023-06-13.csv\").csv({ typed: true })\n\ncombinedData = Promise.all(\n  [imcraData,\n  ibraData]\n).then(\n  ([data1, data2]) =&gt; {\n    return data1.concat(data2)\n  }\n)\n\nPlot.plot({\n  color: { legend: true, scheme: \"Rainbow\" },\n  marks: [\n    Plot.barY(\n      year,\n      Plot.groupX(\n        { y: \"count\" },\n        { x: \"epbcStatus\", fill: \"epbcStatus\", tip: true }\n      )\n    ),\n    Plot.ruleY([0])\n  ]\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof year = Inputs.radio(d3.group(combinedData, d =&gt; d.yearStart), {label: \"Year\", sort: \"ascending\", value:'2016'})\n\nyear\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nselectedYear = year[0][\"yearStart\"]\n\nselectedYearEnd = year[0][\"yearEnd\"]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2"
+    "text": "Figure 1\n\n`Threatened Status of species from the year ${selectedYear} to the year ${selectedYearEnd}`\n\n\n\n\n\n\n\nimcraData = FileAttachment(\"data/SummaryData-ThreatenedSpeciesOccurrencesByMarineEcoregion-1.1.2023-06-13.csv\").csv({ typed: true })\nibraData = FileAttachment(\"data/SummaryData-ThreatenedSpeciesOccurrencesByTerrestrialEcoregion-1.1.2023-06-13.csv\").csv({ typed: true })\n\ncombinedData = Promise.all(\n  [imcraData,\n  ibraData]\n).then(\n  ([data1, data2]) =&gt; {\n    return data1.concat(data2)\n  }\n)\n\nPlot.plot({\n  color: { legend: true, scheme: \"Rainbow\" },\n  marks: [\n    Plot.barY(\n      year,\n      Plot.groupX(\n        { y: \"count\" },\n        { x: \"epbcStatus\", fill: \"epbcStatus\", tip: true }\n      )\n    ),\n    Plot.ruleY([0])\n  ]\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof year = Inputs.radio(d3.group(combinedData, d =&gt; d.yearStart), {label: \"Year\", sort: \"ascending\", value:'2016'})\n\nyear\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nselectedYear = year[0][\"yearStart\"]\n\nselectedYearEnd = year[0][\"yearEnd\"]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2\nWARNING: error writing a body to connection: An operation on a socket could not be performed because the system lacked sufficient buffer space or because a queue was full. (os error 10055): An operation on a socket could not be performed because the system lacked sufficient buffer space or because a queue was full. (os error 10055)\n\n\nLink to access data\nLink to CSIRO data portal to access data."
   },
   {
     "objectID": "biodiversity_data.html#figure-1",
@@ -117,5 +117,12 @@
     "title": "EcoAssets",
     "section": "Figure 2",
     "text": "Figure 2"
+  },
+  {
+    "objectID": "monitoring_data.html",
+    "href": "monitoring_data.html",
+    "title": "Monitoring Data",
+    "section": "",
+    "text": "Visualisations\n\n\nLink to Access Data\nLink to CSIRO data portal to access monitoring dataset."
   }
 ]

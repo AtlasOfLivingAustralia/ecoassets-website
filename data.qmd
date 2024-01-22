@@ -9,4 +9,11 @@ execute:
 
 ### EcoAssets Data explained
 
-OJS tutorial: A summary of the tutorial on [this site](https://quarto.org/docs/interactive/ojs/){target="_blank"}. 
+1-2 sentences explaining the EcoAssets data, the difference between the datasets etc.
+
+link to biodiversity page and monitoring page from here.
+
+```{ojs}
+
+100
+```
