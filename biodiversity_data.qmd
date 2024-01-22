@@ -1,0 +1,61 @@
+---
+title: "Biodiversity data"
+format: 
+  html:
+    template-partials: 
+      - title-block.html
+execute:
+  echo: false
+---
+
+### Figure 1
+
+```{ojs}
+
+`Threatened Status of species from the year ${selectedYear} to the year ${selectedYearEnd}`
+
+imcraData = FileAttachment("data/SummaryData-ThreatenedSpeciesOccurrencesByMarineEcoregion-1.1.2023-06-13.csv").csv({ typed: true })
+ibraData = FileAttachment("data/SummaryData-ThreatenedSpeciesOccurrencesByTerrestrialEcoregion-1.1.2023-06-13.csv").csv({ typed: true })
+
+combinedData = Promise.all(
+  [imcraData,
+  ibraData]
+).then(
+  ([data1, data2]) => {
+    return data1.concat(data2)
+  }
+)
+
+Plot.plot({
+  color: { legend: true, scheme: "Rainbow" },
+  marks: [
+    Plot.barY(
+      year,
+      Plot.groupX(
+        { y: "count" },
+        { x: "epbcStatus", fill: "epbcStatus", tip: true }
+      )
+    ),
+    Plot.ruleY([0])
+  ]
+})
+
+viewof year = Inputs.radio(d3.group(combinedData, d => d.yearStart), {label: "Year", sort: "ascending", value:'2016'})
+
+year
+
+selectedYear = year[0]["yearStart"]
+
+selectedYearEnd = year[0]["yearEnd"]
+
+
+```
+
+### Figure 2
+
+WARNING: error writing a body to connection: An operation on a socket could not be performed because the system lacked sufficient buffer space or because a queue was full. (os error 10055): An operation on a socket could not be performed because the system lacked sufficient buffer space or because a queue was full. (os error 10055)
+
+
+### Link to access data
+
+Link to CSIRO data portal to access data.

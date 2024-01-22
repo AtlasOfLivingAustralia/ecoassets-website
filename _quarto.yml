@@ -2,18 +2,46 @@ project:
   type: website
 
 website:
-  title: "ecoassets-website"
+  title: "EcoAssets"
+  open-graph: true 
+  page-footer: 
+    right: "Copyright 2024"
+    background: "#125800"
+    foreground: "#FFFFFF"
   navbar:
-    left:
+    background: "#EBFEE7"
+    foreground: "#000000"
+    collapse: true
+    pinned: true
+    back-to-top-navigation: true
+    search: true
+    right:
       - href: index.qmd
-        text: Home
-      - about.qmd
-
+        icon: house-door-fill
+        text: " "
+        aria-label: "Homepage"
+      - href: about.qmd
+        text: "About"
+      - text: "Data"
+        menu: 
+          - data.qmd
+          - biodiversity_data.qmd
+          - monitoring_data.qmd
+      - href: news.qmd
+        text: "News"
+        
 format:
   html:
-    theme: cosmo
+    theme: 
+      - lumen
+      - theme.scss
+    mainfont: Spectral
+    monofont: Fira Code
     css: styles.css
     toc: true
+    code-overflow: scroll
 
 editor: visual
+
+
 

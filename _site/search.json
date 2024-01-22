@@ -1,0 +1,128 @@
+[
+  {
+    "objectID": "posts/first-news-post/post.html",
+    "href": "posts/first-news-post/post.html",
+    "title": "EcoAssets 2024 is up and running",
+    "section": "",
+    "text": "Exciting news!\nEcoAssets Quarto website has launched!"
+  },
+  {
+    "objectID": "homepage.html",
+    "href": "homepage.html",
+    "title": "EcoAssets",
+    "section": "",
+    "text": "&lt;!DOCTYPE html&gt;\n\n\n\n  \n\n\n\n\n  &lt;div class=\"div\"&gt;\n    &lt;footer class=\"footer\"&gt;\n      &lt;div class=\"overlap-group\"&gt;\n        &lt;div class=\"rectangle\"&gt;&lt;/div&gt;\n        &lt;div class=\"text-wrapper\"&gt;Copyright&lt;/div&gt;\n        &lt;div class=\"text-wrapper-2\"&gt;Terms of use&lt;/div&gt;\n        &lt;div class=\"text-wrapper-3\"&gt;Privacy policy&lt;/div&gt;\n        &lt;div class=\"rectangle-2\"&gt;&lt;/div&gt;\n        &lt;p class=\"ecoassets-received\"&gt;\n          &lt;span class=\"span\"&gt;EcoAssets received investment (&lt;/span&gt;\n          &lt;a href=\"https://doi.org/10.47486/XN005\" target=\"_blank\" rel=\"noopener noreferrer\"\n            &gt;&lt;span class=\"span\"&gt;doi.org/10.47486/XN005&lt;/span&gt;&lt;/a\n          &gt;\n          &lt;span class=\"span\"\n            &gt;) from the Australian Research Data Commons (ARDC). The ARDC is funded by the Australian Research Data\n            National Collaborative Research Infrastructure Strategy (NCRIS).&lt;/span\n          &gt;\n        &lt;/p&gt;\n        &lt;div class=\"frame\"&gt;\n          &lt;div class=\"logos\"&gt;\n            &lt;img class=\"img\" src=\"img/rectangle-10.png\" /&gt;\n            &lt;img class=\"rectangle-3\" src=\"img/rectangle-11.png\" /&gt;\n            &lt;img class=\"rectangle-4\" src=\"img/rectangle-12.png\" /&gt;\n            &lt;img class=\"rectangle-5\" src=\"img/rectangle-13.png\" /&gt;\n            &lt;img class=\"rectangle-6\" src=\"img/rectangle-14.png\" /&gt;\n            &lt;img class=\"rectangle-7\" src=\"img/rectangle-15.png\" /&gt;\n          &lt;/div&gt;\n        &lt;/div&gt;\n        &lt;p class=\"acknowledgement-of\"&gt;\n          &lt;span class=\"text-wrapper-4\"&gt;Acknowledgement of Traditional Owners and Country&lt;br /&gt;&lt;/span&gt;\n          &lt;span class=\"text-wrapper-5\"\n            &gt;&lt;br /&gt;The project partners acknowledge Australia’s Traditional Owners and pay respect to the past and\n            present Elders of the nation’s Aboriginal and Torres Strait Islander communities. We honour and\n            celebrate the spiritual, cultural and customary connections of Traditional Owners to the country and the\n            biodiversity that forms part of that country.&lt;/span\n          &gt;\n        &lt;/p&gt;\n        &lt;img class=\"line\" src=\"img/line-1.svg\" /&gt;\n      &lt;/div&gt;\n      &lt;div class=\"rectangle-8\"&gt;&lt;/div&gt;\n    &lt;/footer&gt;\n    &lt;div class=\"news\"&gt;\n      &lt;div class=\"overlap\"&gt;\n        &lt;p class=\"p\"&gt;\n          &lt;span class=\"text-wrapper-6\"&gt;News&lt;br /&gt;&lt;/span&gt;\n          &lt;span class=\"text-wrapper-7\"&gt;&lt;br /&gt;&lt;/span&gt;\n          &lt;span class=\"text-wrapper-8\"&gt;View latest updates &gt; &lt;/span&gt;\n        &lt;/p&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n    &lt;div class=\"data\"&gt;\n      &lt;div class=\"explore-data-explore-wrapper\"&gt;\n        &lt;p class=\"p\"&gt;\n          &lt;span class=\"text-wrapper-6\"&gt;Explore Data&lt;br /&gt;&lt;/span&gt;\n          &lt;span class=\"text-wrapper-7\"&gt;&lt;br /&gt;&lt;/span&gt;\n          &lt;span class=\"text-wrapper-8\"\n            &gt;Explore the latest aggregated datasets for biodiversity and monitoring data from the ALA, IMOS and\n            TERN.&lt;br /&gt;&lt;br /&gt;See data &gt;&lt;/span\n          &gt;\n        &lt;/p&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n    &lt;div class=\"welcome\"&gt;\n      &lt;div class=\"overlap\"&gt;\n        &lt;p class=\"p\"&gt;\n          &lt;span class=\"text-wrapper-6\"&gt;Welcome to EcoAssets&lt;br /&gt;&lt;/span&gt;\n          &lt;span class=\"text-wrapper-7\"&gt;&lt;br /&gt;&lt;/span&gt;\n          &lt;span class=\"text-wrapper-8\"\n            &gt;EcoAssets brings together environmental data collected from three national research infrastructures –\n            the ALA, IMOS and TERN. By standardising the formats of these data resources and then sharing them, the\n            information can be streamlined into integrated data assets to support Australia&#39;s environmental\n            reporting needs.&lt;br /&gt;&lt;br /&gt;Learn more &gt;&lt;/span\n          &gt;\n        &lt;/p&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n    &lt;header class=\"header\"&gt;\n      &lt;div class=\"overlap-2\"&gt;\n        &lt;div class=\"title-background\"&gt;\n          &lt;div class=\"div-wrapper\"&gt;&lt;div class=\"text-wrapper-9\"&gt;EcoAssets&lt;/div&gt;&lt;/div&gt;\n          &lt;div class=\"rectangle-9\"&gt;&lt;/div&gt;\n        &lt;/div&gt;\n        &lt;div class=\"nav-bar\"&gt;\n          &lt;div class=\"overlap-3\"&gt;\n            &lt;div class=\"text-wrapper-10\"&gt;About&lt;/div&gt;\n            &lt;img class=\"fi-bs-caret-down\" src=\"img/fi-bs-caret-down.svg\" /&gt;\n          &lt;/div&gt;\n          &lt;div class=\"overlap-4\"&gt;\n            &lt;div class=\"text-wrapper-11\"&gt;Data&lt;/div&gt;\n            &lt;img class=\"fi-bs-caret-down-2\" src=\"img/fi-bs-caret-down.svg\" /&gt;\n          &lt;/div&gt;\n          &lt;div class=\"text-wrapper-12\"&gt;News&lt;/div&gt;\n          &lt;img class=\"fi-bs-search\" src=\"img/fi-bs-search.svg\" /&gt;\n          &lt;img class=\"fi-bs-home\" src=\"img/fi-bs-home.svg\" /&gt;\n        &lt;/div&gt;\n      &lt;/div&gt;\n    &lt;/header&gt;\n    &lt;img class=\"main-image\" src=\"img/main-image.png\" /&gt;\n  &lt;/div&gt;\n&lt;/div&gt;"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "EcoAssets",
+    "section": "",
+    "text": "EcoAssets is improving access to integrated environmental data in forms that can support national, and state and territory environmental assessment and reporting activities. The project was established to support the authors of the 2021 Federal State of the Environment (SoE) report which reviews how different pressures are changing Australia’s land and marine environments and how these changes will impact the economy and society.\nAustralian environmental research infrastructures and their data partners collect large amounts of data each year on all aspects of the environment. In the past these data have not been integrated across infrastructures, or provided at a scale and in a format suitable for environmental reporting at national, or state and territory levels.\nThrough EcoAssets, three of Australia’s national research infrastructures - the ALA, IMOS and TERN - are working together to deliver open integrated data to support environmental assessment and reporting needs.\nThe key resulting data assets are: Integrated species distribution data asset Integrated survey and monitoring activity data asset EcoAssets is achieving these outcomes by identifying opportunities to increase alignment between data from all partners. In particular, we are simplifying spatiotemporal analyses and addressing differences in terminology and vocabularies."
+  },
+  {
+    "objectID": "about.html#core-features",
+    "href": "about.html#core-features",
+    "title": "EcoAssets",
+    "section": "Core Features",
+    "text": "Core Features"
+  },
+  {
+    "objectID": "about.html#partners",
+    "href": "about.html#partners",
+    "title": "EcoAssets",
+    "section": "Partners",
+    "text": "Partners"
+  },
+  {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "About the Data",
+    "section": "",
+    "text": "EcoAssets Data explained\n1-2 sentences explaining the EcoAssets data, the difference between the datasets etc.\nlink to biodiversity page and monitoring page from here.\n\n100"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to EcoAssets",
+    "section": "",
+    "text": "Golden Stag Beetle"
+  },
+  {
+    "objectID": "index.html#welcome-to-ecoassets",
+    "href": "index.html#welcome-to-ecoassets",
+    "title": "EcoAssets",
+    "section": "Welcome to EcoAssets",
+    "text": "Welcome to EcoAssets\nEcoAssets brings together environmental data collected from three national research infrastructures – the ALA, IMOS and TERN. By standardising the formats of these data resources and then sharing them, the information can be streamlined into integrated data assets to support Australia’s environmental reporting needs.\nLearn more &gt;"
+  },
+  {
+    "objectID": "index.html#explore-data",
+    "href": "index.html#explore-data",
+    "title": "EcoAssets",
+    "section": "Explore Data",
+    "text": "Explore Data\nExplore the latest aggregated datasets for biodiversity and monitoring data from the ALA, IMOS and TERN.\nSee data &gt;"
+  },
+  {
+    "objectID": "index.html#news",
+    "href": "index.html#news",
+    "title": "EcoAssets",
+    "section": "News",
+    "text": "News\nView latest updates &gt;"
+  },
+  {
+    "objectID": "news.html",
+    "href": "news.html",
+    "title": "News",
+    "section": "",
+    "text": "EcoAssets 2024 is up and running\n\n\n\n\n\nThe first news post of the website.\n\n\n\n\n\n\nApr 1, 2024\n\n\nClara Peers\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html#about-us",
+    "href": "about.html#about-us",
+    "title": "EcoAssets",
+    "section": "About us",
+    "text": "About us"
+  },
+  {
+    "objectID": "biodiversity_data.html#info-2",
+    "href": "biodiversity_data.html#info-2",
+    "title": "EcoAssets",
+    "section": "info 2",
+    "text": "info 2"
+  },
+  {
+    "objectID": "biodiversity_data.html#info-3",
+    "href": "biodiversity_data.html#info-3",
+    "title": "EcoAssets",
+    "section": "info 3",
+    "text": "info 3"
+  },
+  {
+    "objectID": "biodiversity_data.html",
+    "href": "biodiversity_data.html",
+    "title": "EcoAssets",
+    "section": "",
+    "text": "Figure 1\n\n`Threatened Status of species from the year ${selectedYear} to the year ${selectedYearEnd}`\n\n\n\n\n\n\n\nimcraData = FileAttachment(\"data/SummaryData-ThreatenedSpeciesOccurrencesByMarineEcoregion-1.1.2023-06-13.csv\").csv({ typed: true })\nibraData = FileAttachment(\"data/SummaryData-ThreatenedSpeciesOccurrencesByTerrestrialEcoregion-1.1.2023-06-13.csv\").csv({ typed: true })\n\ncombinedData = Promise.all(\n  [imcraData,\n  ibraData]\n).then(\n  ([data1, data2]) =&gt; {\n    return data1.concat(data2)\n  }\n)\n\nPlot.plot({\n  color: { legend: true, scheme: \"Rainbow\" },\n  marks: [\n    Plot.barY(\n      year,\n      Plot.groupX(\n        { y: \"count\" },\n        { x: \"epbcStatus\", fill: \"epbcStatus\", tip: true }\n      )\n    ),\n    Plot.ruleY([0])\n  ]\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof year = Inputs.radio(d3.group(combinedData, d =&gt; d.yearStart), {label: \"Year\", sort: \"ascending\", value:'2016'})\n\nyear\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nselectedYear = year[0][\"yearStart\"]\n\nselectedYearEnd = year[0][\"yearEnd\"]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2\nWARNING: error writing a body to connection: An operation on a socket could not be performed because the system lacked sufficient buffer space or because a queue was full. (os error 10055): An operation on a socket could not be performed because the system lacked sufficient buffer space or because a queue was full. (os error 10055)\n\n\nLink to access data\nLink to CSIRO data portal to access data."
+  },
+  {
+    "objectID": "biodiversity_data.html#figure-1",
+    "href": "biodiversity_data.html#figure-1",
+    "title": "EcoAssets",
+    "section": "",
+    "text": "imcraData = FileAttachment(\"SummaryData-ThreatenedSpeciesOccurrencesByMarineEcoregion-1.1.2023-06-13.csv\").csv({ typed: true })\nibraData = FileAttachment(\"SummaryData-ThreatenedSpeciesOccurrencesByTerrestrialEcoregion-1.1.2023-06-13.csv\").csv({ typed: true })\n\ncombinedData = Promise.all(\n  [imcraData,\n  ibraData]\n).then(\n  ([data1, data2]) =&gt; {\n    return data1.concat(data2)\n  }\n)\n\nPlot.plot({\n  color: { legend: true, scheme: \"Rainbow\" },\n  marks: [\n    Plot.barY(\n      year,\n      Plot.groupX(\n        { y: \"count\" },\n        { x: \"epbcStatus\", fill: \"epbcStatus\", tip: true }\n      )\n    ),\n    Plot.ruleY([0])\n  ]\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof year = Inputs.radio(d3.group(combinedData, d =&gt; d.yearStart), {label: \"Year\", sort: \"ascending\", value:[498]})\n\nselectedYear = year[0][\"yearStart\"]\n\nselectedYearEnd = year[0][\"yearEnd\"]"
+  },
+  {
+    "objectID": "biodiversity_data.html#figure-2",
+    "href": "biodiversity_data.html#figure-2",
+    "title": "EcoAssets",
+    "section": "Figure 2",
+    "text": "Figure 2"
+  },
+  {
+    "objectID": "monitoring_data.html",
+    "href": "monitoring_data.html",
+    "title": "Monitoring Data",
+    "section": "",
+    "text": "Visualisations\n\n\nLink to Access Data\nLink to CSIRO data portal to access monitoring dataset."
+  }
+]

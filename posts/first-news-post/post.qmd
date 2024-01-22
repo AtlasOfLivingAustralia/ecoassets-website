@@ -1,0 +1,11 @@
+---
+title: "EcoAssets 2024 is up and running"
+description: "The first news post of the website."
+author: "Clara Peers"
+date: "4/1/2024"
+date-modified: "4/1/2024"
+---
+
+# Exciting news!
+
+EcoAssets Quarto website has launched!

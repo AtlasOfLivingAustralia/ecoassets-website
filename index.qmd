@@ -1,11 +1,42 @@
 ---
-title: "ecoassets-website"
+title: "EcoAssets homepage"
+toc: false
+format:
+  html:
+    page-layout: custom
+    template-partials: 
+      - title-block.html
+    include-after-body: _footer.html
 ---
 
-This is a Quarto website.
+::: container
+::: hero-container
+::: hero-image
+![](images/beetle.jpg "Golden Stag Beetle")
+:::
+:::
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+::: centre-text
+::: {#welcome .home-container-green}
+## Welcome to EcoAssets
 
-```{r}
-1 + 1
-```
+EcoAssets brings together environmental data collected from three national research infrastructures -- the ALA, IMOS and TERN. By standardising the formats of these data resources and then sharing them, the information can be streamlined into integrated data assets to support Australia's environmental reporting needs.
+
+[Learn more \>](about.qmd)
+:::
+
+::: {#explore-data .home-container-light}
+## Explore Data
+
+Explore the latest aggregated datasets for biodiversity and monitoring data from the ALA, IMOS and TERN.
+
+[See data \>](data.qmd)
+:::
+
+::: {#news .home-container-green}
+## News
+
+[View latest updates \>](news.qmd)
+:::
+:::
+:::
