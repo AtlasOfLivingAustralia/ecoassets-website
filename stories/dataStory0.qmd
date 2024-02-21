@@ -1,0 +1,215 @@
+---
+title: "Data Story 0"
+toc: true
+format:
+  html: 
+    page-layout: full
+---
+
+# Scrollama
+
+As demo'ed here : https://github.com/jimjam-slam/quarto-experiments/blob/main/scrollytelling/index.qmd.
+
+::: {.columns .column-body-outset}
+::: {.column width="35%"}
+This
+
+is
+
+a
+
+long
+
+column
+
+of text
+
+very
+
+very
+
+very
+
+very
+
+very
+
+very
+
+very
+
+very
+
+very
+
+v
+
+e
+
+r
+
+y
+
+l
+
+o
+
+n
+
+g
+
+.
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="55%" style="padding:20px; position:sticky;top:100px;background-color:red"}
+This whole column has `position:sticky;` and `top:100px` on it!
+
+::: {style="background-color: #333; color: white; height: 200px; text-align: center; padding: 20px;"}
+FIGURE
+:::
+:::
+:::
+
+## Demo: sticky overlay
+
+::: {.column-screen style="background-image:url(images/beetle.jpg); background-size: cover; height: 60vh; position: sticky; top: 0; "}
+:::
+
+*A beetle*
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan rhoncus turpis, id condimentum augue dignissim vel. Suspendisse varius ex nec ligula dictum, vel vestibulum felis bibendum. Cras id mauris posuere, tempus quam at, vehicula eros. Mauris lobortis ante at dapibus blandit. Praesent hendrerit purus quis urna auctor congue. Etiam ut purus mattis, fringilla magna ac, rhoncus enim. Maecenas luctus turpis nisl, sit amet efficitur mauris viverra vel. In dignissim vehicula nunc, vel scelerisque ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla ac pulvinar justo. Sed quis felis odio. Aliquam erat volutpat. Duis ornare ligula tincidunt, volutpat erat in, tristique enim. Nullam id neque sed odio consectetur imperdiet. Cras non malesuada enim, eget hendrerit nunc.
+
+Suspendisse at diam a purus dictum bibendum. Sed eu volutpat sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque at porttitor leo. Mauris laoreet nibh arcu, hendrerit posuere quam auctor eget. Quisque vulputate felis et bibendum dapibus. Ut varius in risus nec finibus. Sed vitae nisl in nisl gravida consectetur. Maecenas ac libero non arcu ultricies porta non sit amet lorem.
+
+Cras ac euismod quam. Proin tempor hendrerit ullamcorper. Aliquam eu elementum neque. Nunc purus dui, fringilla quis pretium vitae, accumsan eget massa. Pellentesque dignissim justo nec velit ullamcorper accumsan. Proin ultrices nisi ac convallis varius. Morbi at leo nisl. Nam condimentum quis mi sed ultricies. Sed vel diam dictum, scelerisque enim sit amet, feugiat nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean at tortor vel ipsum suscipit porta.
+
+# Demo: A flashy series of boxes
+
+```{ojs}
+//| output: false
+
+// import and instantiate the scrollama
+scrollama = require("scrollama@3.1.1")
+scroller = scrollama();
+
+// initialise the library and pass event handlers to 
+scroller
+  .setup({
+    step: ".step",
+  })
+  .onStepEnter((response) => {
+    // the box is passed to this function so we can change it!
+    console.log("Enter triggered")
+    console.log(response)
+    // { element, index, direction }
+    response.element.classList.add("is-active");
+
+  })
+  .onStepExit((response) => {
+    console.log("Exit triggered")
+    console.log(response)
+    // { element, index, direction }
+    response.element.classList.remove("is-active");
+  });
+```
+
+```{=html}
+<style>
+#columnscroller .step {
+  background-color: #ccc;
+  color: black;
+  height: 200px;
+  text-align: center;
+  padding: 20px;
+  transition: background-color 0.5s, color 0.5s, transform 0.5s;
+}
+
+/* here's how each box will look as we scroll past it */
+#columnscroller .step.is-active {
+  background-color: #5500cc;
+  color: white;
+  transform: rotate(1.25deg) scale(1.05);
+}
+</style>
+```
+::: {#columnscroller}
+::: {.step style="margin-bottom: 100px;"}
+Here's our first box!
+:::
+
+::: {.step style="margin-bottom: 100px;"}
+And our second box!
+:::
+
+::: step
+And a third, I guess.
+:::
+:::
+
+# Scrollyteller
+
+This is a scrollytelling attempt...
+
+```{ojs}
+
+// import scrollyteller library
+
+scrollyteller = require("@ihmeuw/scrollyteller@1.0.2");
+
+// copied from documentation 
+myAppId = "myAppId";
+
+storyConfiguration = {
+  //The id of the <div> that will hold this and all other sections
+  appContainerId: myAppId,
+  // build an array of story sections.
+  // Each section object should be a valid section configuration with
+  // the properties defined in the next section
+  sectionList: [ 
+    { sectionIdentifier: "myExampleSection0"
+      // section properties described below
+    },
+    {
+      sectionIdentifier: "myExampleSection1"
+      // section properties described below 
+    },
+    {
+      sectionIdentifier: "myExampleSection3"
+      // section properties described below 
+    ],
+    // optional function to receive the current sectionIdentifier, narrationIndex, narrationId, and narrationClass
+    // when narration blocks are entered
+    onNarrationChangedFunction: function ({
+      sectionIdentifier,
+      narrationIndex,
+      narrationId,
+      narrationClass,
+    }) { console.log('in ', sectionIdentifier, narrationIndex); },
+    
+    // optional parameter to scale scroll elements on mobile devices to create slower scrolling */
+    mobileScrollHeightMultiplier: 1.5,
+  },
+};
+
+// create the ScrollyTeller object to validate the config
+myScrollyTellerInstance = new ScrollyTeller(storyConfiguration);
+
+// parse data and build all HMTL
+myScrollyTellerInstance.render();
+
+```
+
+Once upon a time there was a story
+
+And it had many parts
+
+This was the first part
+
+This was the second part
+
+This was the third part
+
+And this is the end.

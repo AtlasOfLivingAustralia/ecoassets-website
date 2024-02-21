@@ -1,0 +1,136 @@
+---
+title: "Another visualisation"
+toc: true
+format:
+  html: 
+    page-layout: full
+---
+
+```{ojs}
+scrolly = require('@ihmeuw/scrollyteller@1.0.2')
+
+// Sections
+// Each section contains a configuration object that encapsulates: 
+//  - narration (the scrolling text boxes that narrate the story), 
+//  - data, 
+//  - graph rendering code, 
+//  - event handling code to trigger graph events when narration scrolls into view
+intro = ({
+  sectionIdentifier: 'intro', 
+  
+  // 1) Data paths
+  // 2) Render functions
+  // 3) Event handlers 
+});
+
+// Section Config Object
+wealthAndHealth = ({
+  // this section will be built in <div id="section_wealthAndHealth />, and the graph will be contained within: <div id="graph_wealthAndHealth" />
+  
+  sectionIdentifier: 'wealthAndHealth',
+    
+  // 1) DATA PATHS/PROMISES
+  
+  narration: 'path/to/narration.csv',
+  rawData: 'path/to/wealthAndHealthData.json',
+    // on storyInstance.render()...
+    /* after fetching narration... 
+      ↘
+          ScrollyTeller renders narration as HTML */
+    /* after fetching data... 
+                ↘  raw data is passed to   reshape data function*/
+    
+  // 2) FIRST RENDER FUNCTIONS
+  
+  // Once the DOM elements exist, reshapeDataFunction() is passed the results of the data fetch (rawData)
+  reshapeDataFunction: function (rawData){ 
+    // compute data domains for income (x), life expectancy (y), and years
+      const xDomain = getXDomain(rawData); // min, max of all income [300, 100000]
+      const yDomain = getYDomain(rawData); // min, max of life expectancy [30, 80]
+      const yearDomain = getYearDomain(rawData); // min, max of years [1950, 2008]
+ 
+      // sectionConfig.data in subsequent functions 
+      //  return the results of the data as an object with some useful properties
+      // This result is attached to a sectionConfig.data property that is passed to subsequent functions for easy access.
+      return ({
+        dataArray: rawData,
+        xDomain,
+        yDomain,
+        yearDomain,
+      });
+  },
+  
+  //  builds the chart/s for the section
+  // graphId is the id of the div to target to build the graph
+  // sectionConfig is an object containing a variety of props --> the data prop, which is the return value of reshapeDataFunction
+  buildGraphFunction: function (graphId, sectionConfig){
+    /* select graphId, build graph, render graph  */ 
+    
+     // destructure the data from reshapeDataFunction() from the sectionConfig
+     // use some object destructuring (ES6 fanciness) to get data props from sectionConfig.data
+      const {
+        data: { dataArray, /* domains, other props, etc */ },
+      } = sectionConfig;
+ 
+      // build the graph component with the data
+      // create an instance of a custom component called WealthAndHealthOfNations
+      // takes a CSS selector to target the fraphID div and build graph using data and properties calculated in reshapeData function
+      graph = new WealthAndHealthOfNations({
+        container: "#" + graphId, // '#graph_wealthAndHealth'
+        data: dataArray, // pass data to the component
+        // ... pass domains, other rendering props, etc
+      });
+      
+      return graph;
+      // sectionConfig.graph in subsequent functions 
+  },
+    /*
+        ↘  returned graph instance is stored in
+              ↘ sectionConfig: { data, graph }
+                        ... and is passed to event handlers */
+                        
+  // 3) ON USER EVENT FUNCTIONS
+  
+  // Detect when a narration block becomes active -- using scrollama, active when block intersects middle of page
+  // -> sectionConfig.graph: the return value of buildGraphFunction()
+  // -> state : JSON.parse(trigger),in this case the year
+  onActivateNarrationFunction: function  ({ sectionConfig: { graph }, state: { year }, }){
+    if (graph && year) {
+      graph.render({ year });
+    }
+  },
+  
+  // continuously handle scroll progress 
+  // progress: scroll progress
+  // yearDomain: [1950, 1999]
+  onScrollFunction: ({ progress, sectionConfig: { graph }, state: { yearDomain } }){
+    if (graph && yearDomain) {
+    // interpolate years with progress 
+      interpolateYear = d3.interpolate(yearDomain[0], yearDomain[1])(progress);
+      year = Math.floor(interpolateYear);
+      graph.render({ year });
+    }
+  },
+  
+  // Triggered when EITHER the window resizes OR when the graph container resizes
+  // Graph container resizes can occur for various reasons, so check to make sure that the resize function isn't being called more often than you would expect.
+  onResizeFunction: function ({ data, graph }) {},
+});
+
+// Story Config object, contains 2 properties
+// 1) an appContainerId, which defines the div id to render the scrolling content into
+// 2) a sectionList object that contains configurations for each of the different sections.
+storyConfig = ({
+  appContainerId: "app", // div id="app"
+  
+  sectionList: [intro, wealthAndHealth, ], // section configuration
+});
+
+// Rendering the story 
+storyInstance = new scrolly.default({storyConfig});
+
+// fetch data and build HMTL
+storyInstance.render(); 
+
+```
+

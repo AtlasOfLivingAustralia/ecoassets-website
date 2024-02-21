@@ -2,7 +2,10 @@
 title: "About the Data"
 format:
   html: 
-    page-layout: full
+    page-layout: article
+    title-block-banner: true
+    sidebar: true
+    include-after-body: _footer.html
 execute:
   echo: false
 ---
@@ -15,5 +18,9 @@ link to biodiversity page and monitoring page from here.
 
 ```{ojs}
 
-100
+100 + 10
+```
+
+```{=html}
+<iframe width="780" height="500" src="https://quarto.org/" title="Quarto Documentation"></iframe>
 ```

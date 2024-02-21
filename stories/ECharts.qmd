@@ -1,0 +1,169 @@
+---
+format:
+  html:
+    code-fold: true
+echo: false
+---
+
+# Sample GeoMap with ECharts
+--> add this above echo: jupyter: python3
+
+From this site: https://medium.com/@emmanueldavidson/creating-beautiful-analytics-documents-with-quarto-and-observable-js-a4a746f8793a
+
+In this example, we're creating a GeoMap visualization using ECharts and embedding it within an Observable.js cell in a Quarto document. Let's break down how this integration works:
+
+Quarto Document Structure: We start with the Quarto document structure. Quarto allows you to use a combination of Markdown and code chunks to structure your content. Observable.js Cell: Within the document, we use the {ojs} code chunk to define an Observable.js cell. This cell contains JavaScript code for creating our interactive GeoMap. JavaScript Code: Inside the Observable.js cell, we write JavaScript code to customize our GeoMap. This includes defining functions, processing data, and configuring the map using ECharts. Dynamic Visualization: Observable.js allows us to create dynamic and interactive visualizations. The code interacts with the DOM to render the GeoMap within an HTML div element. External Libraries: We can import external libraries like ECharts using JavaScript's require function. This allows us to leverage powerful visualization libraries within our document. Data Import: Observable.js can also fetch data from external sources, such as a GeoJSON file, and use it to render the map. By combining Quarto's document structuring capabilities with Observable.js's real-time interactivity, you can create analytics documents that not only present your insights but also allow readers to explore data and visualizations dynamically.
+
+This Quarto document demonstrates how to create a simple geospatial map using ECharts and display it in an Observable.js cell.
+
+```{ojs}
+function customizeCity(cityData, emphasisColor, itemStyleColor, tooltipFormatter) {
+  return {
+    name: cityData.name,
+    value: cityData.value,
+    itemStyle: {
+      color: itemStyleColor, // Default color is blue
+      borderWidth: 2,
+      borderColor: 'black'
+    },
+    tooltip: {
+        formatter: tooltipFormatter, // Default tooltip format
+    }
+  };
+}
+
+rawData = [
+    {name: 'London', value: [-0.1275, 51.507222]},
+    {name: 'Birmingham', value: [-1.92, 52.48]},
+    {name: 'Manchester', value: [-2.24, 53.48]},
+    {name: 'Leeds', value: [-1.55, 53.79]},
+    {name: 'Glasgow', value: [-4.25, 55.86]},
+    {name: 'Newcastle', value: [-1.6, 54.98]},
+    {name: 'Sheffield', value: [-1.47, 53.38]},
+    {name: 'Liverpool', value: [-2.97, 53.4]},
+    {name: 'Bristol', value: [-2.58, 51.45]},
+    {name: 'Belfast', value: [-5.93, 54.6]},
+    { name: 'Cairo', value: [31.2357, 30.0444] },
+    { name: 'Lagos', value: [3.3792, 6.5244] },
+    { name: 'Nairobi', value: [36.8219, -1.2921] },
+    { name: 'Johannesburg', value: [28.0473, -26.2041] },
+    { name: 'Cape Town', value: [18.4241, -33.9249] },
+    { name: 'Casablanca', value: [-7.6114, 33.5731] },
+    { name: 'Accra', value: [-0.186964, 5.603717] },
+    { name: 'Nairobi', value: [36.8219, -1.2921] },
+    { name: 'Khartoum', value: [32.5549, 15.5007] },
+    { name: 'Abuja', value: [7.49508, 9.05785] }
+                
+]
+
+cities = rawData.map(city => customizeCity(city, 'green', 'red', `${city.name} - Population: 1000`));
+
+
+echarts = require("https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.js")
+rootDiv = html`<div id="main" style="width: 800px;height: 800px;"></div>`
+myChart = echarts.init(rootDiv);
+console.log(echarts.api)
+
+{   
+    const data =  await FileAttachment("assets/the-worlds-oceans.geojson").json();
+    echarts.registerMap('WORLD', data);
+    const option = {
+        tooltip: {},
+        title: {
+            text: 'UK Population Density',
+            subtext: 'Data from 2011 census',
+            left: 'center'
+        },
+        backgroundColor: '#fff',
+        darkMode: true,
+        geo: {
+            map: 'WORLD',
+            roam: true,
+            zoom: 1.2,
+            tooltip: {
+                show: true,
+            },
+            boundingCoords: [
+                [-180, 90],
+                [180, -90]
+            ],
+            emphasis: {
+                label: {
+                    show: true,
+                    color: "#342FB4"
+                },
+                itemStyle: {
+                    borderColor: "#2FB42F",
+                    borderWidth: 1,
+                },
+                // focus: 'self'
+
+                
+            },
+            itemStyle: {
+                borderColor: "#000",
+                color: "#000",
+                
+            },
+            
+        },
+
+        series: [
+            {
+                type: 'custom',
+                coordinateSystem: 'geo',
+                data: cities,
+                renderItem: function (params, api) {
+                    console.log(params)
+                    console.log(api)
+
+                    const coord = api.coord([
+                        api.value(0, params.dataIndex),
+                        api.value(1, params.dataIndex)
+                    ]);
+                    return {
+                        type: 'path',
+                        x: coord[0],
+                        y: coord[1],
+                        shape: {
+                            d: 'M16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zM16 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z',
+                            x: -10,
+                            y: -35,
+                            width: 20,
+                            height: 40
+                        },
+
+                        emphasis:{
+                            itemStyle: {
+                                borderWidth: 3,
+                                borderColor: 'grey',
+                                shadowBlur: 10,
+                            
+                            },
+                            style: {
+                                shadowBlur: 10,
+                                shadowColor: "red"
+                            }
+                        } ,
+                        style: api.style({
+                            fill: api.visual('color'),
+                            stroke: api.visual('borderColor'),
+                            lineWidth: 1,
+                            shadowBlur: 2,
+                            shadowColor: '#000'
+                        }),
+                        
+                    };
+                },
+                
+
+                
+            },
+            
+        ]
+    };
+   
+    myChart.setOption(option);
+}
+
+```

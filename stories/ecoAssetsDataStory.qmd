@@ -1,0 +1,106 @@
+---
+title: "EcoAssets Data Story"
+toc: false
+format:
+  html: 
+    page-layout: custom
+    sidebar: true
+    include-in-header: 
+      - ../progressbar.html
+      - ../back-to-top.html
+    template-partials: ../title-block.html
+execute:
+  echo: true
+---
+
+:::{.story-container}
+## Section 1
+::: {.columns .column-body-outset}
+
+::: {.column width="35%"}
+
+What is EcoAssets?
+
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="55%" style="position:sticky; top:100px; background-color:purple"}
+
+Bubble graph of organisations
+
+::: {style="background-color: #333; color: white; height: 200px; text-align: center; padding: 20px;"}
+PLOT 1: Bubble graph of data contribution by ALA, IMOS, TERN
+:::
+
+:::
+
+:::
+
+## Section 2
+::: {.columns .column-body-outset}
+
+
+::: {.column width="40%}
+The ALA, IMOS and TERN have been collecting data since ... 
+And every year, they collect and publish more and more data...
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%" style="position:sticky; top:100px; background-color:purple"}
+
+::: {style="background-color: #333; color: white; height: 200px; text-align: center; padding: 20px;"}
+PLOT 2: Line graph of counts vs years (biodiversity data)
+:::
+
+:::
+
+:::
+
+## Section 3
+
+And they have data about ... 
+
+## Section 4
+::: {.column-screen style="background: #BD369E; background-size: cover; height: 60vh; position: sticky; top: 0; "}
+
+#### Biodiversity data
+
+:::
+
+
+## Section 5
+
+::: {.grid style="--bs-rows: 3; --bs-columns: 3;"}
+
+::: {}
+Auto-column
+:::
+
+:::{.g-start-2 style="grid-row: 2"}
+#### Monitoring Data
+Auto-column
+:::
+
+::: {.g-start-3 style="grid-row: 3"}
+Auto-column
+:::
+
+:::
+
+
+
+## Section 6
+
+The aggregated datasets have been used for environmental reporting 
+
+[Plot]
+
+## Section 7
+
+And also for more interesting things...
+
+:::

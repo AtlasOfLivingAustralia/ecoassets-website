@@ -4,5 +4,11 @@
     "items": [
       "/posts/first-news-post/post.html"
     ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/first-news-post/post.html"
+    ]
   }
 ]

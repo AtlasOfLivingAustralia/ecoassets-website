@@ -1,0 +1,196 @@
+---
+title: "A custom d3 visualisation"
+toc: true
+format:
+  html: 
+    page-layout: full
+---
+
+## A d3 Chart
+
+This was made following this tutorial: https://robisateam.github.io/courses/d3-course
+
+```{=html}
+<head>
+  <title>The Wealth & Health of Nations</title>
+  <link rel="stylesheet" type="text/css" href="d3Chart/main.css" />
+</head>
+<body>
+
+  <h1>The Wealth & Health of Nations</h1>
+
+  <p id="chart_area"></p>
+  <label><input type="checkbox" name="region" class="region_cb" value="Sub-Saharan Africa" checked="checked"/> Sub-Saharan Africa</label>
+  
+  <script src="d3Chart/d3.min.js"></script>
+  <script src="d3Chart/main.js"></script> 
+</body>
+```
+```{ojs}
+//|echo: false
+// set up chart area by linking JS and HTML environments, so we can write to HTML
+chart_area = d3.select("#chart_area");
+
+// set up the picture frame inside the chart area
+frame = chart_area.append("svg");
+
+// set up the canvas (drawing area) within the frame
+canvas = frame.append("g");
+
+// set up dimensions for the elements to use
+margin = ({top: 19.5, right: 19.5, bottom: 19.5, left: 39.5});
+frame_width = 960;
+frame_height = 350;
+canvas_width = frame_width - margin.left - margin.right;
+canvas_height = frame_height - margin.top - margin.bottom; 
+frame.attr("width", frame_width);
+frame.attr("height", frame_height);
+
+// to make sure the canvas element fits nicely in frame, set a transform attribute and use translate function 
+// shift the canvas
+canvas.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+// make slightly smaller than svg canvas
+canvas.attr("width", canvas_width);
+canvas.attr("height", canvas_height);
+
+// circle = canvas.append("circle").attr("r", "40").attr("stroke", "black").attr("fill", "red").attr("cx", "100").attr("cy", "100");
+
+//////////////////// LOAD DATA /////////////////
+
+nations_data = (await FileAttachment("nations.json").json());
+
+nations_data
+// initialise filtered nations?
+//filtered_nations = nations_data.map(function(nation) { return nation; });
+
+///////////// INPUT & FILTER DATA /////////////
+
+// Get input 
+viewof regions = Inputs.checkbox(["Sub-Saharan Africa", "South Asia", "Middle East & North Africa", "America", "Europe & Central Asia", "East Asia & Pacific"], 
+  {value: ["Sub-Saharan Africa", "South Asia", "Middle East & North Africa", "America", "Europe & Central Asia", "East Asia & Pacific"], label: "Regions"})
+
+regions
+
+// filter iterates over each nation and only selects nations with population greater than 10 million 
+// filtered_nations = nations_data.filter( function(nation){ return nation.population[nation.population.length-1][1] > 10000000;} ); // this doesn't work
+// filtered_nations = nations_data.filter( function(nation){return nation.region == "America";} );
+
+//filered_regions = nations_data.filter( function(nation, regions){});
+//nation.region == r 
+// filtered_nations = nations_data.filter( function(nation){ regions.forEach( function(region){nation.region == region;} )} ); // this doesn't work!!
+
+filtered_nations = nations_data.filter( (d) => regions.includes(d.region));
+
+filtered_nations
+
+///////////////// CREATE AXES //////////////////
+
+// create log scale for x: income
+xScale = d3.scaleLog();   // could also use scaleLinear, scaleSqrt, schemeCategory20 ... 
+
+// set min and max value -> data values that will get mapped to the min and max positions on the page, specified by the range below
+xScale.domain([250, 1e5]);
+// set min and max range on page
+xScale.range([0, canvas_width]);
+
+// xScale = d3.scaleLog().domain([300, 1e5]).range([0, canvas_width]);
+
+// create x axis and link to scale 
+xAxis = d3.axisBottom(xScale); 
+
+// push x axis to canvas and position
+canvas.append("g")
+  .attr("class", "x axis")
+  .attr("transform", "translate(0," + canvas_height + ")")    // move axis to bottom of  plotting area by using transform --> there are a options, use translate to shift it
+  .call(xAxis);
+  
+yScale = d3.scaleLinear().domain([10, 85]).range([canvas_height, 0]);
+yAxis = d3.axisLeft(yScale);
+canvas.append("g")
+  .attr("class", "y axis")
+  .call(yAxis);
+  
+rScale = d3.scaleSqrt().domain([0, 5e8]).range([0, 40]);
+
+colorScale = d3.scaleOrdinal(d3.schemeSet2);
+colorScale
+
+/////////////////// PLOT DATA //////////////
+
+// Add data canvas
+data_canvas = canvas.append("g").attr("class", "data_canvas");
+
+// select everything of the class dot - an empty set, but then get the data from nations dataset and insert a key function 
+// key function helps d3 keep track of data when you start changing it - need to keep ID unique (use name of element)
+dot = data_canvas.selectAll(".dot").data(filtered_nations, function(d){return d.name});
+
+// enter function takes each element in the dataset and does everything after it to all elements
+// create one circle for each data point: cx & cy are based on income and life expectancy 
+dot.enter().append("circle").attr("class", "dot")
+  .style("fill", function(d){return colorScale(d.region); })
+  .attr("cx", function(d){return xScale(d.income[d.income.length-1]); })
+  .attr("cy", function(d){return yScale(d.lifeExpectancy[d.lifeExpectancy.length-1]); })
+  .attr("r", function(d){return rScale(d.population[d.population.length-1]); });
+  
+
+
+
+```
+
+## An interactive Seal
+
+This was made with: https://robisateam.github.io/courses/web-course/5-javascript
+
+```{=html}
+<div class='image'>
+  <img id="seal" src="../images/seal.jpg">
+</div>
+<br>
+<button type="button" class="btn btn-primary" id="feed-button">Feed</button>
+<button type="button" class="btn btn-secondary" id="swim-button">Swim</button>
+```
+```{ojs}
+//|echo: false
+// get the beetle element from document (an element that represents the entire page)
+seal_image = document.getElementById('seal');
+feed_button = document.getElementById('feed-button')
+swim_button = document.getElementById('swim-button')
+
+// detect if someone clicks on the image -> event listeners constantly check if someone performs a certain action
+// event listener takes 2 args: the type of event and a callback
+// callback: a function that explains what we want it to do when the event fires -> in this case, execute a function called cricket
+//beetle_image.addEventListener("click", cricket);
+
+function roar() {
+  alert("roooaaaaar");
+};
+
+// create an inline function to execute a sequence of functions -> only defined in the scope of this specific callback
+seal_image.addEventListener("click", function() {
+  roar();
+  //scratch();
+})
+
+feed_button.addEventListener("click", feed);
+function feed() {
+  seal_image.style.height = (seal_image.offsetHeight + 30.0) + 'px';
+};
+swim_button.addEventListener("dblclick", function() {
+  seal_image.style.height = (seal_image.offsetHeight - 30.0) + 'px'
+});
+
+data = [10, 20, 30];
+console.log(data);
+```
+
+```{ojs}
+cat_object0 = ({name:"cat", weight: 10});
+cat_object = ({weight : 5, past_weight_values : 5, name : "Princess Caroline"});
+
+cat_list = [cat_object]; // initializing with the first field being cat_object
+cat_list.push({weight : 6 , past_weight_values : [5.9, 5.3, 6.1], name : "Snowball"});
+cat_list.push({weight : 2})
+
+console.log(cat_list)
+
+```

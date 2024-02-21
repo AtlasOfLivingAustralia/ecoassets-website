@@ -58,6 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -96,7 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles/styles.css">
 <meta property="og:title" content="EcoAssets - About the Data">
 <meta property="og:description" content="">
 <meta property="og:site-name" content="EcoAssets">
@@ -151,6 +152,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./news.html" rel="" target="">
  <span class="menu-text">News</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-stories" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Stories</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-stories">    
+        <li>
+    <a class="dropdown-item" href="./stories/dataStory0.html" rel="" target="">
+ <span class="dropdown-text">A simple data story</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./stories/d3Chart.html" rel="" target="">
+ <span class="dropdown-text">d3 and JS experiments</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./stories/exampleStory.html" rel="" target="">
+ <span class="dropdown-text">A scrollyteller tutorial example</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./stories/ECharts.html" rel="" target="">
+ <span class="dropdown-text">An Echarts example</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./stories/ecoAssetsDataStory.html" rel="" target="">
+ <span class="dropdown-text">EcoAssets story</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <div class="quarto-navbar-tools">
 </div>
@@ -159,7 +187,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">About the Data</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -172,44 +216,107 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
     </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About the Data</h1>
-</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
 
 <section id="ecoassets-data-explained" class="level3">
 <h3 class="anchored" data-anchor-id="ecoassets-data-explained">EcoAssets Data explained</h3>
 <p>1-2 sentences explaining the EcoAssets data, the difference between the datasets etc.</p>
 <p>link to biodiversity page and monitoring page from here.</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="16" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 15;"><span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="19" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 18;"><span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span> <span class="op">+</span> <span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="expression">
 
 </div>
 </div>
 </div>
+<iframe width="780" height="500" src="https://quarto.org/" title="Quarto Documentation"></iframe>
 
 
 </section>
 
-</main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+
+<!-- EcoAssets Footer -->
+
+<style>
+.logo-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  display: table-cell;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  align-self: center;
+  /*position: relative;*/
+}
+  
+.logo-container {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+}
+
+</style>
+
+<div class="ecoassets-footer column-screen">
+  <div class="page-divider"></div>
+  <div class="footer-container">
+    <div class="grid">
+      <div class="g-col-2"></div>
+      <div id="acknowledgement-of-partners" class="g-col-12 g-col-md-4">
+        <div class="acknowledgement-of-partners-container">
+          <div class="grid" style="--bs-rows: 1; --bs-columns: 3;">
+            <div class="g-start-1" style="align-self: center;">
+              <div class="logo-container"><a href="https://www.ala.org.au/" target="_blank" rel="noreferrer noopener">
+                <img id="ala" class="logo-image" src="images/ala-logo.png" alt="ALA logo"></a></div>
+              <div class="logo-container"><a href="https://www.agriculture.gov.au/" target="_blank" rel="noreferrer noopener">
+                <img id="augov" class="logo-image" src="images/augov-logo.png" alt="Australian government logo"></a></div>
+            </div>
+            <div class="g-start-2" style="align-self: center;">
+              <div class="logo-container"><a href="https://imos.org.au/" target="_blank" rel="noreferrer noopener">
+                <img id="imos" class="logo-image" src="images/imos-logo.png" alt="IMOS logo"></a></div>
+              <div class="logo-container" style="padding-top: 20px"><a href="https://ardc.edu.au/" target="_blank" rel="noreferrer noopener">
+              <img id="ardc" class="logo-image" src="images/ardc-logo.png" alt="ARDC logo"></a></div>
+            </div>
+            <div class="g-start-3" style="align-self: center;">
+              <div class="logo-container"><a href="https://www.tern.org.au/" target="_blank" rel="noreferrer noopener">
+                <img id="tern" class="logo-image" src="images/tern-logo.png" alt="TERN logo"></a></div>
+              <div class="logo-container"><a href="https://www.education.gov.au/ncris" target="_blank" rel="noreferrer noopener">
+                <img id="ncris" class="logo-image" src="images/ncris-logo.png" alt="NCRIS logo"></a></div>
+            </div>            
+          </div>
+          <div class="investment-text">
+          <p class="funding-statement">EcoAssets received investment (<a href="https://ardc.edu.au/project/ecoassets/" target="_blank" rel="noreferrer noopener">doi.org/10.47486/XN005</a>) 
+          from the Australian Research Data Commons (ARDC). 
+          The ARDC is funded by the Australian Research Data National Collaborative Research Infrastructure Strategy (NCRIS).</p>
+          </div>
+        </div>
+      </div>
+      <div id="acknowledgement-of-country" class="g-col-12 g-col-md-4">
+        <div class="acknowledgement-of-country-container">
+          <p class="acknowledgement-of-country-title">Acknowledgement of Traditional Owners and Country</p>
+          <p class="acknowledgement-of-country-text">
+          The project partners acknowledge Australia’s Traditional Owners and pay respect to the past and present 
+          Elders of the nation’s Aboriginal and Torres Strait Islander communities. We honour and celebrate the spiritual,
+          cultural and customary connections of Traditional Owners to the country and the biodiversity that forms part of that country.
+          </p> 
+        </div>
+      </div>
+      <div class="g-col-2"></div>
+    </div>
+  </div>
+</div>
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"\r\n100\r\n"}]}
+{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"\r\n100 + 10\r\n"}]}
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }

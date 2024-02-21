@@ -1,0 +1,457 @@
+$theme: "lumen" !default;
+
+/*-- scss:defaults --*/
+// required by Quarto; write variables under here
+
+// import fonts
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Spectral:ita,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+// DM Serif
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+// DM sans
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+// Merriweather sans 
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+// Bebas neue
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+// @import url('_extensions/quarto-ext/fontawesome/assets/css/all.css');
+
+// Colour palette
+$black: #000000;
+$white: #FFFFFF;
+
+$eerie-black: #19181aff;
+$jet: #333234;
+$pale-grey: #CFC9CD;
+$cream: #FDFBF7;
+
+$dark-blue: #02055Dff;
+$indigo: #44189C;
+$bright-purple: #CD34B5;
+$fandango: #BD369E;
+$light-purple: #F3EEFB;
+$dark-green: #2A5046;
+$bright-green: #26A93C;
+$light-green: #CAE3DC;
+
+$dark-text: #000000;
+$light-text: #FFFFFF;
+
+$paynes-gray: #2f6474ff;
+$keppel: #66af9bff;
+
+// some other colours 
+$primary-green: #ECFFEB;
+$secondary-green: #125800;
+
+
+$pakistan-green: #1a4111ff;
+$hunter-green: #315E3D;
+
+$cambridge-blue: #74aa7eff;
+$jade: #5caa6eff;
+$fern-green: #45804cff;
+$emerald: #70bf87ff;
+$mantis: #61b264ff;
+$pigment-green: #52a440ff;
+
+$indigo2: #57157A;
+$grape: #7c1eafff;
+$grape2: #5C31AFff;
+$grape-dark: #6F1B9D;
+$african-violet: #b172c0ff;
+$royal-purple: #6f53a6ff;
+$periwinkle: #c0b3e1ff;
+
+$palatinate-blue: #4A38C8ff;
+$iris: #5E51B0ff;
+$persian-blue: #1E32B5ff;
+
+
+// Fonts 
+$font-bebas: 'Bebas Neue'; // EcoAssets font
+$font-dm-sans: 'DM Sans'; // body font - sans serif
+$font-dm: 'DM Serif'; // serif font
+$font-code: 'Fira Code', monospace; // code font
+// some extra
+$font-libre: 'Libre Franklin', sans-serif;
+$font-merriweather: 'Merriweather Sans';
+
+// Font sizes 
+$font-size-root: 16px;
+$body-font : 14px;
+$h1-font-size: 50px;
+$h2-font-size: 40px;
+$h3-font-size: 30px;
+// $h4-font-size: 18px;
+$navbar-font-size: 18px;
+
+//$content-width: 500px;
+
+// NavBar base document colors
+$navbar-bg: $dark-blue;
+$navbar-fg: $light-text; 
+$navbar-hl: $keppel; // highlight color when hovering over navbar links
+
+// Page colours
+$body-bg: $white; 
+$body-color: $eerie-black;
+
+// Footer colours 
+$footer-bg: $dark-blue; 
+$link-color: $indigo;  
+
+// Inline code
+$code-bg: $cream;  
+$code-color: $eerie-black;
+$code-block-bg: $white; 
+
+/*-- scss:rules --*/
+.navbar-title {
+  font-family: $font-bebas;
+  font-size: $h1-font-size;
+  font-weight: 400;
+}
+
+.navbar {
+    background: linear-gradient(to right, $indigo, $fandango); 
+    //position: fixed;
+    //width: 100%;
+}
+
+#quarto-header {
+  //border-bottom: 2vh solid $secondary-green;
+  margin: 0px;
+  //padding: 20px;
+}
+
+.nav-item {
+  font-family: $font-dm-sans;
+  font-size: $navbar-font-size;
+  font-weight: 600;
+}
+
+#TOC {
+  align-self: center;
+}
+
+/*-- Index Page --*/
+
+.centre-text {
+  text-align: center;
+  margin: -15px;
+  top: 0;
+  bottom: 0;
+  // background: linear-gradient(to bottom, $indigo, $light-purple);
+}
+
+.hero-image {
+  background-image:url(images/beetle.jpg); 
+  background-size: cover; 
+  background-position: center center;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  top: 0; 
+  align-items: center; 
+  text-align: center; 
+  display: block;
+}
+
+.home-container-welcome {
+  width: 100%;
+  height: 40vh;
+  background-color: $light-purple;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  padding-right: 20vw;
+  padding-left: 20vw;
+  bottom: 0;
+}
+
+.home-container-data {
+  width: 100%;
+  height: 40vh;
+  background-color: $white;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  padding-right: 20vw;
+  padding-left: 20vw;
+  bottom: 0;
+}
+
+.home-container-news {
+  width: 100%;
+  height: auto;
+  background-color: $light-purple;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  padding-right: 20vw;
+  padding-left: 20vw;
+  bottom: 0;
+}
+
+.observablehq--string {
+  font-family: $font-dm-sans;
+  font-size: $h2-font-size;
+  font-weight: bold;
+}
+
+/*-- quarto titles --*/
+
+#title-block-header {
+  position: relative;
+  margin-top: -1px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid $indigo;
+  background-color: $light-purple;
+}
+
+#title-block-header.quarto-title-block.default .quarto-title-meta-heading {
+  font-family: $font-dm;
+  // text-transform: uppercase;
+  // margin-top: 1em;
+  // font-size: 0.9em;
+  // opacity: 1;
+  // font-weight: 400;
+}
+
+#title-block-header.quarto-title-block.default .quarto-title-meta-contents {
+  font-family: $font-dm;
+  text-transform: uppercase;
+  font-weight: 300;
+  opacity: 0.8;
+  font-size: 0.9em;
+}
+
+#title-block-header.quarto-title-block.default .description {
+  margin-top: 1.5em;
+  font-weight: 400;
+  font-size: 1.2em;
+  color: black;
+}
+
+.quarto-title-banner {
+  // margin-bottom: 0.75em;
+  color: $white;
+}
+
+.quarto-title-banner a {
+  color: #939bc9;
+}
+
+/*
+
+@media (max-width: 991.98px) {
+.quarto-title-banner {
+    padding-top: 2.5em;
+    padding-bottom: 0;
+}
+}
+
+@media (min-width: 992px) {
+.quarto-title-banner {
+    padding-top: 2.5em;
+    padding-bottom: 0;
+}
+}
+
+.quarto-title-banner .quarto-title .title {
+  font-weight: 500;
+  color: black;
+}
+
+.quarto-title .quarto-categories {
+  display: flex;
+  column-gap: 0.4em;
+  padding-bottom: 0.5em;
+  margin-top: 1.9em;
+}
+
+.quarto-title .quarto-categories .quarto-category {
+  padding: 0.25em 0.75em;
+  font-family: $font-dm;
+  font-size: .9em;
+  font-weight: 400;
+  color: #939bc9;
+  text-transform: uppercase;
+  border: solid 1px;
+  border-radius: 0.25rem;
+  opacity: 1;
+}
+
+.quarto-title-meta {
+  margin-bottom: 2.5em;
+} 
+
+*/
+
+
+/*-- sidebar --*/
+
+/*.sidebar nav[role=doc-toc]>h2, .sidebar nav[role=doc-toc]>.h2 {
+  font-family: 'Oswald';
+  font-size: .875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  margin-top: 0.3rem;
+  border-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 0px;
+}
+
+.sidebar nav[role=doc-toc] ul>li>a.active {
+  border-left: 1px solid #939bc9;
+  font-weight: 500;
+  color: #939bc9 !important;
+}
+
+.sidebar nav[role=doc-toc]>ul a {
+  border-left: none;
+  padding-left: 0.6rem;
+}
+
+.sidebar nav[role=doc-toc]>ul li a {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  line-height: 1.1rem;
+  padding-bottom: 0.2rem;
+  padding-top: 0.2rem;
+  color: black;
+}
+
+.sidebar nav[role=doc-toc] ul>li>a.active, .sidebar nav[role=doc-toc] ul>li>ul>li>a.active {
+  border-left: 1px solid #939bc9;
+  color: #939bc9 !important;
+}
+
+.toc-actions a {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  color: black;
+}
+
+.toc-actions a:hover {
+  color: #939bc9;
+}
+
+#quarto-margin-sidebar .toc-actions .bi:before {
+  color: black;
+}
+ */
+
+/*-- Stories --*/
+
+.story-container {
+  padding-right: 5vw;
+  padding-left: 5vw;
+}
+
+/*-- Footer --*/
+
+.footer {
+  color: $light-text;
+  margin: 0px;
+}
+
+.ecoassets-footer {
+  padding: 0px;
+  margin: 0px;
+  top: 0px;
+  background-color: $light-purple;
+}
+
+.footer-container {
+  background-color: $light-purple;
+  height: auto;
+}
+
+.page-divider {
+  padding: 0px;
+  margin: 0px;
+  top: 0px;
+  background-color: $dark-blue;
+  height: 1vh;
+}
+
+#acknowledgement-of-country {
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  padding-right: 5vh;
+}
+
+.acknowledgement-of-country-container {
+  padding-left: 5vh;
+  border-left-style: solid;
+  border-left-color: $dark-blue;
+}
+
+.acknowledgement-of-country-container .g-col-12 {
+  padding-left: 5vh;
+  border-left-style: none;
+  border-top-style: solid;
+  border-top-color: $dark-blue;
+}
+
+.acknowledgement-of-country-title {
+  position: relative;
+  font-family: $font-dm-sans;
+  font-weight: 600;
+  color: $dark-text;
+  font-size: $h4-font-size;
+  text-align: center;
+}
+
+.acknowledgement-of-country-text {
+  position: relative;
+  font-family: $font-dm-sans;
+  font-weight: 400;
+  color: $dark-text;
+  font-size: $body-font;
+  text-align: center;
+}
+
+#acknowledgement-of-partners {
+  padding: 3vh;
+}
+
+.acknowledgement-of-partners-container {
+ padding-top: 2vh;
+ //padding-bottom: 2vh;
+}
+
+.investment-text {
+  position: relative;
+  font-family: $font-dm-sans;
+  font-weight: 400;
+  color: $dark-text;
+  font-size: 11px;
+  text-align: center;
+  padding: 2vh;
+}
+
+/* Old code- WIP 
+.hero-container {
+  overflow: hidden;
+  width: 100%;
+  max-height: 50vh;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+*/
