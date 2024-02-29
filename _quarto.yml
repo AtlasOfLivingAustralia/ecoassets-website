@@ -41,7 +41,7 @@ website:
             text: "An Echarts example"
           - href: stories/ecoAssetsDataStory.qmd
             text: "EcoAssets story"
-  back-to-top-navigation: true
+  back-to-top-navigation: false
   
 format:
   html:

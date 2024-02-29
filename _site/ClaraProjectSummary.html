@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Clara Peers Tejero">
+
+<title>EcoAssets - A summary of EcoAssets data visualization and scrollytelling scoping project</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles/styles.css">
+<meta property="og:title" content="EcoAssets - A summary of EcoAssets data visualization and scrollytelling scoping project">
+<meta property="og:description" content="">
+<meta property="og:site-name" content="EcoAssets">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">EcoAssets</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target=""><i class="bi bi-house-door-fill" role="img" aria-label="Homepage">
+</i> 
+ <span class="menu-text"> </span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-data" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Data</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-data">    
+        <li>
+    <a class="dropdown-item" href="./data.html" rel="" target="">
+ <span class="dropdown-text">About the Data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./biodiversity_data.html" rel="" target="">
+ <span class="dropdown-text">Biodiversity data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./monitoring_data.html" rel="" target="">
+ <span class="dropdown-text">Monitoring Data</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./news.html" rel="" target="">
+ <span class="menu-text">News</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-stories" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Stories</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-stories">    
+        <li>
+    <a class="dropdown-item" href="./stories/dataStory0.html" rel="" target="">
+ <span class="dropdown-text">A simple data story</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./stories/d3Chart.html" rel="" target="">
+ <span class="dropdown-text">d3 and JS experiments</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./stories/exampleStory.html" rel="" target="">
+ <span class="dropdown-text">A scrollyteller tutorial example</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./stories/ECharts.html" rel="" target="">
+ <span class="dropdown-text">An Echarts example</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./stories/ecoAssetsDataStory.html" rel="" target="">
+ <span class="dropdown-text">EcoAssets story</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-visualisation" id="toc-data-visualisation" class="nav-link active" data-scroll-target="#data-visualisation">Data Visualisation</a>
+  <ul class="collapse">
+  <li><a href="#data-visualizations-created-during-the-project" id="toc-data-visualizations-created-during-the-project" class="nav-link" data-scroll-target="#data-visualizations-created-during-the-project">Data Visualizations created during the project</a></li>
+  </ul></li>
+  <li><a href="#scrollytelling" id="toc-scrollytelling" class="nav-link" data-scroll-target="#scrollytelling">Scrollytelling</a>
+  <ul class="collapse">
+  <li><a href="#inspiration-for-scrollytelling-and-other-resources" id="toc-inspiration-for-scrollytelling-and-other-resources" class="nav-link" data-scroll-target="#inspiration-for-scrollytelling-and-other-resources">Inspiration for scrollytelling and other resources:</a></li>
+  <li><a href="#javascript-libraries-for-scrollytelling" id="toc-javascript-libraries-for-scrollytelling" class="nav-link" data-scroll-target="#javascript-libraries-for-scrollytelling">JavaScript libraries for scrollytelling</a></li>
+  </ul></li>
+  <li><a href="#r-code-for-data-vizs-created" id="toc-r-code-for-data-vizs-created" class="nav-link" data-scroll-target="#r-code-for-data-vizs-created">R code for Data viz’s created</a>
+  <ul class="collapse">
+  <li><a href="#exploring-the-biodiversity-datasets" id="toc-exploring-the-biodiversity-datasets" class="nav-link" data-scroll-target="#exploring-the-biodiversity-datasets">Exploring the Biodiversity datasets</a></li>
+  <li><a href="#creating-a-streamgraph-for-taxa---aggregate-biodiversity-dataset" id="toc-creating-a-streamgraph-for-taxa---aggregate-biodiversity-dataset" class="nav-link" data-scroll-target="#creating-a-streamgraph-for-taxa---aggregate-biodiversity-dataset">Creating a streamgraph for taxa - aggregate biodiversity dataset</a></li>
+  <li><a href="#create-species-and-regions-double-circle-plot" id="toc-create-species-and-regions-double-circle-plot" class="nav-link" data-scroll-target="#create-species-and-regions-double-circle-plot">Create species and regions double circle plot</a></li>
+  <li><a href="#shape-tweening---manipulating-shape-files-and-converting-to-json" id="toc-shape-tweening---manipulating-shape-files-and-converting-to-json" class="nav-link" data-scroll-target="#shape-tweening---manipulating-shape-files-and-converting-to-json">Shape tweening - manipulating shape files and converting to JSON</a></li>
+  <li><a href="#exploring-the-monitoring-dataset" id="toc-exploring-the-monitoring-dataset" class="nav-link" data-scroll-target="#exploring-the-monitoring-dataset">Exploring the Monitoring dataset</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">A summary of EcoAssets data visualization and scrollytelling scoping project</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Clara Peers Tejero </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Invalid Date</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="data-visualisation" class="level1">
+<h1>Data Visualisation</h1>
+<section id="data-visualizations-created-during-the-project" class="level3">
+<h3 class="anchored" data-anchor-id="data-visualizations-created-during-the-project">Data Visualizations created during the project</h3>
+<p>During the project, I created a number of custom data visualizations using subsets of the EcoAssets data. These were created in <a href="https://observablehq.com/">Observable</a>, a JavaScript platform that allows you to create data viz’s by embedding JS cells in R markdown documents. I used the Observable notebooks, available via the browser, and then would add this content to my quarto website. The collection of data viz notebooks that I made can be found <a href="https://observablehq.com/collection/@clarapt-ws/ecoassets-visualisations">here</a>. They are all public and can be directly edited, or forked and then edited (you need an Observable account to do this).</p>
+<p>When working in Observable, you typically use JavaScript to create visualizations, however, you can also add code in markdown or html cells. In JavaScript, the two main libraries I used were Plot (the Observable Javascript library) and d3.js. Plot is a great library to get started with Observable and play around with the data because it is very easy to create visualizations quickly. D3.js stands for data driven documents and is a free open-source JS library for visualizing data, see <a href="">gallery</a> and <a href="">Observable d3 gallery</a>. It is used to animate data viz’s, and is a low-level approach- every element on the page has to be explicitly added to the visualization. D3.js is much more effective for creating more custom visualizations than Plot, but has a much steeper learning curve, especially if you have never coded in JavaScript before. I used Observable’s tutorials to learn both Plot and d3, and I definitely recommend these.</p>
+<p>It’s also worth mentioning that you can embed <a href="https://echarts4r.john-coene.com/">Echarts</a> into quarto websites using ObservableJS code blocks, this is not something I experimented with but see an example <a href="https://medium.com/@emmanueldavidson/creating-beautiful-analytics-documents-with-quarto-and-observable-js-a4a746f8793a">here</a>.</p>
+</section>
+</section>
+<section id="scrollytelling" class="level1">
+<h1>Scrollytelling</h1>
+<p>Scrollytelling is a way of telling a long-form story in a very engaging way, by combining visual content, text and even audio that changes as the user scrolls down the page. It’s typically used in long-form journalism, you may have seen example in the <a href="https://www.abc.net.au/news/2023-04-28/stage-three-tax-cuts-to-scale/102268304">ABC</a> or <a href="https://www.theguardian.com/us-news/ng-interactive/2017/dec/20/bussed-out-america-moves-homeless-people-country-study">similar</a>. The overarching idea for EcoAssets was to create a library of data stories that explain different themes within the EcoAssets datasets. Scrollytelling is useful in cases where there’s a lot of data, or where there are many possible uses of the data. This is true of the EcoAssets datasets, which are very large and could be subsetted in many ways to answer different questions about biodiversity and monitoring. It’s also helpful in guiding users who may not have a clear idea of what the data contains, or know how to use it. Scrollytelling provides a way to guide users through these datasets by literally telling them a story about the data and using visuals along to way to explain or clarify the points you’re making.</p>
+<section id="inspiration-for-scrollytelling-and-other-resources" class="level3">
+<h3 class="anchored" data-anchor-id="inspiration-for-scrollytelling-and-other-resources">Inspiration for scrollytelling and other resources:</h3>
+<ul>
+<li><a href="https://vizagreste.agriculture.gouv.fr/">French ministry of agriculture scrollytelling gallery</a></li>
+<li><a href="https://github.com/abcnews/swarmyteller">ABC custom javascript libraries</a></li>
+<li><a href="https://media.eagereyes.org/papers/2017/Kosara-EuroVis-2017.pdf">An argument structure for data stories</a></li>
+<li><a href="https://tellingstorieswithdata.com/">Telling stories with data online textbook</a></li>
+</ul>
+</section>
+<section id="javascript-libraries-for-scrollytelling" class="level3">
+<h3 class="anchored" data-anchor-id="javascript-libraries-for-scrollytelling">JavaScript libraries for scrollytelling</h3>
+<p><a href="https://github.com/russellsamora/scrollama/tree/main">Scrollama.js</a> is a a modern &amp; lightweight JS library for scrollytelling using IntersectionObserver in favor of scroll events, examples <a href="https://russellsamora.github.io/scrollama/basic/">here</a>. It works well embedded into Quarto websites with OJS code blocks.</p>
+<p><a href="https://ihmeuw.github.io/ScrollyTeller/">Scrollyteller.js</a> ( see an <a href="https://medium.com/ihme-tech/creating-data-stories-with-scrollyteller-601a34327545">introductory article</a> and an <a href="https://vizhub.healthdata.org/child-mortality">example story on child mortality</a> ), it’s a JS library that builds the HTML for a scrolling data story from csv files, and provides a flexible framework for triggering chart actions when text “narration” scrolls into view. After much experimentation, it seems this cannot yet be embedded into Observable notebooks, let alone Quarto websites. May work in HTML/JavaScript directly.</p>
+<p>Some other libraries I discovered that looked promising but I did not get a chance to experiment with are:</p>
+<ul>
+<li><a href="https://gsap.com/">GSAP.js</a>, a popular animation library</li>
+<li><a href="https://www.plotteus.dev/docs/quick-start">Plotteus</a> is a new JS library that users have developed to work with Observable. It includes basic functionality for changing chart types etc.</li>
+<li><a href="https://flourish.studio/features/">Flourish</a> as a no-code alternative to Javascript. Note that users must pay to access scrollytelling features in Flourish.</li>
+<li>It is also possible to add scrolltriggers to animated charts using d3</li>
+</ul>
+<p>These have been documented on Observable in <a href="https://observablehq.com/collection/@clarapt-ws/scrollytelling-experiments">my collection</a> of story attempts as well as other notebooks that have implemented some of the libraries mentioned.</p>
+</section>
+</section>
+<section id="r-code-for-data-vizs-created" class="level1">
+<h1>R code for Data viz’s created</h1>
+<section id="exploring-the-biodiversity-datasets" class="level3">
+<h3 class="anchored" data-anchor-id="exploring-the-biodiversity-datasets">Exploring the Biodiversity datasets</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exploring Aggregate datasets of Biodiversity data 2023</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>aggregateOccurrences <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'AggregatedData_AustralianSpeciesOccurrences_1.1.2023-06-13.csv'</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>protectTer <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'SummaryData-ProtectionStatusAustralianTerrestrialSpeciesOccurrences-1.1.2023-06-13.csv'</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>protectMar <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'SummaryData-ProtectionStatusAustralianMarineSpeciesOccurrences-1.1.2023-06-13.csv'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>threatTer <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'SummaryData-ThreatenedSpeciesOccurrencesByTerrestrialEcoregion-1.1.2023-06-13.csv'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>threatMar <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'SummaryData-ThreatenedSpeciesOccurrencesByMarineEcoregion-1.1.2023-06-13.csv'</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>introTer <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'SummaryData-IntroducedSpeciesOccurrencesByTerrestrialEcoregion-1.1.2023-06-13.csv'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>introMar <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'SummaryData-IntroducedSpeciesOccurrencesByMarineEcoregion-1.1.2023-06-13.csv'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>epbcStatus <span class="ot">&lt;-</span> <span class="fu">unique</span>(aggregateOccurrences<span class="sc">$</span>epbcStatus)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>griisStatus <span class="ot">&lt;-</span> <span class="fu">unique</span>(aggregateOccurrences<span class="sc">$</span>griisStatus)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#find first occurence with imcra region</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>aggregateOccurrences[<span class="fu">which</span>(aggregateOccurrences<span class="sc">$</span>imcraRegion<span class="sc">!=</span><span class="st">""</span>)[<span class="dv">1</span>],]</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#search for all koala Occurrences</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>koalaOccurrences <span class="ot">&lt;-</span> aggregateOccurrences[<span class="fu">grep</span>(<span class="st">"Phascolarctos cinereus"</span>, aggregateOccurrences<span class="sc">$</span>speciesName), ]</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>numSpecies <span class="ot">&lt;-</span> <span class="fu">unique</span>(aggregateOccurrences<span class="sc">$</span>speciesID)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Order species by count</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>aggregateSorted <span class="ot">&lt;-</span> aggregateOccurrences[<span class="fu">order</span>(aggregateOccurrences<span class="sc">$</span>occurrenceCount, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>topCountSpecies <span class="ot">&lt;-</span> aggregateSorted[<span class="dv">1</span><span class="sc">:</span><span class="dv">250</span>, ]</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>countUnique <span class="ot">&lt;-</span> <span class="fu">unique</span>(topCountSpecies<span class="sc">$</span>speciesName)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>topCountSpecies<span class="sc">$</span>vernacularName</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>topCountSpecies<span class="sc">$</span>class</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(topCountSpecies<span class="sc">$</span>speciesName)) {</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  name <span class="ot">&lt;-</span> topCountSpecies<span class="sc">$</span>speciesName[i]</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  output <span class="ot">&lt;-</span> <span class="fu">search_taxa</span>(name)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  topCountSpecies<span class="sc">$</span>vernacularName[i] <span class="ot">&lt;-</span> output<span class="sc">$</span>vernacular_name</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  topCountSpecies<span class="sc">$</span>class[i] <span class="ot">&lt;-</span> output<span class="sc">$</span>class</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="co"># filter any empty rows... this doesn't quite work </span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>topCountSpeciesF <span class="ot">&lt;-</span> topCountSpecies[<span class="sc">!</span>(<span class="fu">is.na</span>(topCountSpecies<span class="sc">$</span>ibraRegion) </span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>                                         <span class="sc">|</span> topCountSpecies<span class="sc">$</span>ibraRegion <span class="sc">==</span> <span class="st">""</span>), ]</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="do">##### Galah : exploring package functionality</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"galah"</span>)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(galah)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="co"># choosing an atlas</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="fu">show_all</span>(atlases)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="fu">galah_config</span>(<span class="at">atlas =</span> <span class="st">"ALA"</span>)</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="fu">atlas_counts</span>()</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Use galah_ functions after the call...</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="fu">galah_call</span>() <span class="sc">|&gt;</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">galah_identify</span>(<span class="st">"https://biodiversity.org.au/afd/taxa/b6f829dd-0aef-4422-a3f6-77ff691aa9af"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">atlas_species</span>()</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="co"># ...or dplyr functions </span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="fu">galah_call</span>() <span class="sc">|&gt;</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">2020</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>() <span class="sc">|&gt;</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">collect</span>()</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="co"># to search by taxonomic group</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="fu">search_taxa</span>(<span class="st">"reptilia"</span>)</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="fu">search_taxa</span>(<span class="st">"Wallabia bicolor"</span>)</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="fu">galah_call</span>() <span class="sc">|&gt;</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">galah_filter</span>(year <span class="sc">&gt;=</span> <span class="dv">2020</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">galah_identify</span>(<span class="st">"reptilia"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">atlas_counts</span>()</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>ranks <span class="ot">&lt;-</span> <span class="fu">show_all_ranks</span>()</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>searchOuput <span class="ot">&lt;-</span> <span class="fu">search_taxa</span>(<span class="st">"Wallabia bicolor"</span>)</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>class <span class="ot">&lt;-</span> <span class="fu">galah_call</span>() <span class="sc">|&gt;</span> <span class="fu">galah_group_by</span>(class) <span class="sc">|&gt;</span> <span class="fu">atlas_counts</span>()</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="do">##### explore CAPAD status</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>totalCount <span class="ot">&lt;-</span> <span class="fu">nrow</span>(aggregateOccurrences)</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>protected <span class="ot">&lt;-</span> <span class="fu">unique</span>(aggregateOccurrences<span class="sc">$</span>capadStatus)</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>indigenous <span class="ot">&lt;-</span> aggregateOccurrences[<span class="fu">grep</span>(<span class="st">"IPA"</span>, aggregateOccurrences<span class="sc">$</span>capadStatus), ]</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>protected <span class="ot">&lt;-</span> aggregateOccurrences[<span class="fu">grep</span>(<span class="st">"PA"</span>, aggregateOccurrences<span class="sc">$</span>capadStatus), ]</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>np <span class="ot">&lt;-</span> aggregateOccurrences[<span class="fu">grep</span>(<span class="st">"not protected"</span>, aggregateOccurrences<span class="sc">$</span>capadStatus), ]</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>ipaPerCent <span class="ot">&lt;-</span> (<span class="fu">nrow</span>(indigenous)<span class="sc">/</span>totalCount)<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>protectedPerCent <span class="ot">&lt;-</span> (<span class="fu">nrow</span>(protected)<span class="sc">/</span>totalCount)<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>npPerCent <span class="ot">&lt;-</span> (<span class="fu">nrow</span>(np)<span class="sc">/</span>totalCount)<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(indigenous[<span class="fu">grep</span>(<span class="st">"Native"</span>, indigenous<span class="sc">$</span>griisStatus), ])<span class="sc">/</span><span class="fu">nrow</span>(indigenous)</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(protected[<span class="fu">grep</span>(<span class="st">"Native"</span>, protected<span class="sc">$</span>griisStatus), ])<span class="sc">/</span><span class="fu">nrow</span>(protected)</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(np[<span class="fu">grep</span>(<span class="st">"Native"</span>, np<span class="sc">$</span>griisStatus), ])<span class="sc">/</span><span class="fu">nrow</span>(np)</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"dplyr"</span>)</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>year <span class="ot">&lt;-</span> (aggregateOccurrences <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>()))</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="co"># aggregate(data.frame(count = v), list(value = v), length)</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="do">##### explore GRIIS status</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="co"># to create a stream graph: table with date/griis status/count, with the count aggregated for each year</span></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>griisAggregate <span class="ot">&lt;-</span> (aggregateOccurrences <span class="sc">%&gt;%</span> <span class="fu">select</span>(year, griisStatus, occurrenceCount))</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>griisAggregateSum <span class="ot">&lt;-</span> (griisAggregate <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(year, griisStatus) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="fu">sum</span>(occurrenceCount)))</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(griisAggregateSum)[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">"occurrenceCount"</span></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(griisAggregateSum, path)</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">toJSON</span>(griisAggregateSum), <span class="at">file =</span> <span class="st">"griisAggregateData.json"</span>)</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="do">##### explore animal class </span></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(galah)</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>aggregateOccurrences <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'AggregatedData_AustralianSpeciesOccurrences_1.1.2023-06-13.csv'</span>)</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>class <span class="ot">&lt;-</span> <span class="st">"class"</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>aggregateClass <span class="ot">&lt;-</span> <span class="fu">cbind</span>(aggregateOccurrences, class)</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="co">#add class column to aggregate data</span></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(aggregateClass)){</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>  output <span class="ot">&lt;-</span> <span class="fu">search_taxa</span>(aggregateClass<span class="sc">$</span>speciesName[i])</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>  aggregateClass<span class="sc">$</span>class[i] <span class="ot">&lt;-</span> output<span class="sc">$</span>class</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="co"># save this new csv</span></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="co"># group by year and sum counts</span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>aggregateClassGrouped <span class="ot">&lt;-</span> (aggregateClass <span class="sc">%&gt;%</span> <span class="fu">select</span>(year, class, occurrenceCount) <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(year, class))</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="co"># convert to json? </span></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="co">#find first occurence with imcra region</span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>aggregateClass[<span class="fu">which</span>(aggregateClass<span class="sc">$</span>class<span class="sc">==</span><span class="st">"class"</span>)[<span class="dv">1</span>],]</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="do">##### Subset the aggregate data to add in to Observable</span></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>subsetAggregate <span class="ot">&lt;-</span> aggregateOccurrences[<span class="fu">grep</span>(<span class="st">"2014"</span>, aggregateOccurrences<span class="sc">$</span>year), ]</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(subsetAggregate, <span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">PEE040</span><span class="sc">\\</span><span class="st">OneDrive - CSIRO</span><span class="sc">\\</span><span class="st">Documents</span><span class="sc">\\</span><span class="st">EcoAssets</span><span class="sc">\\</span><span class="st">BiodiversityData_2023</span><span class="sc">\\</span><span class="st">Hobern_Donald_18_Dec_2023</span><span class="sc">\\</span><span class="st">data</span><span class="sc">\\</span><span class="st">aggregateOccurrences2014.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="do">## Year counts of biodiversity data</span></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>yearCounts <span class="ot">&lt;-</span> (aggregateOccurrences <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">count=</span><span class="fu">n</span>()))</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>yearCounts, <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>count, <span class="at">group=</span><span class="dv">1</span>)) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(yearCounts, <span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">PEE040</span><span class="sc">\\</span><span class="st">OneDrive - CSIRO</span><span class="sc">\\</span><span class="st">Documents</span><span class="sc">\\</span><span class="st">EcoAssets</span><span class="sc">\\</span><span class="st">biodiversityYearCounts.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="do">## Sample data frame</span></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>sampleSet <span class="ot">&lt;-</span> aggregateOccurrences[<span class="fu">sample</span>(<span class="fu">nrow</span>(aggregateOccurrences), <span class="dv">5</span>), ]</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(sampleSet, <span class="at">file=</span><span class="st">"biodiversity_sample.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="creating-a-streamgraph-for-taxa---aggregate-biodiversity-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-streamgraph-for-taxa---aggregate-biodiversity-dataset">Creating a streamgraph for taxa - aggregate biodiversity dataset</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a Streamgraph for Taxa from aggregate biodiversity dataset</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># A note from Shandiya: Here's the list of taxonomic classifications for (I think) all the species in the aggregated datasets.</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Use arrow to open parquet files: https://arrow.apache.org/docs/r/index.html.</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="do">### Read in taxa</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("arrow")</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>taxa <span class="ot">&lt;-</span> arrow<span class="sc">::</span><span class="fu">read_parquet</span>(<span class="st">"rel_distinct_taxa.parquet"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="do">### Read in aggregate dataset</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>aggregateOccurences <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'AggregatedData_AustralianSpeciesOccurrences_1.1.2023-06-13.csv'</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="do">### Join the datasets, adding taxa column to aggregate dataset</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># to create a stream graph: table with date/griis status/count, with the count aggregated for each year</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>aggregate <span class="ot">&lt;-</span> (aggregateOccurences <span class="sc">%&gt;%</span> <span class="fu">select</span>(year, speciesID, occurrenceCount))</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>aggregateSum <span class="ot">&lt;-</span> (aggregate <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(year, speciesID) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="fu">sum</span>(occurrenceCount)))</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(aggregateSum)[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">"occurrenceCount"</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>taxaOccurence <span class="ot">&lt;-</span> <span class="fu">left_join</span>(aggregateSum, taxa, <span class="at">by=</span><span class="st">"speciesID"</span>) <span class="co">#retain everything from aggregateSum</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(taxaOccurence<span class="sc">$</span>kingdom, <span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">which</span>(taxaOccurence<span class="sc">$</span>kingdom <span class="sc">==</span> <span class="st">"Animalia"</span>))</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>kingdomOccurence <span class="ot">&lt;-</span> (taxaOccurence <span class="sc">%&gt;%</span> </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">select</span>(year, kingdom, occurrenceCount) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">group_by</span>(year, kingdom) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">summarize</span>(<span class="fu">sum</span>(occurrenceCount)))</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(kingdomOccurence)[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">"occurrenceCount"</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>animaliaOccurence <span class="ot">&lt;-</span> (taxaOccurence <span class="sc">%&gt;%</span> </span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">filter</span>(kingdom <span class="sc">==</span> <span class="st">"Animalia"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">select</span>(year, phylum, occurrenceCount) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">group_by</span>(year, phylum) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">summarize</span>(<span class="fu">sum</span>(occurrenceCount)))</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(animaliaOccurence)[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">"occurrenceCount"</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>classOccurrence <span class="ot">&lt;-</span> (taxaOccurence <span class="sc">%&gt;%</span> </span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">filter</span>(kingdom <span class="sc">==</span> <span class="st">"Animalia"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">select</span>(year, class, occurrenceCount) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">group_by</span>(year, class) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">summarize</span>(<span class="fu">sum</span>(occurrenceCount)))</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(classOccurrence)[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">"occurrenceCount"</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>orderOccurrence <span class="ot">&lt;-</span> (taxaOccurence <span class="sc">%&gt;%</span> </span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">filter</span>(kingdom <span class="sc">==</span> <span class="st">"Animalia"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">select</span>(year, order, occurrenceCount) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">group_by</span>(year, order) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">summarize</span>(<span class="fu">sum</span>(occurrenceCount)))</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(orderOccurrence)[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">"occurrenceCount"</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Fill in NA values</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>kingdomOccurence[<span class="fu">is.na</span>(kingdomOccurence)] <span class="ot">&lt;-</span> <span class="st">"No kingdom"</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>animaliaOccurence[<span class="fu">is.na</span>(animaliaOccurence)] <span class="ot">&lt;-</span> <span class="st">"No phylum"</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>classOccurrence[<span class="fu">is.na</span>(classOccurrence)] <span class="ot">&lt;-</span> <span class="st">"No class"</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>orderOccurrence[<span class="fu">is.na</span>(orderOccurrence)] <span class="ot">&lt;-</span> <span class="st">"No order"</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="do">### Create JSON with {year:, class:, occurenceCount:, } array </span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">toJSON</span>(kingdomOccurence), <span class="at">file =</span> <span class="st">"kingdomOccurences.json"</span>)</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">toJSON</span>(animaliaOccurence), <span class="at">file=</span><span class="st">"animaliaOccurences.json"</span>)</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">toJSON</span>(classOccurrence), <span class="at">file=</span><span class="st">"classOccurences.json"</span>)</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">toJSON</span>(orderOccurrence), <span class="at">file=</span><span class="st">"orderOccurrences.json"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="create-species-and-regions-double-circle-plot" class="level3">
+<h3 class="anchored" data-anchor-id="create-species-and-regions-double-circle-plot">Create species and regions double circle plot</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">##### Subset of regions and species for circle graph</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>aggregateOccurrences <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'AggregatedData_AustralianSpeciesOccurrences_1.1.2023-06-13.csv'</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>aggregateSorted <span class="ot">&lt;-</span> aggregateOccurrences[<span class="fu">order</span>(aggregateOccurrences<span class="sc">$</span>occurrenceCount, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>vernacularName <span class="ot">&lt;-</span> <span class="st">"vernacularName"</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>class <span class="ot">&lt;-</span> <span class="st">"class"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>numSpecies <span class="ot">&lt;-</span> <span class="dv">150</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>topSpecies <span class="ot">&lt;-</span> <span class="fu">cbind</span>(aggregateSorted[<span class="dv">1</span><span class="sc">:</span>numSpecies, ], vernacularName, class)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># then need to cross-check species and regions in topSpecies with agreggated occurrences </span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>speciesList <span class="ot">&lt;-</span> <span class="fu">unique</span>(topSpecies<span class="sc">$</span>speciesName)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>ibraList <span class="ot">&lt;-</span> <span class="fu">unique</span>(topSpecies<span class="sc">$</span>ibraRegion)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>imcraList <span class="ot">&lt;-</span> <span class="fu">unique</span>(topSpecies<span class="sc">$</span>imcraRegion)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># create another dataframe with the missing data</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># from numSpecies + 1, loop through rows of table and if the the species is in the speciesList, add it to the data</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Only keep rows where the ibra or imcra region is already in the created lists </span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>missingData <span class="ot">&lt;-</span> aggregateSorted <span class="sc">|&gt;</span> <span class="fu">filter</span>(speciesName <span class="sc">%in%</span> speciesList)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>missingDataRegions <span class="ot">&lt;-</span> missingData <span class="sc">|&gt;</span> <span class="fu">filter</span>(ibraRegion <span class="sc">%in%</span> ibraList) <span class="sc">|&gt;</span> <span class="fu">filter</span>(imcraRegion <span class="sc">%in%</span> imcraList)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>topSpecies <span class="ot">&lt;-</span> missingDataRegions</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Add vernacular name and class to topSpecies</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(galah)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>numSpecies) {</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  name <span class="ot">&lt;-</span> topSpecies<span class="sc">$</span>speciesName[i]</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  output <span class="ot">&lt;-</span> <span class="fu">search_taxa</span>(name)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># only add the vernacular name if not null</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(output<span class="sc">$</span>vernacular_name)) {</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    topSpecies<span class="sc">$</span>vernacularName[i] <span class="ot">&lt;-</span> output<span class="sc">$</span>vernacular_name</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    topSpecies<span class="sc">$</span>class[i] <span class="ot">&lt;-</span> output<span class="sc">$</span>class</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter out species that don't have a vernacular name provided</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>topSpecies <span class="ot">&lt;-</span> topSpecies[topSpecies<span class="sc">$</span>vernacularName <span class="sc">!=</span> <span class="st">"vernacularName"</span>, ]</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>ibraList <span class="ot">&lt;-</span> <span class="fu">unique</span>(topSpecies<span class="sc">$</span>ibraRegion)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>imcraList <span class="ot">&lt;-</span> <span class="fu">unique</span>(topSpecies<span class="sc">$</span>imcraRegion)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to JSON</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("jsonlite")</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>speciesRegion <span class="ot">&lt;-</span> <span class="fu">mutate</span>(topSpecies, <span class="at">region =</span> <span class="fu">paste</span>(imcraRegion, ibraRegion)) </span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>speciesRegion <span class="ot">&lt;-</span> (speciesRegion <span class="sc">%&gt;%</span> <span class="fu">select</span>(region, vernacularName, class))</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(speciesRegion)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">"species"</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>speciesRegion <span class="ot">&lt;-</span> speciesRegion <span class="sc">|&gt;</span> <span class="fu">distinct</span>(<span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="co">#remove duplicate rows across entire data frame --&gt; years creates duplicates</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>speciesRegion <span class="ot">&lt;-</span> speciesRegion[<span class="fu">order</span>(speciesRegion<span class="sc">$</span>region, <span class="at">decreasing =</span> <span class="cn">FALSE</span>), ] <span class="co"># make it in alphabetical order by regions</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="co"># an attempt to create the JSON object with jsonlite functions - doesn't work </span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>list <span class="ot">&lt;-</span> <span class="fu">toJSON</span>(speciesRegion) <span class="co"># creates a json list of region/species pairs</span></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>list <span class="ot">&lt;-</span> <span class="fu">toJSON</span>(speciesRegion, <span class="at">dataframe =</span> <span class="st">"rows"</span>) <span class="co"># same as above</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>list <span class="ot">&lt;-</span> <span class="fu">toJSON</span>(speciesRegion, <span class="at">dataframe =</span> <span class="st">"columns"</span>) <span class="co"># json object with a list of regions and a list of species</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="co"># create JSON object manually </span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>regions <span class="ot">&lt;-</span> <span class="fu">unique</span>(speciesRegion<span class="sc">$</span>region)</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="fu">unique</span>(speciesRegion<span class="sc">$</span>species)</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="st">""</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="st">""</span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a><span class="co"># make regions array {"region1name": ["species1", "species2"]}</span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (x <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(regions)) {</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>  r <span class="ot">&lt;-</span> <span class="fu">paste</span>(r, <span class="st">'{"name": "'</span>, regions[x], <span class="st">'", "values": ['</span>)</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>  listSpecies <span class="ot">&lt;-</span> speciesRegion[speciesRegion<span class="sc">$</span>region <span class="sc">==</span> regions[x], ] <span class="sc">%&gt;%</span> <span class="fu">select</span>(species)</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>  uniqueSpecies <span class="ot">&lt;-</span> <span class="fu">unique</span>(listSpecies)</span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>  countSpecies <span class="ot">&lt;-</span> <span class="fu">count</span>(uniqueSpecies)</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (y <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>countSpecies[<span class="dv">1</span>,<span class="dv">1</span>]) {</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>    r <span class="ot">&lt;-</span> <span class="fu">paste</span>(r, <span class="st">'"'</span>, uniqueSpecies[y, ], <span class="st">'",'</span>)</span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>  r <span class="ot">&lt;-</span> <span class="fu">substring</span>(r, <span class="dv">1</span>, <span class="fu">nchar</span>(r)<span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>  r <span class="ot">&lt;-</span> <span class="fu">paste</span>(r, <span class="st">'], "colour": '</span>)</span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add "ibra" or "imcra" to colour</span></span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>( <span class="fu">trimws</span>(regions[x], <span class="st">"both"</span>) <span class="sc">%in%</span> ibraList) {</span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>    r <span class="ot">&lt;-</span> <span class="fu">paste</span>(r, <span class="st">'"ibra"'</span>)</span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> ( <span class="fu">trimws</span>(regions[x], <span class="st">"both"</span>) <span class="sc">%in%</span> imcraList ) {</span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>    r <span class="ot">&lt;-</span> <span class="fu">paste</span>(r, <span class="st">'"imcra"'</span>)</span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>    r <span class="ot">&lt;-</span> <span class="fu">paste</span>(r, <span class="st">'"both"'</span>)</span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>  r <span class="ot">&lt;-</span> <span class="fu">paste</span>(r, <span class="st">"},"</span>)</span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a><span class="co"># make species array</span></span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (a <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(species)) {</span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">paste</span>(s, <span class="st">'{"name": "'</span>, species[a], <span class="st">'", "values": ['</span>)</span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>  listRegions <span class="ot">&lt;-</span> speciesRegion[speciesRegion<span class="sc">$</span>species <span class="sc">==</span> species[a], ] <span class="sc">%&gt;%</span> <span class="fu">select</span>(region)</span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>  uniqueRegions <span class="ot">&lt;-</span> <span class="fu">unique</span>(listRegions)</span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>  countRegions <span class="ot">&lt;-</span> <span class="fu">count</span>(uniqueRegions)</span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (b <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>countRegions[<span class="dv">1</span>,<span class="dv">1</span>]) {</span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>    s <span class="ot">&lt;-</span> <span class="fu">paste</span>(s, <span class="st">'"'</span>, uniqueRegions[b, ], <span class="st">'",'</span>)</span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">substring</span>(s, <span class="dv">1</span>, <span class="fu">nchar</span>(s)<span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">paste</span>(s, <span class="st">'], "colour": '</span>)</span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add class to species</span></span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>  speciesClass <span class="ot">&lt;-</span> speciesRegion[speciesRegion<span class="sc">$</span>species <span class="sc">==</span> species[a], ] <span class="sc">%&gt;%</span> <span class="fu">select</span>(class) </span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">paste</span>(s, <span class="st">'"'</span>, speciesClass[<span class="dv">1</span>,<span class="dv">1</span>], <span class="st">'"'</span>)</span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">paste</span>(s, <span class="st">"},"</span>)</span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a><span class="co"># remove trailing commas</span></span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">substring</span>(r, <span class="dv">1</span>, <span class="fu">nchar</span>(r)<span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">substring</span>(s, <span class="dv">1</span>, <span class="fu">nchar</span>(s)<span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a>jsonObject <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">'{"regions": </span></span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a><span class="st">                      [%s], </span></span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a><span class="st">                      "species":</span></span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a><span class="st">                      [%s]}'</span>, r, s) </span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(jsonObject, <span class="at">file=</span><span class="st">"speciesRegion.json"</span>)</span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a><span class="co"># get species class list to make colour scale in observable</span></span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(speciesRegion<span class="sc">$</span>class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="shape-tweening---manipulating-shape-files-and-converting-to-json" class="level3">
+<h3 class="anchored" data-anchor-id="shape-tweening---manipulating-shape-files-and-converting-to-json">Shape tweening - manipulating shape files and converting to JSON</h3>
+<p>Shape files for Australian states located at: <a href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/digital-boundary-files" class="uri">https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/digital-boundary-files</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">###### Exploring state data for shape tweening</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>aggregateOccurrences <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'AggregatedData_AustralianSpeciesOccurrences_1.1.2023-06-13.csv'</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>total2022 <span class="ot">&lt;-</span> aggregateOccurrences <span class="sc">%&gt;%</span> </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2022</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total2022 =</span> <span class="fu">sum</span>(occurrrenceCount))</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>stateCounts <span class="ot">&lt;-</span> (aggregateOccurrences <span class="sc">%&gt;%</span> </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2022</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">group_by</span>(stateTerritory) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">summarise</span>(<span class="fu">signif</span>(((<span class="fu">sum</span>(occurrenceCount)<span class="sc">/</span>total2022<span class="sc">$</span>total2022)<span class="sc">*</span><span class="dv">100</span>), <span class="at">digits =</span> <span class="dv">3</span>)))</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(stateCounts)[<span class="fu">colnames</span>(stateCounts) <span class="sc">==</span> <span class="st">'stateTerritory'</span>] <span class="ot">&lt;-</span> <span class="st">'name'</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(stateCounts)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">'value'</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># subset data based on available shape files</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>stateCounts <span class="ot">&lt;-</span> stateCounts <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>((name <span class="sc">==</span> <span class="st">"Unknown1"</span>) <span class="sc">|</span> (name <span class="sc">==</span> <span class="st">"Coral Sea Islands"</span>) <span class="sc">|</span> (name <span class="sc">==</span> <span class="st">"Ashmore and Cartier Islands"</span>) <span class="sc">|</span> (name <span class="sc">==</span> <span class="st">""</span>)))</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(stateCounts, <span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">PEE040</span><span class="sc">\\</span><span class="st">OneDrive - CSIRO</span><span class="sc">\\</span><span class="st">Documents</span><span class="sc">\\</span><span class="st">EcoAssets</span><span class="sc">\\</span><span class="st">BiodiversityData_2023</span><span class="sc">\\</span><span class="st">Hobern_Donald_18_Dec_2023</span><span class="sc">\\</span><span class="st">data</span><span class="sc">\\</span><span class="st">stateCounts.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Reading in a shape file and creating an array </span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("sf")</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("tidyverse")</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="co"># read in shape files using read_sf()</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>shape <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"states_shapes/STE_2021_AUST_GDA2020.shp"</span>, <span class="at">promote_to_multi =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in shape files using st_read() and cast multipolygons as polygons</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>shape <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"states_shapes/STE_2021_AUST_GDA2020.shp"</span>)</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>shape2 <span class="ot">&lt;-</span> <span class="fu">st_cast</span>(shape, <span class="st">"POLYGON"</span>)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in shape file and simplify to reduce file size</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>ausShape <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"states_shapes/STE_2021_AUST_GDA2020.shp"</span>) </span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>aus_simplified <span class="ot">&lt;-</span> ausShape <span class="sc">|&gt;</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(STE_NAME21 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Outside Australia"</span>, <span class="st">"Other Territories"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_simplify</span>(<span class="at">preserveTopology =</span> <span class="cn">TRUE</span>, <span class="at">dTolerance =</span> <span class="dv">1000</span>)</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="fu">st_write</span>(aus_simplified, <span class="st">"path/to/STE_2021_AUST_GDA2020_simplified/STE_2021_AUST_GDA2020_simplified.shp"</span>)</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>aus_simplified<span class="sc">$</span>geometry</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>ausShapeSimple <span class="ot">&lt;-</span> <span class="fu">st_cast</span>(aus_simplified, <span class="st">"POLYGON"</span>, <span class="at">group_or_split =</span> <span class="cn">TRUE</span>, )</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>ausShapeSimple<span class="sc">$</span>geometry</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="co">#st_union(ausShapeSimple |&gt; filter(STE_CODE21 == 1))</span></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>ausShapeSimple<span class="sc">$</span>area <span class="ot">&lt;-</span> <span class="fu">st_area</span>(ausShapeSimple)</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>ausShapeSimple <span class="ot">&lt;-</span> <span class="fu">st_cast</span>(aus_simplified, <span class="st">"POLYGON"</span>, <span class="at">group_or_split =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">area =</span> <span class="fu">st_area</span>(geometry)) <span class="sc">|&gt;</span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(STE_NAME21, <span class="fu">desc</span>(area)) <span class="sc">|&gt;</span> </span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(STE_NAME21) <span class="sc">|&gt;</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">row_number</span>() <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>nswPolygons <span class="ot">&lt;-</span> ausShapeSimple <span class="sc">|&gt;</span> <span class="fu">filter</span>(STE_CODE21 <span class="sc">==</span> <span class="dv">1</span>) </span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">st_area</span>(nswPolygons))</span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="co"># Save gemoetry as geojson file to be input into observable </span></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("geojsonsf")</span></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geojsonsf)</span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>geoShape <span class="ot">&lt;-</span> <span class="fu">sf_geojson</span>(ausShapeSimple)</span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">toJSON</span>(geoShape), <span class="at">file =</span> <span class="st">"stateShapesOrdered.json"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exploring-the-monitoring-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="exploring-the-monitoring-dataset">Exploring the Monitoring dataset</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dataSources <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">'data-sources.csv'</span>, <span class="at">locale=</span><span class="fu">locale</span>(<span class="at">encoding=</span><span class="st">"latin1"</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>aggregateData<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">'AggregatedData_EnvironmentalMonitoringAndObservationsEffort_1.1.2023-06-13.csv'</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>sampleSet <span class="ot">&lt;-</span> aggregateData[<span class="fu">sample</span>(<span class="fu">nrow</span>(aggregateData), <span class="dv">5</span>), ]</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(sampleSet, <span class="at">file=</span><span class="st">"monitoring_sample.rds"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>vocab <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'Vocabulary_EcoAssetsEarthScienceFeatures_1.0.2023-03-23.csv'</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>keyWords <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'KeywordMapping_EcoAssetsEarthScienceFeatures_1.0.2023-03-23.csv'</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>featureID <span class="ot">&lt;-</span> <span class="fu">unique</span>(aggregateData<span class="sc">$</span>featureID)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>featureName <span class="ot">&lt;-</span> <span class="fu">unique</span>(aggregateData<span class="sc">$</span>featureName)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>feature1 <span class="ot">&lt;-</span> <span class="fu">unique</span>(aggregateData<span class="sc">$</span>featureFacet1)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>feature2 <span class="ot">&lt;-</span> <span class="fu">unique</span>(aggregateData<span class="sc">$</span>featureFacet2)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>feature3 <span class="ot">&lt;-</span> <span class="fu">unique</span>(aggregateData<span class="sc">$</span>featureFacet3)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>summaryTer <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"SummaryData_MonitoringAndObservationsEffortByTerrestrialEcoregion_1.1.2023-06-13.csv"</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Data for Line graph of year and counts</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>yearCounts <span class="ot">&lt;-</span> (aggregateData <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">count=</span><span class="fu">n</span>()))</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>yearCounts2 <span class="ot">&lt;-</span> (aggregateData <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(year, nri) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">freq=</span><span class="fu">n</span>()))</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>yearCounts3 <span class="ot">&lt;-</span> (aggregateData <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(year, featureFacet3) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">count=</span><span class="fu">n</span>()))</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>yearCounts4 <span class="ot">&lt;-</span> (aggregateData <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(year, stateTerritory) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">count=</span><span class="fu">n</span>()))</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>yearCounts, <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>count, <span class="at">group=</span><span class="dv">1</span>)) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>yearCounts2, <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>freq, <span class="at">group=</span>nri)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color=</span>nri)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span>nri))</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>yearCounts3, <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>count, <span class="at">group=</span>featureFacet3)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color=</span>featureFacet3)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span>featureFacet3))</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>yearCounts4, <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>count, <span class="at">group=</span>stateTerritory)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color=</span>stateTerritory)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span>stateTerritory))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">Copyright 2024</div>
+  </div>
+</footer>
+
+
+
+</body></html>

@@ -10,7 +10,7 @@ format:
     include-after-body: _footer.html
 ---
 
-## About us
+## About the project
 
 EcoAssets is improving access to integrated environmental data in forms that can support national, and state and territory environmental assessment and reporting activities. The project was established to support the authors of the 2021 Federal State of the Environment (SoE) report which reviews how different pressures are changing Australia's land and marine environments and how these changes will impact the economy and society.
 
@@ -21,6 +21,7 @@ Through EcoAssets, three of Australia's national research infrastructures - the 
 The key resulting data assets are: Integrated species distribution data asset Integrated survey and monitoring activity data asset EcoAssets is achieving these outcomes by identifying opportunities to increase alignment between data from all partners. In particular, we are simplifying spatiotemporal analyses and addressing differences in terminology and vocabularies.
 
 ## Core Features
+
 
 ##### **Improvements to Data Pipelines**
 
@@ -39,6 +40,7 @@ The newly aggregated data assets will provide a single set of data for major env
 ##### **Data Principles: Findable, Accessible, Interoperable and Reusable (FAIR)**
 
 Data linkages and summary formats will provide easy-to-access information on indicators and trends. Data pipelines developed will enable future continuous updates and integration of new data from partners.
+<br>
 <br>
 
 

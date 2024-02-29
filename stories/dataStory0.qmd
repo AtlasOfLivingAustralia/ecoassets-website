@@ -75,7 +75,7 @@ FIGURE
 
 ## Demo: sticky overlay
 
-::: {.column-screen style="background-image:url(images/beetle.jpg); background-size: cover; height: 60vh; position: sticky; top: 0; "}
+::: {.column-screen style="background-image:url(../images/beetle.jpg); background-size: cover; height: 60vh; position: sticky; top: 0; "}
 :::
 
 *A beetle*

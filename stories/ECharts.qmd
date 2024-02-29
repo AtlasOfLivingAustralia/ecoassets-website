@@ -6,7 +6,8 @@ echo: false
 ---
 
 # Sample GeoMap with ECharts
---> add this above echo: jupyter: python3
+--> install python & jupyter
+--> add to header: jupyter: python3
 
 From this site: https://medium.com/@emmanueldavidson/creating-beautiful-analytics-documents-with-quarto-and-observable-js-a4a746f8793a
 

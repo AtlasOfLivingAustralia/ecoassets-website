@@ -58,6 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -169,10 +170,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">A scrollyteller tutorial example</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../stories/homepage.html" rel="" target="">
- <span class="dropdown-text">Home</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../stories/ECharts.html" rel="" target="">
  <span class="dropdown-text">An Echarts example</span></a>
   </li>  
@@ -267,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="demo-sticky-overlay" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="demo-sticky-overlay">Demo: sticky overlay</h2>
-<div class="column-screen" style="background-image:url(images/beetle.jpg); background-size: cover; height: 60vh; position: sticky; top: 0; ">
+<div class="column-screen" style="background-image:url(../images/beetle.jpg); background-size: cover; height: 60vh; position: sticky; top: 0; ">
 
 </div>
 <p><em>A beetle</em></p>
@@ -430,7 +427,7 @@ OJS Syntax Error (line 171, column 14)Unexpected token
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</main> <!-- /main -->
 <script type="ojs-module-contents">
 {"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"\r\n// import and instantiate the scrollama\r\nscrollama = require(\"scrollama@3.1.1\")\r\nscroller = scrollama();\r\n\r\n// initialise the library and pass event handlers to \r\nscroller\r\n  .setup({\r\n    step: \".step\",\r\n  })\r\n  .onStepEnter((response) => {\r\n    // the box is passed to this function so we can change it!\r\n    console.log(\"Enter triggered\")\r\n    console.log(response)\r\n    // { element, index, direction }\r\n    response.element.classList.add(\"is-active\");\r\n\r\n  })\r\n  .onStepExit((response) => {\r\n    console.log(\"Exit triggered\")\r\n    console.log(response)\r\n    // { element, index, direction }\r\n    response.element.classList.remove(\"is-active\");\r\n  });\r\n"}]}
 </script>
