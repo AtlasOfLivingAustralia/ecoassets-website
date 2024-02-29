@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -60,8 +61,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles/styles.css">
 <meta property="og:title" content="EcoAssets - Monitoring Data">
+<meta property="og:description" content="">
 <meta property="og:site-name" content="EcoAssets">
 </head>
 
@@ -114,6 +116,33 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./news.html" rel="" target="">
  <span class="menu-text">News</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-stories" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Stories</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-stories">    
+        <li>
+    <a class="dropdown-item" href="./stories/dataStory0.html" rel="" target="">
+ <span class="dropdown-text">A simple data story</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./stories/d3Chart.html" rel="" target="">
+ <span class="dropdown-text">d3 and JS experiments</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./stories/exampleStory.html" rel="" target="">
+ <span class="dropdown-text">A scrollyteller tutorial example</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./stories/ECharts.html" rel="" target="">
+ <span class="dropdown-text">An Echarts example</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./stories/ecoAssetsDataStory.html" rel="" target="">
+ <span class="dropdown-text">EcoAssets story</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <div class="quarto-navbar-tools">
 </div>
@@ -122,173 +151,111 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#visualisations" id="toc-visualisations" class="nav-link active" data-scroll-target="#visualisations">Visualisations</a></li>
+  <li><a href="#link-to-access-data" id="toc-link-to-access-data" class="nav-link" data-scroll-target="#link-to-access-data">Link to Access Data</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 <!-- <header id="title-block-header">
 
 </header> -->
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#visualisations" id="toc-visualisations">Visualisations</a></li>
-  <li><a href="#link-to-access-data" id="toc-link-to-access-data">Link to Access Data</a></li>
-  </ul>
-</nav>
+
 <section id="visualisations" class="level3">
-<h3 data-anchor-id="visualisations">Visualisations</h3>
+<h3 class="anchored" data-anchor-id="visualisations">Visualisations</h3>
+<p>Monitoring data viz here, with explanation.</p>
 </section>
 <section id="link-to-access-data" class="level3">
-<h3 data-anchor-id="link-to-access-data">Link to Access Data</h3>
+<h3 class="anchored" data-anchor-id="link-to-access-data">Link to Access Data</h3>
 <p>Link to CSIRO data portal to access monitoring dataset.</p>
 
 
 </section>
 
+</main> <!-- /main -->
 
 <!-- EcoAssets Footer -->
 
 <style>
-.top-rectangle {
-  background-color: #125800;
-  height: 2vh;
-}
-
-.logos-frame {
-  position: relative;
-  width: 482px;
-  height: 233px;
-  padding-top: 2vh;
-  padding-bottom: 10vh;
-}
-
-.logos {
-  position: relative;
-  height: 222px;
-  top: 30px;
-  left: 11px;
-}
-
-#ala {
-  position: absolute;
-  width: 140px;
+.logo-image {
+  width: 100%;
+  max-width: 100%;
   height: auto;
-  top: 0;
-  left: 0;
-  object-fit: fill;
-}
-
-#imos {
-  position: absolute;
-  width: 144px;
-  height: auto;
-  top: 0;
-  left: 169px;
-}
-
-#tern {
-  position: absolute;
-  width: 144px;
-  height: auto;
-  top: 0;
-  left: 338px;
-}
-
-#ncris {
-  position: absolute;
-  width: 144px;
-  height: 99px;
-  top: 123px;
-  left: 338px;
-}
-
-#ardc {
-  position: absolute;
-  width: 144px;
-  height: 99px;
-  top: 123px;
-  left: 169px;
-}
-
-#augov {
-  position: absolute;
-  width: 144px;
-  height: 99px;
-  top: 123px;
-  left: 0;
-}
-
-.acknowledgement-of-country {
-  position: relative;
-  width: 357px;
-  height: 281px;
-  font-family: "Spectral-Bold", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 16px;
+  max-height: 100%;
+  display: table-cell;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
-  letter-spacing: -0.32px;
-  line-height: normal;
+  align-self: center;
+  /*position: relative;*/
 }
-
-.footer-line-divide {
-  border-left-color: #125800;
-  width: 5px;
+  
+.logo-container {
+  width: 100%;
   height: 10vh;
-  padding-right: 5vw;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
 }
 
-.centre-rectangle {
-  background-color: #EBFEE7;
-  height: auto;
-}
-
-.footer-right .footer-left {
-  padding-top: 1vh;
-}
-.footer-left {
-  align-content: right;
-}
 </style>
 
-<div class="ecoassets-footer">
-  <div class="top-rectangle"></div>
-  <div class="centre-rectangle">
+<div class="ecoassets-footer column-screen">
+  <div class="page-divider"></div>
+  <div class="footer-container">
     <div class="grid">
-      <div class="g-col-6">
-        <div class="footer-left">
-          <div class="logos-frame">
-            <div class="logos">
-              <a href="https://www.ala.org.au/" target="_blank" rel="noreferrer noopener">
-                <img id="ala" src="images/ala-logo.png" alt="ALA logo"></a>
-              <a href="https://imos.org.au/" target="_blank" rel="noreferrer noopener">
-                <img id="imos" src="images/imos-logo.png" alt="IMOS logo"></a>
-              <a href="https://www.tern.org.au/" target="_blank" rel="noreferrer noopener">
-                <img id="tern" src="images/tern-logo.png" alt="TERN logo"></a>
-              <a href="https://www.education.gov.au/ncris" target="_blank" rel="noreferrer noopener">
-                <img id="ncris" src="images/ncris-logo.png" alt="NCRIS logo"></a>
-              <a href="https://ardc.edu.au/" target="_blank" rel="noreferrer noopener">
-                <img id="ardc" src="images/ardc-logo.png" alt="ARDC logo"></a>
-              <a href="https://www.agriculture.gov.au/" target="_blank" rel="noreferrer noopener">
-                <img id="augov" src="images/augov-logo.png" alt="Australian government logo"></a>
+      <div class="g-col-2"></div>
+      <div id="acknowledgement-of-partners" class="g-col-12 g-col-md-4">
+        <div class="acknowledgement-of-partners-container">
+          <div class="grid" style="--bs-rows: 1; --bs-columns: 3;">
+            <div class="g-start-1" style="align-self: center;">
+              <div class="logo-container"><a href="https://www.ala.org.au/" target="_blank" rel="noreferrer noopener">
+                <img id="ala" class="logo-image" src="images/ala-logo.png" alt="ALA logo"></a></div>
+              <div class="logo-container"><a href="https://www.agriculture.gov.au/" target="_blank" rel="noreferrer noopener">
+                <img id="augov" class="logo-image" src="images/augov-logo.png" alt="Australian government logo"></a></div>
             </div>
+            <div class="g-start-2" style="align-self: center;">
+              <div class="logo-container"><a href="https://imos.org.au/" target="_blank" rel="noreferrer noopener">
+                <img id="imos" class="logo-image" src="images/imos-logo.png" alt="IMOS logo"></a></div>
+              <div class="logo-container" style="padding-top: 20px"><a href="https://ardc.edu.au/" target="_blank" rel="noreferrer noopener">
+              <img id="ardc" class="logo-image" src="images/ardc-logo.png" alt="ARDC logo"></a></div>
+            </div>
+            <div class="g-start-3" style="align-self: center;">
+              <div class="logo-container"><a href="https://www.tern.org.au/" target="_blank" rel="noreferrer noopener">
+                <img id="tern" class="logo-image" src="images/tern-logo.png" alt="TERN logo"></a></div>
+              <div class="logo-container"><a href="https://www.education.gov.au/ncris" target="_blank" rel="noreferrer noopener">
+                <img id="ncris" class="logo-image" src="images/ncris-logo.png" alt="NCRIS logo"></a></div>
+            </div>            
           </div>
-          <p class="funding-statement">EcoAssets received investment (doi.org/10.47486/XN005) from the Australian Research Data Commons (ARDC). The ARDC is funded by the Australian Research Data National Collaborative Research Infrastructure Strategy (NCRIS).</p>
+          <div class="investment-text">
+          <p class="funding-statement">EcoAssets received investment (<a href="https://ardc.edu.au/project/ecoassets/" target="_blank" rel="noreferrer noopener">doi.org/10.47486/XN005</a>) 
+          from the Australian Research Data Commons (ARDC). 
+          The ARDC is funded by the Australian Research Data National Collaborative Research Infrastructure Strategy (NCRIS).</p>
+          </div>
         </div>
-    </div>
-      <div class="g-col-6">
-        <div class="footer-line-divide"></div>
-        <div class="footer-right">
-          <p class="acknowledgement-of-country">
+      </div>
+      <div id="acknowledgement-of-country" class="g-col-12 g-col-md-4">
+        <div class="acknowledgement-of-country-container">
+          <p class="acknowledgement-of-country-title">Acknowledgement of Traditional Owners and Country</p>
+          <p class="acknowledgement-of-country-text">
           The project partners acknowledge Australia’s Traditional Owners and pay respect to the past and present 
           Elders of the nation’s Aboriginal and Torres Strait Islander communities. We honour and celebrate the spiritual,
           cultural and customary connections of Traditional Owners to the country and the biodiversity that forms part of that country.
-        </p>  
+          </p> 
         </div>
       </div>
+      <div class="g-col-2"></div>
     </div>
   </div>
 </div>

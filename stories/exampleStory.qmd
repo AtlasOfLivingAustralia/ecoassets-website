@@ -1,0 +1,353 @@
+---
+title: "Another visualisation"
+toc: true
+format:
+  html: 
+    page-layout: full
+---
+
+## Wealth and Health of Nations on Plot
+
+From this link: https://observablehq.com/@tophtucker/the-wealth-health-of-nations
+
+```{ojs}
+//|echo: false
+////////////////////// Input & load data
+
+// nations2.json is input as an array of objects, where each object is a country and each country has attributes (name, region, income[], population[], lifeExpectancy[])
+
+// takes an array and maps year to a data (ie 1800 -> 1800-01-01)
+// Date.UTC(year, monthIndex, day) -> date constructor for UTC
+function parseSeries(series) {
+  return series.map(([year, value]) => [new Date(Date.UTC(year, 0, 1)), value]);
+}
+
+// map creates a new array from calling a function for every array element, without changing the original array 
+data = (await FileAttachment("nations2.json").json())
+  .map(({name, region, income, population, lifeExpectancy}) => ({
+    name,
+    region,
+    income: parseSeries(income),
+    population: parseSeries(population),
+    lifeExpectancy: parseSeries(lifeExpectancy)
+  }))
+
+// ... is Spread syntax in Javascript (or Spread operator) --> allows an iterable to be expanded 
+// without this, the new set created just has a single object which is an array of 180 objects --> ie you get a nested output
+// Array: a block of data allocated in consecutive memory [x, y, z] --> indexed collection
+// Set: abstract data type with only distinct elements/objects that don't need to be allocated by index {x, y, z} --> keyed collection
+countries = [...new Set(data.map(d => d.name))].sort()
+
+regions = new Set(data.map(d => d.region))
+
+////// Update data for user input
+
+// Bisection (binary search) quickly finds a given value in a sorted array
+// finds the index of the row for the specified date
+bisectDate = d3.bisector(([date]) => date).left 
+
+// given an array and specified year (date), returns the value in the array for that year
+function valueAt(values, date) {
+  const i = bisectDate(values, date, 0, values.length - 1);
+  const a = values[i];
+  if (i > 0) {
+    const b = values[i - 1];
+    const t = (date - a[0]) / (b[0] - a[0]);
+    return a[1] * (1 - t) + b[1] * t;
+  }
+  return a[1];
+}
+
+// select data at specified year ie get only one data point for each field
+function dataAt(date) {
+  return data.map(d => ({
+    name: d.name,
+    region: d.region,
+    income: valueAt(d.income, date),
+    population: valueAt(d.population, date),
+    lifeExpectancy: valueAt(d.lifeExpectancy, date)
+  }));
+}
+
+// get only data selected by user 
+displayData = dataAt(new Date(Date.UTC(year, 0, 1)))
+
+// Inputs
+// First get range of years
+dateExtent = [
+  d3.min(data, (d) => {
+    return d3.min(
+      [d.income[0], d.population[0], d.lifeExpectancy[0]],
+      ([date]) => date
+    );
+  }),
+  d3.min(data, (d) => {
+    return d3.max(
+      [
+        d.income[d.income.length - 1],
+        d.population[d.population.length - 1],
+        d.lifeExpectancy[d.lifeExpectancy.length - 1]
+      ],
+      ([date]) => date
+    );
+  })
+]
+
+viewof year = Inputs.range(
+  dateExtent.map((d) => d.getUTCFullYear()),
+  { label: "Year", step: 1, value: dateExtent[0].getUTCFullYear() }
+)
+
+viewof country = Inputs.select(["—", ...countries], {label: "Highlight"})
+
+viewof selectedRegions = Inputs.checkbox(regions, {value: regions, label: "Regions"})
+
+
+Plot.plot({
+  width: 900,
+  height: 720,
+  x: { type: "log", label: "Income per capita (dollars)", domain: [200, 1e5] },
+  y: { label: "Life expectancy (years)", domain: [14, 86] },
+  r: { domain: [0, 5e8], range: [0, 60] },
+  color: { domain: regions },
+  marks: [
+    Plot.dot(
+      displayData
+        .filter((d) => selectedRegions.includes(d.region))
+        .sort((a, b) => b.population - a.population),
+      {
+        x: "income",
+        y: "lifeExpectancy",
+        r: "population",
+        z: "name",
+        fill: "region",
+        stroke: "rgba(0, 0, 0, 0.2)",
+        strokeWidth: 1,
+        opacity: (d) => (country === "—" || d.name === country ? 1 : 0.2)
+      }
+    )
+  ]
+})
+
+```
+
+## And now some scrollytelling
+```{ojs}
+// instance of CSSNames class
+// Can be used to override the default naming of id's and css classes. If left undefined, the default naming will be used.
+
+class CSSNames {
+  /*scrollContainer= "scroll",
+  sectionContainer= 'section',
+  narrationList= 'narration_list',
+  narrationBlock= 'narration',
+  narrationContent= 'narration-content',
+  graphContainer= 'graph',
+  graphContainerDefault= 'graph_default',
+  graphTitleClass= 'graph_title',
+  graphCaptionClass= 'graph_caption',
+  linkContainer= 'link',*/
+  
+  constructor() {
+    this.scrollContainer= 'scroll',
+    this.sectionContainer= 'section',
+    this.narrationList= 'narration_list',
+    this.narrationBlock= 'narration',
+    this.narrationContent= 'narration-content',
+    this.graphContainer= 'graph',
+    this.graphContainerDefault= 'graph_default',
+    this.graphTitleClass= 'graph_title',
+    this.graphCaptionClass= 'graph_caption',
+    this.linkContainer= 'link'
+  }
+};  
+```
+
+```{ojs}
+
+scrollyteller = require('@ihmeuw/scrollyteller@1.0.2');
+lodash = import('https://unpkg.com/lodash-es@4.17.21/lodash.js?module');
+// intro = FileAttachment("exampleStory/00_intro/scrollyTellerConfig.js");
+
+
+// A helper function
+updateSvgImage = (graphId, state, previousSvgFileName) => {
+  const {
+    svgFileName,
+  } = state;
+  if (lodash.isNil(svgFileName)) {
+    const graph = d3.select(`#${graphId} .imageDiv`);
+    graph
+      .transition()
+      .duration(250)
+      .style('opacity', 0);
+  }
+  if (svgFileName !== previousSvgFileName) {
+    const html = svgFileName
+      ? `<img src="dist/images/${svgFileName}.svg" />`
+      : null;
+    const graph = d3.select(`#${graphId} .imageDiv`);
+    graph
+      .transition()
+      .duration(250)
+      .style('opacity', 0)
+      .on('end', () => {
+        graph
+          .html(html)
+          .transition()
+          .duration(250)
+          .style('opacity', svgFileName ? 1 : 0);
+      });
+  }
+};
+
+// local state object- constant 
+sectionState = ({svgFileName: ''});
+
+/* CSSNames = ({
+  scrollContainer: 'scroll',
+  sectionContainer: 'section',
+  narrationList: 'narration_list',
+  narrationBlock: 'narration',
+  narrationContent: 'narration-content',
+  graphContainer: 'graph',
+  graphContainerDefault: 'graph_default',
+  graphTitleClass: 'graph_title',
+  graphCaptionClass: 'graph_caption',
+  linkContainer: 'link',
+}); */
+
+intro = ({
+  sectionIdentifier: 'introduction',
+
+  /** narration can be either of the following 3 options:
+   *  1) a string representing an absolute file path to a file of the following types:
+   *      'csv', 'tsv', 'json', 'html', 'txt', 'xml', which will be parsed by d3.promise
+   *  2) array of narration objects,
+   *  3) a promise to return an array of narration objects in the appropriate form
+   * See README for the specification of the narration objects */
+  narration: FileAttachment("narration.csv").csv(),
+
+  data: [],
+  
+  convertTriggerToObject: true,
+  
+  // css names - not required but prevents bugs
+   cssNames : new CSSNames(),
+  /**
+   * Optional method to reshape the data passed into ScrollyTeller, or resolved by the data promise
+   * @param {object} results - data passed into ScrollyTeller or the result of resolving the data promise (see below).
+   * @returns {object|array} -  an object or array of data of user-defined shape
+   */
+  reshapeDataFunction: function processData(results) {
+    return {};
+  },
+  
+   /**
+   * Called AFTER data is fetched, and reshapeDataFunction is called.  This method should
+   * build the graph and return an instance of that graph, which will passed as arguments
+   * to the onScrollFunction and onActivateNarration functions.
+   *
+   * This function is called as follows:
+   * buildGraphFunction(graphId, sectionConfig)
+   * @param {string} graphId - id of the graph in this section. const myGraph = d3.select(`#${graphId}`);
+   * @param {object} sectionConfig - the configuration object passed to ScrollyTeller
+   * @param {object} [sectionConfig] - the configuration object passed to ScrollyTeller
+   * @param {string} [sectionConfig.sectionIdentifier] - the identifier for this section
+   * @param {object} [sectionConfig.graph] - the chart instance, or a reference containing the result of the buildChart() function above
+   * @param {object} [sectionConfig.data] - the data that was passed in or resolved by the promise and processed by reshapeDataFunction()
+   * @param {object} [sectionConfig.scroller] - the scrollama object that handles activation of narration, etc
+   * @param {object} [sectionConfig.cssNames] - the CSSNames object containing some useful functions for getting the css identifiers of narrations, graph, and the section
+   * @param {object} [params.sectionConfig.elementResizeDetector] - the element-resize-detector object: see https://github.com/wnr/element-resize-detector for usage
+   * @returns {object} - chart instance
+   */
+  buildGraphFunction: function buildGraph(graphId, sectionConfig) {
+    /** REMEMBER TO RETURN THE GRAPH! (could also return as an object with multiple graphs, etc)
+     * The graph object is assigned to sectionConfig.graph, which is returned to all scrollyteller
+     * functions such as buildGraphFunction(), onActivateNarrationFunction(), onScrollFunction()  */
+    d3.select(`#${graphId}`)
+      .append('div')
+      .classed('imageDiv', true)
+    updateSvgImage(graphId, { svgFileName: 'slide1' }, sectionState.svgFileName);
+    sectionState.svgFileName = 'slide1';
+    return undefined;
+  },
+
+  /**
+   * Called upon scrolling of the section. See argument list below, this function is called as:
+   * onScrollFunction({ index, progress, element, trigger, graphId, sectionConfig })
+   * @param {object} [params] - object containing parameters
+   * @param {number} [params.index] - index of the active narration object
+   * @param {number} [params.progress] - 0-1 (sort of) value indicating progress through the active narration block
+   * @param {HTMLElement} [params.element] - the narration block DOM element that is currently active
+   * @param {string} [params.trigger] - the trigger attribute for narration block that is currently active
+   * @param {string} [params.graphContainerId] - id of the graph container in this section. const graphContainer = d3.select(`#${graphContainerId}`);
+   * @param {string} [params.graphId] - id of the graph in this section. const myGraph = d3.select(`#${graphId}`);
+   * @param {object} [params.sectionConfig] - the configuration object passed to ScrollyTeller
+   * @param {string} [params.sectionConfig.sectionIdentifier] - the identifier for this section
+   * @param {object} [params.sectionConfig.graph] - the chart instance, or a reference containing the result of the buildChart() function above
+   * @param {object} [params.sectionConfig.data] - the data that was passed in or resolved by the promise and processed by reshapeDataFunction()
+   * @param {object} [params.sectionConfig.scroller] - the scrollama object that handles activation of narration, etc
+   * @param {object} [params.sectionConfig.cssNames] - the CSSNames object containing some useful functions for getting the css identifiers of narrations, graph, and the section
+   * @param {object} [params.sectionConfig.elementResizeDetector] - the element-resize-detector object: see https://github.com/wnr/element-resize-detector for usage
+   * @returns {void}
+   */
+  onScrollFunction: function onScroll() {
+  },
+  
+  /**
+   * Called when a narration block is activated.
+   * See argument list below, this function is called as:
+   * onActivateNarration({ index, progress, element, trigger, graphId, sectionConfig })
+   * @param {object} [params] - object containing parameters
+   * @param {number} [params.index] - index of the active narration object
+   * @param {number} [params.progress] - 0-1 (sort of) value indicating progress through the active narration block
+   * @param {HTMLElement} [params.element] - the narration block DOM element that is currently active
+   * @param {string} [params.trigger] - the trigger attribute for narration block that is currently active
+   * @param {string} [params.direction] - the direction the event happened in (up or down)
+   * @param {string} [params.graphContainerId] - id of the graph container in this section. const graphContainer = d3.select(`#${graphContainerId}`);
+   * @param {string} [params.graphId] - id of the graph in this section. const myGraph = d3.select(`#${graphId}`);
+   * @param {object} [params.sectionConfig] - the configuration object passed to ScrollyTeller
+   * @param {string} [params.sectionConfig.sectionIdentifier] - the identifier for this section
+   * @param {object} [params.sectionConfig.graph] - the chart instance, or a reference containing the result of the buildChart() function above
+   * @param {object} [params.sectionConfig.data] - the data that was passed in or resolved by the promise and processed by reshapeDataFunction()
+   * @param {object} [params.sectionConfig.scroller] - the scrollama object that handles activation of narration, etc
+   * @param {object} [params.sectionConfig.cssNames] - the CSSNames object containing some useful functions for getting the css identifiers of narrations, graph, and the section
+   * @param {object} [params.sectionConfig.elementResizeDetector] - the element-resize-detector object: see https://github.com/wnr/element-resize-detector for usage
+   * @returns {void}
+   */
+  onActivateNarrationFunction: function onActivateNarration({
+    graphId,
+    state,
+    state: {
+      svgFileName,
+    },
+  }) {
+    /** DISPLAY/FLIP BETWEEN IMAGES */
+    updateSvgImage(graphId, state, sectionState.svgFileName);
+    sectionState.svgFileName = svgFileName;
+  },
+
+});
+
+intro.cssNames.constructor.name;
+
+/* ScrollyTeller */
+storyConfiguration = ({
+  /* The id of the <div> that will contain all of the page content */
+  appContainerId: "app",
+  /*build an array of story sections, each section object should be a valid ScrollyTeller section configuration */
+  sectionList: [intro],
+});
+
+storyConfiguration.sectionList[0].cssNames.constructor.name;
+
+/* create the ScrollyTeller object to validate the config */
+si = new scrollyteller.default(storyConfiguration);
+
+/* parse data and build all HMTL */
+si.render();
+
+
+```
+

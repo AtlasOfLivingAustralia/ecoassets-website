@@ -4,8 +4,16 @@ description: "The first news post of the website."
 author: "Clara Peers"
 date: "4/1/2024"
 date-modified: "4/1/2024"
+format:
+  html: 
+    page-layout: article
+    title-block-banner: true
+    sidebar: true
+    include-after-body: ../../_footer.html
 ---
 
-# Exciting news!
+# News Post 0
 
-EcoAssets Quarto website has launched!
+This is a test news post.
+
+Exciting news! EcoAssets Quarto website has launched!

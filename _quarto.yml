@@ -6,13 +6,13 @@ website:
   open-graph: true 
   page-footer: 
     right: "Copyright 2024"
-    background: "#125800"
+    background: "#02055Dff"
     foreground: "#FFFFFF"
   navbar:
-    background: "#EBFEE7"
-    foreground: "#000000"
+    background: "#1a4111ff"
+    foreground: "#FFFFFF"
     collapse: true
-    pinned: true
+    pinned: false
     back-to-top-navigation: true
     search: true
     right:
@@ -29,15 +29,28 @@ website:
           - monitoring_data.qmd
       - href: news.qmd
         text: "News"
-        
+      - text: Stories
+        menu:
+          - href: stories/dataStory0.qmd
+            text: "A simple data story"
+          - href: stories/d3Chart.qmd
+            text: "d3 and JS experiments"
+          - href: stories/exampleStory.qmd
+            text: "A scrollyteller tutorial example"
+          - href: stories/ECharts.qmd
+            text: "An Echarts example"
+          - href: stories/ecoAssetsDataStory.qmd
+            text: "EcoAssets story"
+  back-to-top-navigation: false
+  
 format:
   html:
     theme: 
       - lumen
-      - theme.scss
-    mainfont: Spectral
+      - styles/theme.scss
+    mainfont: DM Sans
     monofont: Fira Code
-    css: styles.css
+    css: styles/styles.css
     toc: true
     code-overflow: scroll
 

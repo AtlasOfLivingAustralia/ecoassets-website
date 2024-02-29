@@ -1,0 +1,4 @@
+narrationId,narrationClass,marginTopVh,marginBottomVh,minHeightVh,h2Text,paragraphText,hRef,hRefText,trigger,graphTitle,graphCaption
+introStart,intro,40,40,50,So you want to build a scrollytelling data story?,,,,"{ ""svgFileName"": ""slide1"" }",,
+,intro,40,40,50,And animate your charts as you narrate the story with text?,,,,"{ ""svgFileName"": ""slide2"" }",,
+,intro,40,40,50,But you don't want to write a lot of HTMl boilerplate…,,,,"{ ""svgFileName"": ""slide3"" }",,

@@ -2,13 +2,19 @@
 title: Monitoring Data
 format: 
   html:
-    page-layout: custom
+    page-layout: article
+    title-block-banner: true
+    sidebar: true
+    include-after-body: _footer.html
     template-partials: 
       - title-block.html
-    include-after-body: _footer.html
+execute:
+  echo: false
 ---
 
 ### Visualisations
+
+Monitoring data viz here, with explanation.
 
 ### Link to Access Data
 

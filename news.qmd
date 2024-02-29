@@ -1,9 +1,15 @@
 ---
 title: "News"
+format:
+  html: 
+    page-layout: article
+    title-block-banner: true
+    sidebar: true
+    include-after-body: _footer.html
 listing:
   contents: posts
   sort: "date desc"
-  type: default
+  type: grid
   categories: true
   page-size: 10
 ---

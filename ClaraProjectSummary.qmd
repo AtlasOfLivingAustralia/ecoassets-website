@@ -1,0 +1,528 @@
+---
+title: "A summary of EcoAssets data visualization and scrollytelling scoping project"
+author: "Clara Peers Tejero"
+date: "29/2/2024"
+execute: 
+  enabled: false
+format:
+  html:
+    theme: Minty
+    toc: true
+---
+
+# Data Visualisation
+
+### Data Visualizations created during the project
+
+During the project, I created a number of custom data visualizations using subsets of the EcoAssets data. These were created in [Observable](https://observablehq.com/), a JavaScript platform that allows you to create data viz’s by embedding JS cells in R markdown documents. I used the Observable notebooks, available via the browser, and then would add this content to my quarto website. The collection of data viz notebooks that I made can be found [here](https://observablehq.com/collection/@clarapt-ws/ecoassets-visualisations). They are all public and can be directly edited, or forked and then edited (you need an Observable account to do this). 
+
+When working in Observable, you typically use JavaScript to create visualizations, however, you can also add code in markdown or html cells. In JavaScript, the two main libraries I used were Plot (the Observable Javascript library) and d3.js. Plot is a great library to get started with Observable and play around with the data because it is very easy to create visualizations quickly. D3.js stands for data driven documents and is a free open-source JS library for visualizing data, see [gallery]() and [Observable d3 gallery](). It is used to animate data viz’s, and is a low-level approach- every element on the page has to be explicitly added to the visualization. D3.js is much more effective for creating more custom visualizations than Plot, but has a much steeper learning curve, especially if you have never coded in JavaScript before. I used Observable's tutorials to learn both Plot and d3, and I definitely recommend these. 
+
+
+It's also worth mentioning that you can embed [Echarts](https://echarts4r.john-coene.com/) into quarto websites using ObservableJS code blocks, this is not something I experimented with but see an example [here](https://medium.com/@emmanueldavidson/creating-beautiful-analytics-documents-with-quarto-and-observable-js-a4a746f8793a).
+
+# Scrollytelling 
+
+Scrollytelling is a way of telling a long-form story in a very engaging way, by combining visual content, text and even audio that changes as the user scrolls down the page. It's typically used in long-form journalism, you may have seen example in the [ABC](https://www.abc.net.au/news/2023-04-28/stage-three-tax-cuts-to-scale/102268304) or [similar](https://www.theguardian.com/us-news/ng-interactive/2017/dec/20/bussed-out-america-moves-homeless-people-country-study). The overarching idea for EcoAssets was to create a library of data stories that explain different themes within the EcoAssets datasets. Scrollytelling is useful in cases where there's a lot of data, or where there are many possible uses of the data. This is true of the EcoAssets datasets, which are very large and could be subsetted in many ways to answer different questions about biodiversity and monitoring.	It's also helpful in guiding users who may not have a clear idea of what the data contains, or know how to use it. Scrollytelling provides a way to guide users through these datasets by literally telling them a story about the data and using visuals along to way to explain or clarify the points you're making.
+
+### Inspiration for scrollytelling and other resources:
+
+  * [French ministry of agriculture scrollytelling gallery](https://vizagreste.agriculture.gouv.fr/)
+  * [ABC custom javascript libraries](https://github.com/abcnews/swarmyteller)
+  * [An argument structure for data stories](https://media.eagereyes.org/papers/2017/Kosara-EuroVis-2017.pdf)
+  * [Telling stories with data online textbook](https://tellingstorieswithdata.com/)
+  
+
+### JavaScript libraries for scrollytelling
+
+[Scrollama.js](https://github.com/russellsamora/scrollama/tree/main) is a  a modern & lightweight JS library for scrollytelling using IntersectionObserver in favor of scroll events, examples [here](https://russellsamora.github.io/scrollama/basic/). It works well embedded into Quarto websites with OJS code blocks. 
+
+[Scrollyteller.js](https://ihmeuw.github.io/ScrollyTeller/) ( see an [introductory article](https://medium.com/ihme-tech/creating-data-stories-with-scrollyteller-601a34327545) and an [example story on child mortality](https://vizhub.healthdata.org/child-mortality) ), it's a JS library that builds the HTML for a scrolling data story from csv files, and provides a flexible framework for triggering chart actions when text "narration" scrolls into view. After much experimentation, it seems this cannot yet be embedded into Observable notebooks, let alone Quarto websites. May work in HTML/JavaScript directly. 
+
+Some other libraries I discovered that looked promising but I did not get a chance to experiment with are: 
+
+  * [GSAP.js](https://gsap.com/), a popular animation library 
+  * [Plotteus](https://www.plotteus.dev/docs/quick-start) is a new JS library that users have developed to work with Observable. It includes basic functionality for changing chart types etc. 
+  * [Flourish](https://flourish.studio/features/) as a no-code alternative to Javascript. Note that users must pay to access scrollytelling features in Flourish. 
+  * It is also possible to add scrolltriggers to animated charts using d3
+
+These have been documented on Observable in [my collection](https://observablehq.com/collection/@clarapt-ws/scrollytelling-experiments) of story attempts as well as other notebooks that have implemented some of the libraries mentioned. 
+
+# R code for Data viz's created
+
+### Exploring the Biodiversity datasets 
+
+```{r}
+# Exploring Aggregate datasets of Biodiversity data 2023
+
+aggregateOccurrences <- read.csv('AggregatedData_AustralianSpeciesOccurrences_1.1.2023-06-13.csv')
+protectTer <- read.csv('SummaryData-ProtectionStatusAustralianTerrestrialSpeciesOccurrences-1.1.2023-06-13.csv')
+protectMar <- read.csv('SummaryData-ProtectionStatusAustralianMarineSpeciesOccurrences-1.1.2023-06-13.csv')
+threatTer <- read.csv('SummaryData-ThreatenedSpeciesOccurrencesByTerrestrialEcoregion-1.1.2023-06-13.csv')
+threatMar <- read.csv('SummaryData-ThreatenedSpeciesOccurrencesByMarineEcoregion-1.1.2023-06-13.csv')
+introTer <- read.csv('SummaryData-IntroducedSpeciesOccurrencesByTerrestrialEcoregion-1.1.2023-06-13.csv')
+introMar <- read.csv('SummaryData-IntroducedSpeciesOccurrencesByMarineEcoregion-1.1.2023-06-13.csv')
+
+epbcStatus <- unique(aggregateOccurrences$epbcStatus)
+griisStatus <- unique(aggregateOccurrences$griisStatus)
+
+#find first occurence with imcra region
+aggregateOccurrences[which(aggregateOccurrences$imcraRegion!="")[1],]
+
+#search for all koala Occurrences
+koalaOccurrences <- aggregateOccurrences[grep("Phascolarctos cinereus", aggregateOccurrences$speciesName), ]
+
+numSpecies <- unique(aggregateOccurrences$speciesID)
+
+# Order species by count
+aggregateSorted <- aggregateOccurrences[order(aggregateOccurrences$occurrenceCount, decreasing = TRUE), ]
+
+topCountSpecies <- aggregateSorted[1:250, ]
+
+countUnique <- unique(topCountSpecies$speciesName)
+
+topCountSpecies$vernacularName
+topCountSpecies$class
+
+for (i in 1:length(topCountSpecies$speciesName)) {
+  name <- topCountSpecies$speciesName[i]
+  output <- search_taxa(name)
+  topCountSpecies$vernacularName[i] <- output$vernacular_name
+  topCountSpecies$class[i] <- output$class
+}
+
+# filter any empty rows... this doesn't quite work 
+topCountSpeciesF <- topCountSpecies[!(is.na(topCountSpecies$ibraRegion) 
+                                         | topCountSpecies$ibraRegion == ""), ]
+
+
+##### Galah : exploring package functionality
+
+install.packages("galah")
+library(galah)
+
+# choosing an atlas
+show_all(atlases)
+galah_config(atlas = "ALA")
+
+atlas_counts()
+# Use galah_ functions after the call...
+galah_call() |>
+  galah_identify("https://biodiversity.org.au/afd/taxa/b6f829dd-0aef-4422-a3f6-77ff691aa9af") |>
+  atlas_species()
+
+# ...or dplyr functions 
+galah_call() |>
+  filter(year >= 2020) |> 
+  group_by(year) |>
+  count() |>
+  collect()
+
+# to search by taxonomic group
+search_taxa("reptilia")
+search_taxa("Wallabia bicolor")
+
+galah_call() |>
+  galah_filter(year >= 2020) |> 
+  galah_identify("reptilia") |> 
+  atlas_counts()
+
+ranks <- show_all_ranks()
+searchOuput <- search_taxa("Wallabia bicolor")
+class <- galah_call() |> galah_group_by(class) |> atlas_counts()
+
+
+##### explore CAPAD status
+
+totalCount <- nrow(aggregateOccurrences)
+protected <- unique(aggregateOccurrences$capadStatus)
+
+indigenous <- aggregateOccurrences[grep("IPA", aggregateOccurrences$capadStatus), ]
+protected <- aggregateOccurrences[grep("PA", aggregateOccurrences$capadStatus), ]
+np <- aggregateOccurrences[grep("not protected", aggregateOccurrences$capadStatus), ]
+
+ipaPerCent <- (nrow(indigenous)/totalCount)*100
+protectedPerCent <- (nrow(protected)/totalCount)*100
+npPerCent <- (nrow(np)/totalCount)*100
+
+nrow(indigenous[grep("Native", indigenous$griisStatus), ])/nrow(indigenous)
+nrow(protected[grep("Native", protected$griisStatus), ])/nrow(protected)
+nrow(np[grep("Native", np$griisStatus), ])/nrow(np)
+
+library("dplyr")
+year <- (aggregateOccurrences %>% group_by(year) %>% summarize(count=n()))
+# aggregate(data.frame(count = v), list(value = v), length)
+
+
+##### explore GRIIS status
+
+# to create a stream graph: table with date/griis status/count, with the count aggregated for each year
+
+griisAggregate <- (aggregateOccurrences %>% select(year, griisStatus, occurrenceCount))
+griisAggregateSum <- (griisAggregate %>% group_by(year, griisStatus) %>% summarize(sum(occurrenceCount)))
+
+colnames(griisAggregateSum)[3] <- "occurrenceCount"
+
+write.csv(griisAggregateSum, path)
+
+library(jsonlite)
+
+cat(toJSON(griisAggregateSum), file = "griisAggregateData.json")
+
+
+##### explore animal class 
+
+library(galah)
+library(jsonlite)
+aggregateOccurrences <- read.csv('AggregatedData_AustralianSpeciesOccurrences_1.1.2023-06-13.csv')
+class <- "class"
+aggregateClass <- cbind(aggregateOccurrences, class)
+
+#add class column to aggregate data
+for (i in 1:nrow(aggregateClass)){
+  output <- search_taxa(aggregateClass$speciesName[i])
+  aggregateClass$class[i] <- output$class
+}
+# save this new csv
+
+# group by year and sum counts
+aggregateClassGrouped <- (aggregateClass %>% select(year, class, occurrenceCount) %>% group_by(year, class))
+
+# convert to json? 
+#find first occurence with imcra region
+
+aggregateClass[which(aggregateClass$class=="class")[1],]
+
+
+##### Subset the aggregate data to add in to Observable
+
+subsetAggregate <- aggregateOccurrences[grep("2014", aggregateOccurrences$year), ]
+write.csv(subsetAggregate, "C:\\Users\\PEE040\\OneDrive - CSIRO\\Documents\\EcoAssets\\BiodiversityData_2023\\Hobern_Donald_18_Dec_2023\\data\\aggregateOccurrences2014.csv", row.names=FALSE)
+
+## Year counts of biodiversity data
+
+library(dplyr)
+yearCounts <- (aggregateOccurrences %>% group_by(year) %>% summarise(count=n()))
+
+library(ggplot2)
+ggplot(data=yearCounts, aes(x=year, y=count, group=1)) + geom_line() + geom_point()
+
+write.csv(yearCounts, "C:\\Users\\PEE040\\OneDrive - CSIRO\\Documents\\EcoAssets\\biodiversityYearCounts.csv", row.names = FALSE)
+
+
+## Sample data frame
+
+sampleSet <- aggregateOccurrences[sample(nrow(aggregateOccurrences), 5), ]
+saveRDS(sampleSet, file="biodiversity_sample.rds")
+
+```
+
+### Creating a streamgraph for taxa - aggregate biodiversity dataset
+
+```{r}
+# Creating a Streamgraph for Taxa from aggregate biodiversity dataset
+
+# A note from Shandiya: Here's the list of taxonomic classifications for (I think) all the species in the aggregated datasets.
+## Use arrow to open parquet files: https://arrow.apache.org/docs/r/index.html.
+
+### Read in taxa
+# install.packages("arrow")
+taxa <- arrow::read_parquet("rel_distinct_taxa.parquet")
+
+### Read in aggregate dataset
+aggregateOccurences <- read.csv('AggregatedData_AustralianSpeciesOccurrences_1.1.2023-06-13.csv')
+
+### Join the datasets, adding taxa column to aggregate dataset
+
+# to create a stream graph: table with date/griis status/count, with the count aggregated for each year
+
+library(dplyr)
+aggregate <- (aggregateOccurences %>% select(year, speciesID, occurrenceCount))
+aggregateSum <- (aggregate %>% group_by(year, speciesID) %>% summarize(sum(occurrenceCount)))
+
+colnames(aggregateSum)[3] <- "occurrenceCount"
+
+taxaOccurence <- left_join(aggregateSum, taxa, by="speciesID") #retain everything from aggregateSum
+
+table(taxaOccurence$kingdom, useNA='always')
+
+length(which(taxaOccurence$kingdom == "Animalia"))
+
+kingdomOccurence <- (taxaOccurence %>% 
+                       select(year, kingdom, occurrenceCount) %>% 
+                       group_by(year, kingdom) %>% 
+                       summarize(sum(occurrenceCount)))
+colnames(kingdomOccurence)[3] <- "occurrenceCount"
+
+animaliaOccurence <- (taxaOccurence %>% 
+                        filter(kingdom == "Animalia") %>%
+                        select(year, phylum, occurrenceCount) %>% 
+                        group_by(year, phylum) %>% 
+                        summarize(sum(occurrenceCount)))
+colnames(animaliaOccurence)[3] <- "occurrenceCount"
+
+classOccurrence <- (taxaOccurence %>% 
+                        filter(kingdom == "Animalia") %>%
+                        select(year, class, occurrenceCount) %>% 
+                        group_by(year, class) %>% 
+                        summarize(sum(occurrenceCount)))
+colnames(classOccurrence)[3] <- "occurrenceCount"
+
+orderOccurrence <- (taxaOccurence %>% 
+                      filter(kingdom == "Animalia") %>%
+                      select(year, order, occurrenceCount) %>% 
+                      group_by(year, order) %>% 
+                      summarize(sum(occurrenceCount)))
+colnames(orderOccurrence)[3] <- "occurrenceCount"
+
+
+# Fill in NA values
+kingdomOccurence[is.na(kingdomOccurence)] <- "No kingdom"
+animaliaOccurence[is.na(animaliaOccurence)] <- "No phylum"
+classOccurrence[is.na(classOccurrence)] <- "No class"
+orderOccurrence[is.na(orderOccurrence)] <- "No order"
+
+### Create JSON with {year:, class:, occurenceCount:, } array 
+
+library(jsonlite)
+
+cat(toJSON(kingdomOccurence), file = "kingdomOccurences.json")
+cat(toJSON(animaliaOccurence), file="animaliaOccurences.json")
+cat(toJSON(classOccurrence), file="classOccurences.json")
+cat(toJSON(orderOccurrence), file="orderOccurrences.json")
+
+```
+
+### Create species and regions double circle plot
+
+```{r}
+##### Subset of regions and species for circle graph
+
+aggregateOccurrences <- read.csv('AggregatedData_AustralianSpeciesOccurrences_1.1.2023-06-13.csv')
+aggregateSorted <- aggregateOccurrences[order(aggregateOccurrences$occurrenceCount, decreasing = TRUE), ]
+vernacularName <- "vernacularName"
+class <- "class"
+numSpecies <- 150
+topSpecies <- cbind(aggregateSorted[1:numSpecies, ], vernacularName, class)
+
+# then need to cross-check species and regions in topSpecies with agreggated occurrences 
+speciesList <- unique(topSpecies$speciesName)
+ibraList <- unique(topSpecies$ibraRegion)
+imcraList <- unique(topSpecies$imcraRegion)
+
+# create another dataframe with the missing data
+# from numSpecies + 1, loop through rows of table and if the the species is in the speciesList, add it to the data
+# Only keep rows where the ibra or imcra region is already in the created lists 
+library(dplyr)
+missingData <- aggregateSorted |> filter(speciesName %in% speciesList)
+missingDataRegions <- missingData |> filter(ibraRegion %in% ibraList) |> filter(imcraRegion %in% imcraList)
+
+topSpecies <- missingDataRegions
+
+# Add vernacular name and class to topSpecies
+library(galah)
+for (i in 1:numSpecies) {
+  name <- topSpecies$speciesName[i]
+  output <- search_taxa(name)
+  # only add the vernacular name if not null
+  if (!is.null(output$vernacular_name)) {
+    topSpecies$vernacularName[i] <- output$vernacular_name
+    topSpecies$class[i] <- output$class
+  }
+}
+# Filter out species that don't have a vernacular name provided
+topSpecies <- topSpecies[topSpecies$vernacularName != "vernacularName", ]
+
+ibraList <- unique(topSpecies$ibraRegion)
+imcraList <- unique(topSpecies$imcraRegion)
+
+# Convert to JSON
+# install.packages("jsonlite")
+library(jsonlite)
+library(dplyr)
+
+speciesRegion <- mutate(topSpecies, region = paste(imcraRegion, ibraRegion)) 
+speciesRegion <- (speciesRegion %>% select(region, vernacularName, class))
+colnames(speciesRegion)[2] <- "species"
+speciesRegion <- speciesRegion |> distinct(.keep_all = TRUE) #remove duplicate rows across entire data frame --> years creates duplicates
+speciesRegion <- speciesRegion[order(speciesRegion$region, decreasing = FALSE), ] # make it in alphabetical order by regions
+
+# an attempt to create the JSON object with jsonlite functions - doesn't work 
+list <- toJSON(speciesRegion) # creates a json list of region/species pairs
+list <- toJSON(speciesRegion, dataframe = "rows") # same as above
+list <- toJSON(speciesRegion, dataframe = "columns") # json object with a list of regions and a list of species
+
+# create JSON object manually 
+regions <- unique(speciesRegion$region)
+species <- unique(speciesRegion$species)
+r <- ""
+s <- ""
+
+# make regions array {"region1name": ["species1", "species2"]}
+for (x in 1:length(regions)) {
+  r <- paste(r, '{"name": "', regions[x], '", "values": [')
+  listSpecies <- speciesRegion[speciesRegion$region == regions[x], ] %>% select(species)
+  uniqueSpecies <- unique(listSpecies)
+  countSpecies <- count(uniqueSpecies)
+  for (y in 1:countSpecies[1,1]) {
+    r <- paste(r, '"', uniqueSpecies[y, ], '",')
+  }
+  r <- substring(r, 1, nchar(r)-1)
+  r <- paste(r, '], "colour": ')
+  # add "ibra" or "imcra" to colour
+  if( trimws(regions[x], "both") %in% ibraList) {
+    r <- paste(r, '"ibra"')
+  } else if ( trimws(regions[x], "both") %in% imcraList ) {
+    r <- paste(r, '"imcra"')
+  } else {
+    r <- paste(r, '"both"')
+  }
+  r <- paste(r, "},")
+}
+
+# make species array
+for (a in 1:length(species)) {
+  s <- paste(s, '{"name": "', species[a], '", "values": [')
+  listRegions <- speciesRegion[speciesRegion$species == species[a], ] %>% select(region)
+  uniqueRegions <- unique(listRegions)
+  countRegions <- count(uniqueRegions)
+  for (b in 1:countRegions[1,1]) {
+    s <- paste(s, '"', uniqueRegions[b, ], '",')
+  }
+  s <- substring(s, 1, nchar(s)-1)
+  s <- paste(s, '], "colour": ')
+  # add class to species
+  speciesClass <- speciesRegion[speciesRegion$species == species[a], ] %>% select(class) 
+  s <- paste(s, '"', speciesClass[1,1], '"')
+  s <- paste(s, "},")
+}
+# remove trailing commas
+r <- substring(r, 1, nchar(r)-1)
+s <- substring(s, 1, nchar(s)-1)
+
+jsonObject <- sprintf('{"regions": 
+                      [%s], 
+                      "species":
+                      [%s]}', r, s) 
+cat(jsonObject, file="speciesRegion.json")
+
+# get species class list to make colour scale in observable
+unique(speciesRegion$class)
+
+```
+
+### Shape tweening - manipulating shape files and converting to JSON
+
+Shape files for Australian states located at: <https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/digital-boundary-files>. 
+```{r}
+###### Exploring state data for shape tweening
+
+aggregateOccurrences <- read.csv('AggregatedData_AustralianSpeciesOccurrences_1.1.2023-06-13.csv')
+
+library(dplyr)
+total2022 <- aggregateOccurrences %>% 
+  filter(year == 2022) %>%
+  summarise(total2022 = sum(occurrrenceCount))
+
+stateCounts <- (aggregateOccurrences %>% 
+                  filter(year == 2022) %>%
+                  group_by(stateTerritory) %>% 
+                  summarise(signif(((sum(occurrenceCount)/total2022$total2022)*100), digits = 3)))
+
+colnames(stateCounts)[colnames(stateCounts) == 'stateTerritory'] <- 'name'
+colnames(stateCounts)[2] <- 'value'
+
+# subset data based on available shape files
+stateCounts <- stateCounts %>% filter(!((name == "Unknown1") | (name == "Coral Sea Islands") | (name == "Ashmore and Cartier Islands") | (name == "")))
+
+write.csv(stateCounts, "C:\\Users\\PEE040\\OneDrive - CSIRO\\Documents\\EcoAssets\\BiodiversityData_2023\\Hobern_Donald_18_Dec_2023\\data\\stateCounts.csv", row.names=FALSE)
+
+# Reading in a shape file and creating an array 
+#install.packages("sf")
+library(sf)
+#install.packages("tidyverse")
+library(tidyverse)
+
+# read in shape files using read_sf()
+shape <- read_sf("states_shapes/STE_2021_AUST_GDA2020.shp", promote_to_multi = FALSE)
+
+# Read in shape files using st_read() and cast multipolygons as polygons
+shape <- st_read("states_shapes/STE_2021_AUST_GDA2020.shp")
+shape2 <- st_cast(shape, "POLYGON")
+
+# Read in shape file and simplify to reduce file size
+ausShape <- read_sf("states_shapes/STE_2021_AUST_GDA2020.shp") 
+aus_simplified <- ausShape |>
+  filter(!(STE_NAME21 %in% c("Outside Australia", "Other Territories"))) |>
+  st_simplify(preserveTopology = TRUE, dTolerance = 1000)
+
+st_write(aus_simplified, "path/to/STE_2021_AUST_GDA2020_simplified/STE_2021_AUST_GDA2020_simplified.shp")
+
+aus_simplified$geometry
+
+ausShapeSimple <- st_cast(aus_simplified, "POLYGON", group_or_split = TRUE, )
+
+ausShapeSimple$geometry
+
+#st_union(ausShapeSimple |> filter(STE_CODE21 == 1))
+
+ausShapeSimple$area <- st_area(ausShapeSimple)
+
+ausShapeSimple <- st_cast(aus_simplified, "POLYGON", group_or_split = TRUE) |>
+  mutate(area = st_area(geometry)) |>
+  arrange(STE_NAME21, desc(area)) |> 
+  group_by(STE_NAME21) |>
+  filter(row_number() == 1)
+
+nswPolygons <- ausShapeSimple |> filter(STE_CODE21 == 1) 
+sort(st_area(nswPolygons))
+
+# Save gemoetry as geojson file to be input into observable 
+#install.packages("geojsonsf")
+library(geojsonsf)
+geoShape <- sf_geojson(ausShapeSimple)
+
+library(jsonlite)
+cat(toJSON(geoShape), file = "stateShapesOrdered.json")
+```
+
+### Exploring the Monitoring dataset 
+```{r}
+
+dataSources <- read.csv2('data-sources.csv', locale=locale(encoding="latin1"))
+
+aggregateData<-read.csv('AggregatedData_EnvironmentalMonitoringAndObservationsEffort_1.1.2023-06-13.csv')
+
+sampleSet <- aggregateData[sample(nrow(aggregateData), 5), ]
+saveRDS(sampleSet, file="monitoring_sample.rds")
+
+vocab <- read.csv('Vocabulary_EcoAssetsEarthScienceFeatures_1.0.2023-03-23.csv')
+
+keyWords <- read.csv('KeywordMapping_EcoAssetsEarthScienceFeatures_1.0.2023-03-23.csv')
+
+featureID <- unique(aggregateData$featureID)
+featureName <- unique(aggregateData$featureName)
+feature1 <- unique(aggregateData$featureFacet1)
+feature2 <- unique(aggregateData$featureFacet2)
+feature3 <- unique(aggregateData$featureFacet3)
+
+summaryTer <- read.csv("SummaryData_MonitoringAndObservationsEffortByTerrestrialEcoregion_1.1.2023-06-13.csv")
+
+## Data for Line graph of year and counts
+library(dplyr)
+yearCounts <- (aggregateData %>% group_by(year) %>% summarise(count=n()))
+yearCounts2 <- (aggregateData %>% group_by(year, nri) %>% summarise(freq=n()))
+yearCounts3 <- (aggregateData %>% group_by(year, featureFacet3) %>% summarise(count=n()))
+yearCounts4 <- (aggregateData %>% group_by(year, stateTerritory) %>% summarise(count=n()))
+
+install.packages("ggplot2")
+library(ggplot2)
+ggplot(data=yearCounts, aes(x=year, y=count, group=1)) + geom_line() + geom_point()
+
+ggplot(data=yearCounts2, aes(x=year, y=freq, group=nri)) + geom_line(aes(color=nri)) + geom_point(aes(color=nri))
+
+ggplot(data=yearCounts3, aes(x=year, y=count, group=featureFacet3)) + geom_line(aes(color=featureFacet3)) + geom_point(aes(color=featureFacet3))
+
+ggplot(data=yearCounts4, aes(x=year, y=count, group=stateTerritory)) + geom_line(aes(color=stateTerritory)) + geom_point(aes(color=stateTerritory))
+
+```
